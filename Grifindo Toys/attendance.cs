@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
 namespace Grifindo_Toys
 {
     public partial class frm_attendance : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
+       SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
 
         string id = string.Empty;
 
@@ -44,7 +44,7 @@ namespace Grifindo_Toys
         private void btn_new_Click(object sender, EventArgs e)
         {
             cmb_employee.SelectedIndex = 0;
-            /*txt_leave.Text = string.Empty;*/
+            /*txt_leave.Text = string.Empty;
             txt_absent.Text = string.Empty;
             txt_holiday.Text = string.Empty;
             txt_overtime.Text = string.Empty;
@@ -55,7 +55,7 @@ namespace Grifindo_Toys
             try
             {
                 int selectedemp = Convert.ToInt32(cmb_employee.SelectedValue);
-                /*string leaves = txt_leave.Text.Trim();*/
+                /*string leaves = txt_leave.Text.Trim();
                 string absent = txt_absent.Text.Trim();
                 string holidays = txt_holiday.Text.Trim();
                 string overtime = txt_overtime.Text.Trim();
