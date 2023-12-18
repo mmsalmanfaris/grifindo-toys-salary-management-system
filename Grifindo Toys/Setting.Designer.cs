@@ -32,7 +32,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_gov_tax = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_annual_leave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtp_salary_end = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_salary_setting)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,23 +81,15 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Goverment Tax Rate:";
             // 
-            // txt_annual_leave
-            // 
-            this.txt_annual_leave.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_annual_leave.Location = new System.Drawing.Point(42, 203);
-            this.txt_annual_leave.Name = "txt_annual_leave";
-            this.txt_annual_leave.Size = new System.Drawing.Size(196, 33);
-            this.txt_annual_leave.TabIndex = 27;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 31);
+            this.label1.Size = new System.Drawing.Size(192, 31);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Annual Leaves:";
+            this.label1.Text = "Salary Cycle Range:";
             // 
             // dtp_salary_end
             // 
@@ -135,7 +127,7 @@
             this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(455, 606);
+            this.btn_update.Location = new System.Drawing.Point(450, 737);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
             this.btn_update.TabIndex = 38;
@@ -148,7 +140,7 @@
             this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(670, 606);
+            this.btn_delete.Location = new System.Drawing.Point(665, 737);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
             this.btn_delete.TabIndex = 37;
@@ -161,7 +153,7 @@
             this.btn_new.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(42, 606);
+            this.btn_new.Location = new System.Drawing.Point(37, 737);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(163, 58);
             this.btn_new.TabIndex = 36;
@@ -174,7 +166,7 @@
             this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(250, 606);
+            this.btn_save.Location = new System.Drawing.Point(245, 737);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
             this.btn_save.TabIndex = 35;
@@ -195,12 +187,22 @@
             this.label7.Text = "Employee Salary Setting";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "label3";
+            // 
             // frm_setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(890, 699);
+            this.ClientSize = new System.Drawing.Size(890, 822);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_delete);
@@ -213,7 +215,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_gov_tax);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_annual_leave);
             this.Controls.Add(this.label1);
             this.Name = "frm_setting";
             this.Text = "Salary Setting";
@@ -230,7 +231,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_gov_tax;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_annual_leave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtp_salary_end;
         private System.Windows.Forms.Label label2;
@@ -240,5 +240,6 @@
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
     }
 }

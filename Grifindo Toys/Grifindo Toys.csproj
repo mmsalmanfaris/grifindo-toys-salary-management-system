@@ -53,7 +53,9 @@
     <Compile Include="admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="attendance.cs" />
+    <Compile Include="attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="attendance.Designer.cs">
       <DependentUpon>attendance.cs</DependentUpon>
     </Compile>
