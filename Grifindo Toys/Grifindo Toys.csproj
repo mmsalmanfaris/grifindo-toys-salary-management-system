@@ -83,6 +83,18 @@
     <Compile Include="employee type.Designer.cs">
       <DependentUpon>employee type.cs</DependentUpon>
     </Compile>
+    <Compile Include="Holidays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Holidays.Designer.cs">
+      <DependentUpon>Holidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Leave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave.Designer.cs">
+      <DependentUpon>Leave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="employee type.resx">
       <DependentUpon>employee type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Holidays.resx">
+      <DependentUpon>Holidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leave.resx">
+      <DependentUpon>Leave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

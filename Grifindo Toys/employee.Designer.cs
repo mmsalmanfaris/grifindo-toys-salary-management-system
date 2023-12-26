@@ -45,13 +45,14 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmb_bloodgrp = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtp_joiningdate = new System.Windows.Forms.DateTimePicker();
             this.rb_male = new System.Windows.Forms.RadioButton();
             this.rb_female = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmb_emptype = new System.Windows.Forms.ComboBox();
+            this.txt_jobrole = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_emp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -173,7 +174,8 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_save.BackColor = System.Drawing.Color.Lime;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
             this.btn_save.Location = new System.Drawing.Point(256, 665);
@@ -187,6 +189,7 @@
             // btn_new
             // 
             this.btn_new.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
             this.btn_new.Location = new System.Drawing.Point(48, 665);
@@ -199,7 +202,8 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_delete.BackColor = System.Drawing.Color.Red;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Location = new System.Drawing.Point(676, 665);
@@ -212,7 +216,8 @@
             // 
             // btn_update
             // 
-            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.Location = new System.Drawing.Point(461, 665);
@@ -235,34 +240,6 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Employee Information";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmb_bloodgrp
-            // 
-            this.cmb_bloodgrp.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_bloodgrp.FormattingEnabled = true;
-            this.cmb_bloodgrp.Items.AddRange(new object[] {
-            "A+",
-            "B+",
-            "AB+",
-            "A-",
-            "B-",
-            "AB-",
-            "O+",
-            "O-"});
-            this.cmb_bloodgrp.Location = new System.Drawing.Point(337, 358);
-            this.cmb_bloodgrp.Name = "cmb_bloodgrp";
-            this.cmb_bloodgrp.Size = new System.Drawing.Size(218, 38);
-            this.cmb_bloodgrp.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(332, 324);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 31);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Blood Group:";
             // 
             // label10
             // 
@@ -317,15 +294,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(332, 324);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 39);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Job Role:";
+            // 
+            // cmb_emptype
+            // 
+            this.cmb_emptype.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_emptype.FormattingEnabled = true;
+            this.cmb_emptype.Items.AddRange(new object[] {
+            "A+",
+            "B+",
+            "AB+",
+            "A-",
+            "B-",
+            "AB-",
+            "O+",
+            "O-"});
+            this.cmb_emptype.Location = new System.Drawing.Point(337, 248);
+            this.cmb_emptype.Name = "cmb_emptype";
+            this.cmb_emptype.Size = new System.Drawing.Size(218, 38);
+            this.cmb_emptype.TabIndex = 29;
+            // 
+            // txt_jobrole
+            // 
+            this.txt_jobrole.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_jobrole.Location = new System.Drawing.Point(334, 358);
+            this.txt_jobrole.Name = "txt_jobrole";
+            this.txt_jobrole.Size = new System.Drawing.Size(219, 33);
+            this.txt_jobrole.TabIndex = 30;
+            // 
             // frm_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(887, 748);
+            this.Controls.Add(this.txt_jobrole);
+            this.Controls.Add(this.cmb_emptype);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtp_joiningdate);
-            this.Controls.Add(this.cmb_bloodgrp);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
@@ -375,13 +389,14 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmb_bloodgrp;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtp_joiningdate;
         private System.Windows.Forms.RadioButton rb_male;
         private System.Windows.Forms.RadioButton rb_female;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmb_emptype;
+        private System.Windows.Forms.TextBox txt_jobrole;
     }
 }
 

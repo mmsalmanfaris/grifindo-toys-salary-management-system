@@ -33,17 +33,17 @@ namespace Grifindo_Toys
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            cmb_employee.DisplayMember = "name";
-            cmb_employee.ValueMember = "emp_id";
-            cmb_employee.DataSource = dt;
+            cmb_empid.DisplayMember = "name";
+            cmb_empid.ValueMember = "emp_id";
+            cmb_empid.DataSource = dt;
 
-            cmb_employee.SelectedIndex = 0;
+            cmb_empid.SelectedIndex = 0;
 
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            cmb_employee.SelectedIndex = 0;
+            cmb_empid.SelectedIndex = 0;
             txt_leave.Text = string.Empty;
             txt_absent.Text = string.Empty;
             txt_holiday.Text = string.Empty;
@@ -54,7 +54,7 @@ namespace Grifindo_Toys
         {
             try
             {
-                int selectedemp = Convert.ToInt32(cmb_employee.SelectedValue);
+                int selectedemp = Convert.ToInt32(cmb_empid.SelectedValue);
                 string leaves = txt_leave.Text.Trim();
                 string absent = txt_absent.Text.Trim();
                 string holidays = txt_holiday.Text.Trim();
@@ -118,7 +118,7 @@ namespace Grifindo_Toys
                 if (MessageBox.Show("Do you want to update", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string qry = "UPDATE attendance SET " +
-                        "emp_id = '" + cmb_employee.Text.Trim() + "'," +
+                        "emp_id = '" + cmb_empid.Text.Trim() + "'," +
                         "no_leaves = '" + txt_leave.Text.Trim() + "'," +
                         "no_absent = '" + txt_absent.Text.Trim() + "'," +
                         "no_holidays = '" + txt_holiday.Text.Trim() + "'," +
@@ -192,7 +192,7 @@ namespace Grifindo_Toys
 
                 if (rdr.Read())
                 {
-                    cmb_employee.Text = rdr[1].ToString();
+                    cmb_empid.Text = rdr[1].ToString();
                     txt_leave.Text = rdr[2].ToString();
                     txt_absent.Text = rdr[3].ToString();
                     txt_holiday.Text = rdr[4].ToString();
