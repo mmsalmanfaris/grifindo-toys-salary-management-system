@@ -53,9 +53,9 @@
             this.lbl_total_days.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total_days.Location = new System.Drawing.Point(28, 511);
             this.lbl_total_days.Name = "lbl_total_days";
-            this.lbl_total_days.Size = new System.Drawing.Size(108, 31);
+            this.lbl_total_days.Size = new System.Drawing.Size(130, 39);
             this.lbl_total_days.TabIndex = 54;
-            this.lbl_total_days.Text = "Total Days";
+            this.lbl_total_days.Text = "---------";
             // 
             // label7
             // 

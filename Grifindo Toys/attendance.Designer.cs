@@ -39,11 +39,11 @@
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.dtp_intime = new System.Windows.Forms.DateTimePicker();
             this.dtp_outime = new System.Windows.Forms.DateTimePicker();
-            this.lbl_ttlhours = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.lbl_totalhours = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_attendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,16 +159,6 @@
             this.dtp_outime.Size = new System.Drawing.Size(217, 33);
             this.dtp_outime.TabIndex = 64;
             // 
-            // lbl_ttlhours
-            // 
-            this.lbl_ttlhours.AutoSize = true;
-            this.lbl_ttlhours.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ttlhours.Location = new System.Drawing.Point(44, 584);
-            this.lbl_ttlhours.Name = "lbl_ttlhours";
-            this.lbl_ttlhours.Size = new System.Drawing.Size(108, 31);
-            this.lbl_ttlhours.TabIndex = 65;
-            this.lbl_ttlhours.Text = "Total Days";
-            // 
             // btn_update
             // 
             this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -221,17 +211,27 @@
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             // 
+            // lbl_totalhours
+            // 
+            this.lbl_totalhours.AutoSize = true;
+            this.lbl_totalhours.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalhours.Location = new System.Drawing.Point(45, 579);
+            this.lbl_totalhours.Name = "lbl_totalhours";
+            this.lbl_totalhours.Size = new System.Drawing.Size(104, 31);
+            this.lbl_totalhours.TabIndex = 70;
+            this.lbl_totalhours.Text = "---------";
+            // 
             // frm_attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(895, 771);
+            this.Controls.Add(this.lbl_totalhours);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.lbl_ttlhours);
             this.Controls.Add(this.dtp_outime);
             this.Controls.Add(this.dtp_intime);
             this.Controls.Add(this.dtp_date);
@@ -264,10 +264,10 @@
         private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.DateTimePicker dtp_intime;
         private System.Windows.Forms.DateTimePicker dtp_outime;
-        private System.Windows.Forms.Label lbl_ttlhours;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Label lbl_totalhours;
     }
 }

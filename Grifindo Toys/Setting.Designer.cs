@@ -41,7 +41,7 @@
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbl_cycle_range = new System.Windows.Forms.Label();
+            this.lbl_range = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_salary_setting)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,15 +191,15 @@
             this.label7.Text = "Employee Salary Setting";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_cycle_range
+            // lbl_range
             // 
-            this.lbl_cycle_range.AutoSize = true;
-            this.lbl_cycle_range.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cycle_range.Location = new System.Drawing.Point(34, 500);
-            this.lbl_cycle_range.Name = "lbl_cycle_range";
-            this.lbl_cycle_range.Size = new System.Drawing.Size(135, 39);
-            this.lbl_cycle_range.TabIndex = 40;
-            this.lbl_cycle_range.Text = "Total Days";
+            this.lbl_range.AutoSize = true;
+            this.lbl_range.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_range.Location = new System.Drawing.Point(30, 487);
+            this.lbl_range.Name = "lbl_range";
+            this.lbl_range.Size = new System.Drawing.Size(104, 31);
+            this.lbl_range.TabIndex = 55;
+            this.lbl_range.Text = "---------";
             // 
             // frm_setting
             // 
@@ -207,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(857, 693);
-            this.Controls.Add(this.lbl_cycle_range);
+            this.Controls.Add(this.lbl_range);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_delete);
@@ -245,6 +245,6 @@
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_cycle_range;
+        private System.Windows.Forms.Label lbl_range;
     }
 }

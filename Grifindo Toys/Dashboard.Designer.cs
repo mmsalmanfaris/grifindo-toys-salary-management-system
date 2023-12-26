@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_admin = new System.Windows.Forms.Button();
+            this.btn_leave = new System.Windows.Forms.Button();
             this.btn_attendance = new System.Windows.Forms.Button();
             this.btn_salary = new System.Windows.Forms.Button();
             this.btn_emp = new System.Windows.Forms.Button();
@@ -48,6 +48,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.btn_holiday = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,7 +59,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_admin);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btn_holiday);
+            this.panel1.Controls.Add(this.btn_leave);
             this.panel1.Controls.Add(this.btn_attendance);
             this.panel1.Controls.Add(this.btn_salary);
             this.panel1.Controls.Add(this.btn_emp);
@@ -68,22 +72,22 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(263, 761);
+            this.panel1.Size = new System.Drawing.Size(263, 959);
             this.panel1.TabIndex = 0;
             // 
-            // btn_admin
+            // btn_leave
             // 
-            this.btn_admin.BackColor = System.Drawing.Color.White;
-            this.btn_admin.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_admin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_admin.Location = new System.Drawing.Point(29, 668);
-            this.btn_admin.Name = "btn_admin";
-            this.btn_admin.Size = new System.Drawing.Size(205, 63);
-            this.btn_admin.TabIndex = 6;
-            this.btn_admin.Text = "Admin";
-            this.btn_admin.UseVisualStyleBackColor = false;
-            this.btn_admin.Click += new System.EventHandler(this.btn_admin_Click);
+            this.btn_leave.BackColor = System.Drawing.Color.White;
+            this.btn_leave.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_leave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_leave.Location = new System.Drawing.Point(29, 668);
+            this.btn_leave.Name = "btn_leave";
+            this.btn_leave.Size = new System.Drawing.Size(205, 63);
+            this.btn_leave.TabIndex = 6;
+            this.btn_leave.Text = "Leave";
+            this.btn_leave.UseVisualStyleBackColor = false;
+            this.btn_leave.Click += new System.EventHandler(this.btn_admin_Click);
             // 
             // btn_attendance
             // 
@@ -318,12 +322,38 @@
             this.button12.Text = "Home";
             this.button12.UseVisualStyleBackColor = false;
             // 
+            // btn_holiday
+            // 
+            this.btn_holiday.BackColor = System.Drawing.Color.White;
+            this.btn_holiday.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_holiday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_holiday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_holiday.Location = new System.Drawing.Point(29, 768);
+            this.btn_holiday.Name = "btn_holiday";
+            this.btn_holiday.Size = new System.Drawing.Size(205, 63);
+            this.btn_holiday.TabIndex = 8;
+            this.btn_holiday.Text = "Holiday";
+            this.btn_holiday.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(29, 869);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(205, 63);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Admin";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // frm_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1349, 761);
+            this.ClientSize = new System.Drawing.Size(1349, 959);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frm_dashboard";
@@ -345,7 +375,7 @@
         private System.Windows.Forms.Button btn_salary;
         private System.Windows.Forms.Button btn_emp;
         private System.Windows.Forms.Button btn_emp_type;
-        private System.Windows.Forms.Button btn_admin;
+        private System.Windows.Forms.Button btn_leave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button7;
@@ -357,5 +387,7 @@
         private System.Windows.Forms.Button btn_report;
         private System.Windows.Forms.Button btn_setting;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_holiday;
     }
 }

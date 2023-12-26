@@ -54,7 +54,7 @@ namespace Grifindo_Toys
         private void btn_new_Click(object sender, EventArgs e)
         {
             //cmb_attendance.SelectedIndex = 0;
-            cmb_employee.SelectedIndex = 0;
+            cmb_empid.SelectedIndex = 0;
             txt_salary.Text = string.Empty;
             cmb_setting.SelectedIndex = 0;
             dtp_salary_issue_date.Value = DateTime.Now;
@@ -172,7 +172,7 @@ namespace Grifindo_Toys
                 if (rdr.Read())
                 {
                     //cmb_attendance.Text = rdr[1].ToString();
-                    cmb_employee.Text = rdr[2].ToString();
+                    cmb_empid.Text = rdr[2].ToString();
                     txt_salary.Text = rdr[3].ToString();
                     cmb_setting.Text = rdr[4].ToString();
                     string dtp_salary_issue_date = rdr[5].ToString();

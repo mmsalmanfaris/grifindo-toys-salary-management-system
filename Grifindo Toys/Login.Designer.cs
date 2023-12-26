@@ -39,6 +39,7 @@
             this.btn_login = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +131,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btn_login);
             this.groupBox1.Controls.Add(this.txt_password);
@@ -155,6 +157,16 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Forget Password";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(46, 231);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(78, 25);
+            this.checkBox2.TabIndex = 40;
+            this.checkBox2.Text = "Show";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // frm_login
             // 
@@ -188,5 +200,6 @@
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
