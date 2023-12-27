@@ -115,6 +115,7 @@
             this.txt_overtime.Name = "txt_overtime";
             this.txt_overtime.Size = new System.Drawing.Size(257, 33);
             this.txt_overtime.TabIndex = 26;
+            this.txt_overtime.TextChanged += new System.EventHandler(this.txt_overtime_TextChanged);
             // 
             // label6
             // 
@@ -133,6 +134,7 @@
             this.txt_emp_type.Name = "txt_emp_type";
             this.txt_emp_type.Size = new System.Drawing.Size(256, 33);
             this.txt_emp_type.TabIndex = 24;
+            this.txt_emp_type.TextChanged += new System.EventHandler(this.txt_emp_type_TextChanged);
             // 
             // label1
             // 
@@ -165,6 +167,7 @@
             this.txt_annualleave.Name = "txt_annualleave";
             this.txt_annualleave.Size = new System.Drawing.Size(257, 33);
             this.txt_annualleave.TabIndex = 29;
+            this.txt_annualleave.TextChanged += new System.EventHandler(this.txt_annualleave_TextChanged);
             // 
             // label2
             // 

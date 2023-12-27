@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,7 @@ namespace Grifindo_Toys
 {
     public partial class frm_emp_type : Form
     {   
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
-
-        string id = string.Empty;
+        cls_employeetype clsemptype = new cls_employeetype();
 
         public frm_emp_type()
         {
@@ -29,13 +28,12 @@ namespace Grifindo_Toys
 
         private void frm_emp_type_Load(object sender, EventArgs e)
         {
-            myFillGridDetail();
+
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            txt_emp_type.Text = string.Empty;
-            txt_overtime.Text = string.Empty;
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -45,7 +43,7 @@ namespace Grifindo_Toys
 
         private void dgv_emp_type_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgv_emp_type.Rows[e.RowIndex].Cells[0].Value.ToString();
+           /* id = dgv_emp_type.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             try
             {
@@ -71,43 +69,16 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string emptype = txt_emp_type.Text.Trim();
-                string overtime = txt_overtime.Text.Trim();
-               
-                string qry = "INSERT INTO employee_type" +
-                    "(emp_type, overtime_rate_hour)" + " VALUES('" + emptype + "','" + overtime + "')";
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Saved Successfully");
-
-                btn_new.PerformClick();
-
-                myFillGridDetail();
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            clsemptype.Inserdata();
         }
         void myFillGridDetail()
         {
-            try
+            /*try
             {
                 string qry = "SELECT * FROM employee_type";
                 DataTable dt = new DataTable();
@@ -123,14 +94,14 @@ namespace Grifindo_Toys
             catch (SqlException exex)
             {
                 MessageBox.Show(exex.Message);
-            }
+            }*/
 
 
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
 
 
@@ -156,12 +127,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -181,7 +152,22 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
+        }
+
+        private void txt_emp_type_TextChanged(object sender, EventArgs e)
+        {
+            clsemptype.emptype = txt_emp_type.Text.Trim();
+        }
+
+        private void txt_overtime_TextChanged(object sender, EventArgs e)
+        {
+            clsemptype.Overtimerate =  Convert.ToInt32(txt_overtime.Text.Trim());
+        }
+
+        private void txt_annualleave_TextChanged(object sender, EventArgs e)
+        {
+            clsemptype.Annualleaves = txt_annualleave.Text.Trim();
         }
     }   
 }

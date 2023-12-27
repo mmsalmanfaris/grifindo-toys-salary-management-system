@@ -14,9 +14,6 @@ namespace Grifindo_Toys
     public partial class frm_salary : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
-
-        string id = string.Empty;
 
         public frm_salary()
         {
@@ -25,7 +22,7 @@ namespace Grifindo_Toys
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
 
                 if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -48,16 +45,11 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            //cmb_attendance.SelectedIndex = 0;
-            cmb_empid.SelectedIndex = 0;
-            txt_salary.Text = string.Empty;
-            cmb_setting.SelectedIndex = 0;
-            dtp_salary_issue_date.Value = DateTime.Now;
 
         }
 
@@ -102,7 +94,7 @@ namespace Grifindo_Toys
         }
         void GridDetail()
         {
-            try
+           /* try
             {
                 string qry = "SELECT * FROM salary";
                 DataTable dt = new DataTable();
@@ -117,7 +109,7 @@ namespace Grifindo_Toys
             catch (SqlException exex)
             {
                 MessageBox.Show(exex.Message);
-            }
+            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -160,7 +152,7 @@ namespace Grifindo_Toys
 
         private void dgv_empoyee_salary_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgv_empoyee_salary.Rows[e.RowIndex].Cells[0].Value.ToString();
+           /* id = dgv_empoyee_salary.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             try
             {
@@ -190,7 +182,7 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -219,6 +211,11 @@ namespace Grifindo_Toys
         }
 
         private void dgv_empoyee_salary_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_save_Click_1(object sender, EventArgs e)
         {
 
         }

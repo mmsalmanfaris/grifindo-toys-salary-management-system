@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +17,8 @@ namespace Grifindo_Toys
 {
     public partial class frm_emp : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
-
-        string id = string.Empty;
-
-        string gender = string.Empty;
-
+        cls_employee clsemp = new cls_employee();
+        filloperation fill = new filloperation();
         public frm_emp()
         {
             InitializeComponent();
@@ -37,20 +36,22 @@ namespace Grifindo_Toys
 
         private void frm_emp_Load(object sender, EventArgs e)
         {
-            myFillGridDetail();
-
-            string qry = "SELECT * FROM employee_type";
+            cmb_load();
+            /*
+            string qry = "SELECT * FROM tbl_employeetype";
             SqlDataAdapter da = new SqlDataAdapter(qry, con);
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            
+            da.Fill(dt);*/
 
-            cmb_bloodgrp.SelectedIndex = 0;
+        }
 
+        void cmb_load()
+        {
+            fill.combobox("SELECT * FROM tbl_employeetype", cmb_emptype, "SELECT emp_type_id FROM tbl_employeetype", "SELECT emp_type FROM tbl_employeetype");
         }
         void myFillGridDetail()
         {
-            try
+           /* try
             {
                 string qry = "SELECT * FROM employee";
                 DataTable dt = new DataTable();
@@ -66,7 +67,7 @@ namespace Grifindo_Toys
             catch (SqlException exex)
             {
                 MessageBox.Show(exex.Message);
-            }
+            }*/
 
 
         }
@@ -78,69 +79,17 @@ namespace Grifindo_Toys
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            txt_name.Text = string.Empty;
-            txt_nic.Text = string.Empty;
-            txt_email.Text = string.Empty;
-            txt_salary.Text = string.Empty;
-            //cmb_emp_type.SelectedIndex = 0;
-            txt_allowance.Text = string.Empty;
-            dtp_joiningdate.Text = string.Empty;
-            cmb_bloodgrp.SelectedIndex = 0;
-            rb_female.Text = string.Empty;
-            rb_male.Text = string.Empty;
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string name = txt_name.Text.Trim();
-                string nic = txt_nic.Text.Trim();
-                string email = txt_email.Text.Trim();
-                string salary = txt_salary.Text.Trim();
-                //int emptype = 1 + cmb_emp_type.SelectedIndex;
-                string allowance = txt_allowance.Text.Trim();
-                string joindate = dtp_joiningdate.Value.ToString("yyy-mm-dd");
-                string bloodgrp = cmb_bloodgrp.Text;
+            clsemp.Insertdata();
 
-                if (rb_male.Checked)
-                {
-                    gender = "Male";
-                }
-                else if (rb_female.Checked)
-                {
-                    gender = "Female";
-                }
-
-                string genderr = gender;
-
-
-                string qry = "INSERT INTO emp_attendance_salary" +
-                    "(name, nic, email, monthly_salary, allowance, joindate, bloodgrp, gender)" +
-                    " VALUES('" + name + "','" + nic + "','" + email + "','" + salary + "','" + allowance + "','" + joindate + "','" + bloodgrp + "','" + genderr + "')";
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Saved Successfully");
-
-                btn_new.PerformClick();
-
-                myFillGridDetail();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
         }
 
         private void dgv_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {/*
             id = dgv_emp.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             try
@@ -184,11 +133,11 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
-        {
+        {/*
             try
             {
 
@@ -233,12 +182,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
-        }
+            }*/
+        } 
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
 
 
@@ -261,7 +210,62 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
+        }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.name = txt_name.Text.Trim();
+        }
+
+        private void txt_nic_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.nic = Convert.ToInt32(txt_nic.Text.Trim());
+        }
+
+        private void txt_email_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.email = txt_email.Text.Trim();
+        }
+
+        private void txt_salary_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.salary = Int32.Parse(txt_salary.Text.Trim());
+        }
+
+        private void cmb_emptype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clsemp.emptype = Convert.ToInt32(cmb_emptype.SelectedValue);
+        }
+
+        private void txt_allowance_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.allowance = Convert.ToInt32(txt_allowance.Text.Trim());
+        }
+
+        private void dtp_joiningdate_ValueChanged(object sender, EventArgs e)
+        {
+            clsemp.joindate = dtp_joiningdate.ToString();
+        }
+
+        private void txt_jobrole_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.jobrole = txt_jobrole.Text.Trim();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_male_CheckedChanged(object sender, EventArgs e)
+        {
+            clsemp.gender = rb_male.Checked.ToString();
+        }
+
+        private void rb_female_CheckedChanged(object sender, EventArgs e)
+        {
+            clsemp.gender = rb_female.Checked.ToString();
         }
     }
 }

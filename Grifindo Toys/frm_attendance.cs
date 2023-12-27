@@ -14,10 +14,6 @@ namespace Grifindo_Toys
     public partial class frm_attendance : Form
     {
 
-       SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
-
-        string id = string.Empty;
-
         public frm_attendance()
         {
             InitializeComponent();
@@ -25,7 +21,7 @@ namespace Grifindo_Toys
 
         private void attendance_Load(object sender, EventArgs e)
         {
-            GridDetail();
+            /*GridDetail();
 
             string qry = "SELECT * FROM emp_attendance_salary";
 
@@ -37,22 +33,18 @@ namespace Grifindo_Toys
             cmb_empid.ValueMember = "emp_id";
             cmb_empid.DataSource = dt;
 
-            cmb_empid.SelectedIndex = 0;
+            cmb_empid.SelectedIndex = 0;*/
 
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            cmb_empid.SelectedIndex = 0;
-            txt_leave.Text = string.Empty;
-            txt_absent.Text = string.Empty;
-            txt_holiday.Text = string.Empty;
-            txt_overtime.Text = string.Empty;
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 int selectedemp = Convert.ToInt32(cmb_empid.SelectedValue);
                 string leaves = txt_leave.Text.Trim();
@@ -65,9 +57,9 @@ namespace Grifindo_Toys
                     "overtime_hours = '" + overtime + "' " +
                     "WHERE emp_id = " + selectedemp;
 
-                /*string qry = "INSERT INTO emp_attendance_salary" +
+                string qry = "INSERT INTO emp_attendance_salary" +
                     "(no_leaves, no_absent, no_holidays, overtime_hours)" +
-                    " VALUES('" + leaves + "','" + absent + "','" + holidays + "','" + overtime + "')";*/
+                    " VALUES('" + leaves + "','" + absent + "','" + holidays + "','" + overtime + "')";
 
                 con.Open();
                 SqlCommand cmd = new SqlCommand(qry, con);
@@ -86,11 +78,11 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
         void GridDetail()
         {
-            try
+            /*try
             {
                 string qry = "SELECT * FROM emp_attendance_salary";
                 DataTable dt = new DataTable();
@@ -106,12 +98,12 @@ namespace Grifindo_Toys
             catch (SqlException exex)
             {
                 MessageBox.Show(exex.Message);
-            }
+            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
 
 
@@ -144,12 +136,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
 
 
@@ -176,12 +168,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void dgv_attendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgv_attendance.Rows[e.RowIndex].Cells[0].Value.ToString();
+            /*id = dgv_attendance.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             try
             {
@@ -211,7 +203,7 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void cmb_employee_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,6 +212,11 @@ namespace Grifindo_Toys
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_save_Click_1(object sender, EventArgs e)
         {
 
         }

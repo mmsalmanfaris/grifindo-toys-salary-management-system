@@ -68,7 +68,7 @@
             this.label5.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(891, 134);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 39);
+            this.label5.Size = new System.Drawing.Size(99, 31);
             this.label5.TabIndex = 21;
             this.label5.Text = "End Date:";
             // 
@@ -78,7 +78,7 @@
             this.label3.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(321, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 39);
+            this.label3.Size = new System.Drawing.Size(77, 31);
             this.label3.TabIndex = 17;
             this.label3.Text = "Month:";
             // 
@@ -88,7 +88,7 @@
             this.label2.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(38, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 39);
+            this.label2.Size = new System.Drawing.Size(127, 31);
             this.label2.TabIndex = 15;
             this.label2.Text = "Employee Id:";
             // 
@@ -107,7 +107,7 @@
             this.label7.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(607, 129);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 39);
+            this.label7.Size = new System.Drawing.Size(116, 31);
             this.label7.TabIndex = 26;
             this.label7.Text = "Begin Date:";
             // 
@@ -151,7 +151,7 @@
             this.label10.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(891, 246);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(170, 39);
+            this.label10.Size = new System.Drawing.Size(136, 31);
             this.label10.TabIndex = 48;
             this.label10.Text = "No Pay Value:";
             // 
@@ -161,7 +161,7 @@
             this.label11.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(607, 246);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(175, 39);
+            this.label11.Size = new System.Drawing.Size(140, 31);
             this.label11.TabIndex = 56;
             this.label11.Text = "Total Absents:";
             // 
@@ -171,7 +171,7 @@
             this.label13.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(38, 246);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 39);
+            this.label13.Size = new System.Drawing.Size(129, 31);
             this.label13.TabIndex = 50;
             this.label13.Text = "Total Leaves:";
             // 
@@ -181,7 +181,7 @@
             this.label14.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(321, 246);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(179, 39);
+            this.label14.Size = new System.Drawing.Size(143, 31);
             this.label14.TabIndex = 52;
             this.label14.Text = "Total Holidays:";
             // 
@@ -191,7 +191,7 @@
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(891, 358);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 39);
+            this.label1.Size = new System.Drawing.Size(162, 31);
             this.label1.TabIndex = 58;
             this.label1.Text = "Gross Pay Value:";
             // 
@@ -201,7 +201,7 @@
             this.label4.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(607, 358);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 39);
+            this.label4.Size = new System.Drawing.Size(154, 31);
             this.label4.TabIndex = 64;
             this.label4.Text = "Base Pay Value:";
             // 
@@ -211,7 +211,7 @@
             this.label6.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(38, 358);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(208, 39);
+            this.label6.Size = new System.Drawing.Size(166, 31);
             this.label6.TabIndex = 60;
             this.label6.Text = "Over Time Hours:";
             // 
@@ -221,7 +221,7 @@
             this.label9.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(321, 358);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(244, 39);
+            this.label9.Size = new System.Drawing.Size(195, 31);
             this.label9.TabIndex = 62;
             this.label9.Text = "Over Time Payment:";
             // 
@@ -276,6 +276,7 @@
             this.btn_save.TabIndex = 70;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
             // 
             // cmb_month
             // 

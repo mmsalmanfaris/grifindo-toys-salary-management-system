@@ -53,7 +53,7 @@
             this.lbl_total_days.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total_days.Location = new System.Drawing.Point(28, 511);
             this.lbl_total_days.Name = "lbl_total_days";
-            this.lbl_total_days.Size = new System.Drawing.Size(130, 39);
+            this.lbl_total_days.Size = new System.Drawing.Size(104, 31);
             this.lbl_total_days.TabIndex = 54;
             this.lbl_total_days.Text = "---------";
             // 
@@ -122,6 +122,7 @@
             this.btn_save.TabIndex = 49;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // dgv_leave
             // 
@@ -148,7 +149,7 @@
             this.label2.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 356);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 39);
+            this.label2.Size = new System.Drawing.Size(156, 31);
             this.label2.TabIndex = 46;
             this.label2.Text = "Leave End Date:";
             // 
@@ -166,7 +167,7 @@
             this.label10.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(25, 242);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(209, 39);
+            this.label10.Size = new System.Drawing.Size(167, 31);
             this.label10.TabIndex = 44;
             this.label10.Text = "Leave Start Date:";
             // 
@@ -186,7 +187,7 @@
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 467);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 39);
+            this.label1.Size = new System.Drawing.Size(112, 31);
             this.label1.TabIndex = 41;
             this.label1.Text = "Total Days:";
             // 
@@ -222,7 +223,7 @@
             this.label3.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(23, 574);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 39);
+            this.label3.Size = new System.Drawing.Size(85, 31);
             this.label3.TabIndex = 56;
             this.label3.Text = "Reason:";
             // 

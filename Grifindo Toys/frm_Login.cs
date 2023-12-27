@@ -13,9 +13,6 @@ namespace Grifindo_Toys
 {
     public partial class frm_login : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
-
-        string id = string.Empty;
 
         public frm_login()
         {
@@ -34,7 +31,7 @@ namespace Grifindo_Toys
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 if (txt_username.Text.Trim() != "" && txt_password.Text.Trim() != "")
                 {
@@ -63,7 +60,7 @@ namespace Grifindo_Toys
 
                 MessageBox.Show(ex.Message);
             }
-            finally { con.Close(); }
+            finally { con.Close(); }*/
             
         }
     }

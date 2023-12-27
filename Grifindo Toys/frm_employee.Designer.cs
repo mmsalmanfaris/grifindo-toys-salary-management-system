@@ -75,6 +75,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(219, 33);
             this.txt_name.TabIndex = 1;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // txt_nic
             // 
@@ -83,6 +84,7 @@
             this.txt_nic.Name = "txt_nic";
             this.txt_nic.Size = new System.Drawing.Size(219, 33);
             this.txt_nic.TabIndex = 3;
+            this.txt_nic.TextChanged += new System.EventHandler(this.txt_nic_TextChanged);
             // 
             // label2
             // 
@@ -102,6 +104,7 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(219, 33);
             this.txt_email.TabIndex = 5;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
             // label3
             // 
@@ -120,6 +123,7 @@
             this.txt_allowance.Name = "txt_allowance";
             this.txt_allowance.Size = new System.Drawing.Size(219, 33);
             this.txt_allowance.TabIndex = 11;
+            this.txt_allowance.TextChanged += new System.EventHandler(this.txt_allowance_TextChanged);
             // 
             // label4
             // 
@@ -148,6 +152,7 @@
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.Size = new System.Drawing.Size(219, 33);
             this.txt_salary.TabIndex = 7;
+            this.txt_salary.TextChanged += new System.EventHandler(this.txt_salary_TextChanged);
             // 
             // label6
             // 
@@ -258,6 +263,7 @@
             this.dtp_joiningdate.Name = "dtp_joiningdate";
             this.dtp_joiningdate.Size = new System.Drawing.Size(219, 33);
             this.dtp_joiningdate.TabIndex = 25;
+            this.dtp_joiningdate.ValueChanged += new System.EventHandler(this.dtp_joiningdate_ValueChanged);
             // 
             // rb_male
             // 
@@ -270,6 +276,7 @@
             this.rb_male.TabStop = true;
             this.rb_male.Text = "Male";
             this.rb_male.UseVisualStyleBackColor = true;
+            this.rb_male.CheckedChanged += new System.EventHandler(this.rb_male_CheckedChanged);
             // 
             // rb_female
             // 
@@ -282,6 +289,7 @@
             this.rb_female.TabStop = true;
             this.rb_female.Text = "Female";
             this.rb_female.UseVisualStyleBackColor = true;
+            this.rb_female.CheckedChanged += new System.EventHandler(this.rb_female_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -293,6 +301,7 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label9
             // 
@@ -300,7 +309,7 @@
             this.label9.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(332, 324);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 39);
+            this.label9.Size = new System.Drawing.Size(95, 31);
             this.label9.TabIndex = 21;
             this.label9.Text = "Job Role:";
             // 
@@ -308,19 +317,11 @@
             // 
             this.cmb_emptype.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_emptype.FormattingEnabled = true;
-            this.cmb_emptype.Items.AddRange(new object[] {
-            "A+",
-            "B+",
-            "AB+",
-            "A-",
-            "B-",
-            "AB-",
-            "O+",
-            "O-"});
             this.cmb_emptype.Location = new System.Drawing.Point(337, 248);
             this.cmb_emptype.Name = "cmb_emptype";
             this.cmb_emptype.Size = new System.Drawing.Size(218, 38);
             this.cmb_emptype.TabIndex = 29;
+            this.cmb_emptype.SelectedIndexChanged += new System.EventHandler(this.cmb_emptype_SelectedIndexChanged);
             // 
             // txt_jobrole
             // 
@@ -329,6 +330,7 @@
             this.txt_jobrole.Name = "txt_jobrole";
             this.txt_jobrole.Size = new System.Drawing.Size(219, 33);
             this.txt_jobrole.TabIndex = 30;
+            this.txt_jobrole.TextChanged += new System.EventHandler(this.txt_jobrole_TextChanged);
             // 
             // frm_emp
             // 

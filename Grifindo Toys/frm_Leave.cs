@@ -21,5 +21,10 @@ namespace Grifindo_Toys
         {
 
         }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -114,6 +114,7 @@
             this.btn_save.TabIndex = 65;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // dgv_holiday
             // 
@@ -150,7 +151,7 @@
             this.yyy.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yyy.Location = new System.Drawing.Point(40, 122);
             this.yyy.Name = "yyy";
-            this.yyy.Size = new System.Drawing.Size(91, 39);
+            this.yyy.Size = new System.Drawing.Size(73, 31);
             this.yyy.TabIndex = 59;
             this.yyy.Text = "Name:";
             // 

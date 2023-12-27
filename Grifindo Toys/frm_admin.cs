@@ -13,9 +13,7 @@ namespace Grifindo_Toys
 {
     public partial class frm_admin : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=grifindo_toys;Integrated Security=True");
 
-        string id = string.Empty;
         public frm_admin()
         {
             InitializeComponent();
@@ -23,15 +21,12 @@ namespace Grifindo_Toys
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-            txt_name.Text = string.Empty;
-            txt_nic.Text = string.Empty;
-            txt_password.Text = string.Empty;
-            txt_username.Text = string.Empty;
+
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
 
 
@@ -57,12 +52,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
 
 
@@ -94,12 +89,12 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            }*/
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             { 
                 string name = txt_name.Text.Trim();
                 string nic = txt_nic.Text.Trim();
@@ -123,27 +118,26 @@ namespace Grifindo_Toys
             finally 
             {
                 con.Close();              
-            }
+            }*/
         }
         void griddetail()
         {
-            string qry = "SELECT * FROM admin";
+           /* string qry = "SELECT * FROM admin";
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(qry, con);
             da.Fill(dt);
             dgv_admin.DataSource = dt;
 
-            dgv_admin.Columns[0].Visible = false;
+            dgv_admin.Columns[0].Visible = false;*/
         }
 
         private void admin_Load(object sender, EventArgs e)
         {
-            griddetail();
         }
 
         private void dgv_admin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgv_admin.Rows[e.RowIndex].Cells[0].Value.ToString();
+            /*id = dgv_admin.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             try
             {
@@ -172,7 +166,7 @@ namespace Grifindo_Toys
             finally
             {
                 con.Close();
-            }
+            */
         }
     }
 }

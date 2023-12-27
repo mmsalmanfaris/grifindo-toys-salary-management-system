@@ -109,7 +109,7 @@
             this.label6.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(44, 445);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 39);
+            this.label6.Size = new System.Drawing.Size(100, 31);
             this.label6.TabIndex = 49;
             this.label6.Text = "Out Time:";
             // 
@@ -131,7 +131,7 @@
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 550);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 39);
+            this.label1.Size = new System.Drawing.Size(120, 31);
             this.label1.TabIndex = 30;
             this.label1.Text = "Total Hours:";
             // 
@@ -210,6 +210,7 @@
             this.btn_save.TabIndex = 66;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
             // 
             // lbl_totalhours
             // 
