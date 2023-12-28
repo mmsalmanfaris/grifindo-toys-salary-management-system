@@ -23,5 +23,21 @@ namespace Grifindo_Toys.CommonClasses
             cmb_name.DataSource = dt;
         }
 
+        public void FillDataGridView(string qry, DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+            da.Fill(dt);
+            dgv.DataSource = dt;
+        }
+
+        public SqlDataReader FillWithID(string qry)
+        {
+            con.mycon.Open();
+            SqlCommand cmd = new SqlCommand(qry, con.mycon);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            return rdr;
+        }
+
     }
 }

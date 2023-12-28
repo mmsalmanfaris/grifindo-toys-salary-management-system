@@ -39,9 +39,6 @@ namespace Grifindo_Toys.AppClasses
             cmn.messages(qry, "insert");
         }
 
-        public void cmbfill() 
-        {
-        string qry = "SELECT * FROM tbl_employeetype";
-        }
+ 
     }
 }

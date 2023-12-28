@@ -19,6 +19,7 @@ namespace Grifindo_Toys
     {
         cls_employee clsemp = new cls_employee();
         filloperation fill = new filloperation();
+
         public frm_emp()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace Grifindo_Toys
 
         void cmb_load()
         {
-            fill.combobox("SELECT * FROM tbl_employeetype", cmb_emptype, "SELECT emp_type_id FROM tbl_employeetype", "SELECT emp_type FROM tbl_employeetype");
+            fill.combobox("SELECT * FROM tbl_employeetype", cmb_emptype, "emp_type", "emp_type_id");
         }
         void myFillGridDetail()
         {
@@ -68,7 +69,6 @@ namespace Grifindo_Toys
             {
                 MessageBox.Show(exex.Message);
             }*/
-
 
         }
 
@@ -235,7 +235,7 @@ namespace Grifindo_Toys
 
         private void cmb_emptype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clsemp.emptype = Convert.ToInt32(cmb_emptype.SelectedValue);
+            clsemp.emptype = cmb_emptype.SelectedValue.ToString();
         }
 
         private void txt_allowance_TextChanged(object sender, EventArgs e)
@@ -266,6 +266,11 @@ namespace Grifindo_Toys
         private void rb_female_CheckedChanged(object sender, EventArgs e)
         {
             clsemp.gender = rb_female.Checked.ToString();
+        }
+
+        private void txt_salary_Click(object sender, EventArgs e)
+        {
+            txt_salary.SelectAll();
         }
     }
 }

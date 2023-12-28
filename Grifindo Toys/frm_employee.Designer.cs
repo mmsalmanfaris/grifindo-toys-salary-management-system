@@ -152,6 +152,8 @@
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.Size = new System.Drawing.Size(219, 33);
             this.txt_salary.TabIndex = 7;
+            this.txt_salary.Text = "0.00";
+            this.txt_salary.Click += new System.EventHandler(this.txt_salary_Click);
             this.txt_salary.TextChanged += new System.EventHandler(this.txt_salary_TextChanged);
             // 
             // label6
@@ -259,6 +261,7 @@
             // dtp_joiningdate
             // 
             this.dtp_joiningdate.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_joiningdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_joiningdate.Location = new System.Drawing.Point(53, 363);
             this.dtp_joiningdate.Name = "dtp_joiningdate";
             this.dtp_joiningdate.Size = new System.Drawing.Size(219, 33);
