@@ -24,6 +24,7 @@ namespace Grifindo_Toys.CommonClasses
                         if (MessageBox.Show("Do you want to save?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             RunQuery(qry);
+                            
                             MessageBox.Show("Saved Succesfully", "Saved");
                         }
                         break;
@@ -40,6 +41,8 @@ namespace Grifindo_Toys.CommonClasses
                             RunQuery(qry);
                             MessageBox.Show("Deleted Successfully", "Deleted");
                         }
+                        break;
+                    default:
                         break;
                 }
             }

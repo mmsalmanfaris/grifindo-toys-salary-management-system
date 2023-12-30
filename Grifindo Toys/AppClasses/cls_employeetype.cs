@@ -24,22 +24,22 @@ namespace Grifindo_Toys.AppClasses
 
         public void Inserdata()
         {
-            string qry = "INSERT INTO tbl_employeetype(emp_type, overtime_rate_hour, annual_leave) VALUES " +
-                "('" + emptype + "' , '" + Overtimerate + "' , '" + Annualleaves + "')";
-            cmn.messages(qry, "insert");
+            string query = "INSERT INTO tbl_employeetype(emp_type, overtime_rate_hour, annual_leave) VALUES " +
+                "('" + emptype + "' , " + Overtimerate + " , '" + Annualleaves + "')";
+            cmn.messages(query, "insert");
         }
 
         public void UpdateData()
         {
-            string qry = "UPDATE tbl_employeetype SET emp_type = '" + emptype + "', overtime_rate_hour = '" + Overtimerate + "', " +
+            string query = "UPDATE tbl_employeetype SET emp_type = '" + emptype + "', overtime_rate_hour = " + Overtimerate + ", " +
                 "annual_leave = " + Annualleaves + " WHERE emp_type_id = " + emptype_id;
-            cmn.messages(qry, "update");
+            cmn.messages(query, "update");
         }
 
         public void DeleteDate()
         {
-            string qry = "Delete from tbl_employeetype WHERE emp_type_id = " + emptype_id;
-            cmn.messages(qry, "delete");
+            string query = "Delete from tbl_employeetype WHERE emp_type_id = " + emptype_id;
+            cmn.messages(query, "delete");
         }
 
         public void FillEmployeTypeToField()
@@ -50,8 +50,8 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 emptype = rd["emp_type"].ToString();
-                Overtimerate = (int)rd["overtime_rate_hour"];
-                Annualleaves = (string)rd["annual_leave"];
+                Overtimerate = Convert.ToInt32(rd["overtime_rate_hour"]);
+                Annualleaves = rd["annual_leave"].ToString();
             }
         }
     }

@@ -84,6 +84,7 @@
             this.txt_nic.Name = "txt_nic";
             this.txt_nic.Size = new System.Drawing.Size(219, 33);
             this.txt_nic.TabIndex = 3;
+            this.txt_nic.Click += new System.EventHandler(this.txt_nic_Click);
             this.txt_nic.TextChanged += new System.EventHandler(this.txt_nic_TextChanged);
             // 
             // label2
@@ -104,6 +105,7 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(219, 33);
             this.txt_email.TabIndex = 5;
+            this.txt_email.Click += new System.EventHandler(this.txt_email_Click);
             this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
             // label3
