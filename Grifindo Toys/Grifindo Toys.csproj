@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="AppClasses\cls_employee.cs" />
     <Compile Include="AppClasses\cls_employeetype.cs" />
+    <Compile Include="AppClasses\cls_leave.cs" />
+    <Compile Include="AppClasses\cls_setting.cs" />
     <Compile Include="CommonClasses\Common.cs" />
     <Compile Include="CommonClasses\dbconnection.cs" />
     <Compile Include="CommonClasses\filloperation.cs" />

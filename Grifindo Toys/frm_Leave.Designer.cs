@@ -56,6 +56,7 @@
             this.lbl_total_days.Size = new System.Drawing.Size(104, 31);
             this.lbl_total_days.TabIndex = 54;
             this.lbl_total_days.Text = "---------";
+            this.lbl_total_days.Click += new System.EventHandler(this.lbl_total_days_Click);
             // 
             // label7
             // 
@@ -83,6 +84,7 @@
             this.btn_update.TabIndex = 52;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
@@ -96,6 +98,7 @@
             this.btn_delete.TabIndex = 51;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_new
             // 
@@ -109,6 +112,7 @@
             this.btn_new.TabIndex = 50;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // btn_save
             // 
@@ -134,14 +138,18 @@
             this.dgv_leave.RowTemplate.Height = 24;
             this.dgv_leave.Size = new System.Drawing.Size(538, 509);
             this.dgv_leave.TabIndex = 48;
+            this.dgv_leave.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_leave_CellContentClick);
+            this.dgv_leave.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_leave_CellDoubleClick);
             // 
             // dtp_leave_end
             // 
             this.dtp_leave_end.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_leave_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_leave_end.Location = new System.Drawing.Point(31, 395);
             this.dtp_leave_end.Name = "dtp_leave_end";
             this.dtp_leave_end.Size = new System.Drawing.Size(195, 33);
             this.dtp_leave_end.TabIndex = 47;
+            this.dtp_leave_end.ValueChanged += new System.EventHandler(this.dtp_leave_end_ValueChanged);
             // 
             // label2
             // 
@@ -156,10 +164,12 @@
             // dtp_leave_start
             // 
             this.dtp_leave_start.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_leave_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_leave_start.Location = new System.Drawing.Point(30, 281);
             this.dtp_leave_start.Name = "dtp_leave_start";
             this.dtp_leave_start.Size = new System.Drawing.Size(196, 33);
             this.dtp_leave_start.TabIndex = 45;
+            this.dtp_leave_start.ValueChanged += new System.EventHandler(this.dtp_leave_start_ValueChanged);
             // 
             // label10
             // 
@@ -195,19 +205,11 @@
             // 
             this.cmb_empid.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_empid.FormattingEnabled = true;
-            this.cmb_empid.Items.AddRange(new object[] {
-            "A+",
-            "B+",
-            "AB+",
-            "A-",
-            "B-",
-            "AB-",
-            "O+",
-            "O-"});
             this.cmb_empid.Location = new System.Drawing.Point(29, 171);
             this.cmb_empid.Name = "cmb_empid";
             this.cmb_empid.Size = new System.Drawing.Size(197, 38);
             this.cmb_empid.TabIndex = 55;
+            this.cmb_empid.SelectedIndexChanged += new System.EventHandler(this.cmb_empid_SelectedIndexChanged);
             // 
             // txt_reason
             // 
@@ -216,6 +218,7 @@
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.Size = new System.Drawing.Size(197, 33);
             this.txt_reason.TabIndex = 57;
+            this.txt_reason.TextChanged += new System.EventHandler(this.txt_reason_TextChanged);
             // 
             // label3
             // 
@@ -251,6 +254,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Leave";
             this.Text = "Leave";
+            this.Load += new System.EventHandler(this.Leave_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_leave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -44,7 +44,7 @@ namespace Grifindo_Toys
         void FirstRun()
         {
             txt_name.Text = "";
-            txt_nic.Text = "";
+            txt_nic.Text = "123";
             txt_email.Text = "";
             txt_salary.Text = "0.00";
             cmb_emptype.SelectedIndex = 0;
@@ -117,7 +117,7 @@ namespace Grifindo_Toys
 
         private void txt_nic_TextChanged(object sender, EventArgs e)
         {
-            clsemp.nic = Convert.ToInt32(txt_nic.Text.Trim());
+            clsemp.nic = (int)Convert.ToDecimal(txt_nic.Text.ToString());
         }
 
         private void txt_email_TextChanged(object sender, EventArgs e)
@@ -184,6 +184,11 @@ namespace Grifindo_Toys
         private void txt_email_Click(object sender, EventArgs e)
         {
             txt_email.SelectAll();
+        }
+
+        private void txt_allowance_Click(object sender, EventArgs e)
+        {
+            txt_allowance.SelectAll();
         }
     }
 }

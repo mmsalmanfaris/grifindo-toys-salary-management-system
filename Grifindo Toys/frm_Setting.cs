@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace Grifindo_Toys
 {
     public partial class frm_setting : Form
     {
+        cls_setting clssetting = new cls_setting();
+        filloperation fill = new filloperation();
 
         public frm_setting()
         {
@@ -21,133 +25,44 @@ namespace Grifindo_Toys
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-           /* try
-            {
-                string leave = txt_annual_leave.Text.Trim();
-                string tax = txt_gov_tax.Text.Trim();
-                string begindate = dtp_salary_begin.Value.ToString("yyyy-mm-dd");
-                string enddate = dtp_salary_end.Value.ToString("yyyy-mm-dd");
-               
-                string qry = "INSERT INTO setting" +
-                    "(annual_leave, tax_rate, begin_date, end_date)" +
-                    " VALUES('" + leave + "','" + tax + "','" + begindate + "','" + enddate + "')";
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Saved Successfully");
-
-                btn_new.PerformClick();
-
-                myFillGridDetail();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
-        }
-        void myFillGridDetail()
-        {
-            /*try
-            {
-                string qry = "SELECT * FROM setting";
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(qry, con);
-                da.Fill(dt);
-                dgv_salary_setting.DataSource = dt;
-
-                dgv_salary_setting.Columns[0].Visible = true;
-                //dgv_employee.Columns[1].HeaderText = "First Name";
-                dgv_salary_setting.Columns[1].Width = 200;
-
-            }
-            catch (SqlException exex)
-            {
-                MessageBox.Show(exex.Message);
-            }*/
+            clssetting.Insertdata();
+            FirstRun();
         }
 
         private void Setting_Load(object sender, EventArgs e)
         {
+            FirstRun();
+        }
+
+        void FirstRun()
+        {
+            txt_gov_tax.Text = "0";
+            dtp_salary_begin.Value = DateTime.Now;
+            dtp_salary_end.Value = DateTime.Now;
+            lbl_range.Text = "";
+
+            fill.FillDataGridView("SELECT * FROM tbl_setting", dgv_salary_setting);
         }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-
+            FirstRun();
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            /*try
-            {
-
-
-                if (MessageBox.Show("Do you want to update", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "UPDATE setting SET " +
-                        "annual_leave = '" + txt_annual_leave.Text.Trim() + "'," +
-                        "tax_rate = '" + txt_gov_tax.Text.Trim() + "'," +
-                        "begin_date = '" + dtp_salary_begin.Value.ToShortDateString() + "'," +
-                        "end_date = '" + dtp_salary_end.Value.ToShortDateString() + "'" +
-                        "WHERE setting_id = " + id;
-
-
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Updated Successfully", "Update Operation");
-                    btn_new.PerformClick();
-                    myFillGridDetail();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            clssetting.UpdateData();
+            FirstRun();
         }
 
         private void dgv_salary_setting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* id = dgv_salary_setting.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            try
-            {
-                string qry = "SELECT * FROM setting WHERE setting_id = " + id;
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                SqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read())
-                {
-                    txt_annual_leave.Text = rdr[1].ToString();
-                    txt_gov_tax.Text = rdr[2].ToString();
-                    string dtp_salary_end = rdr[4].ToString();
-                    dtp_salary_end = rdr[4].ToString();
-
-                }
-                btn_new.Enabled = false;
-                btn_save.Enabled = false;
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            clssetting.seting_id = Convert.ToInt32(dgv_salary_setting.Rows[e.RowIndex].Cells[0].Value);
+            clssetting.FillEmployeTypeToField();
+            txt_gov_tax.Text = clssetting.gov_tax.ToString();
+            dtp_salary_begin.Text = clssetting.begindate.ToString();
+            dtp_salary_end.Text = clssetting.endDate.ToString();
+            lbl_range.Text = clssetting.range;
         }
 
         private void dgv_salary_setting_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -157,34 +72,46 @@ namespace Grifindo_Toys
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-           /* try
-            {
+            clssetting.DeleteData();
+            FirstRun();
+        }
+
+        private void txt_gov_tax_TextChanged(object sender, EventArgs e)
+        {
+            clssetting.gov_tax = (int)Convert.ToDecimal(txt_gov_tax.Text);
+        }
+
+        private void dtp_salary_begin_ValueChanged(object sender, EventArgs e)
+        {
+            clssetting.begindate = dtp_salary_begin.Value.ToString();
+
+            lbl_range_Click(sender, e);
+        }
+
+        private void dtp_salary_end_ValueChanged(object sender, EventArgs e)
+        {
+            clssetting.endDate = dtp_salary_begin.Value.ToString();
+
+            lbl_range_Click(sender, e);
+        }
+
+        void lbl_range_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dtp_salary_begin.Value;
+            DateTime endDate = dtp_salary_end.Value;
+
+            TimeSpan difference = (startDate <= endDate) ? endDate - startDate : TimeSpan.Zero;
+            int daysDifference = difference.Days;
+
+            lbl_range.Text = daysDifference.ToString();
+
+            clssetting.range = lbl_range.Text;
+        }
 
 
-                if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "DELETE FROM setting WHERE setting_id = " + id;
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Delete Successfully", "Delete Operation");
-
-                    btn_new.PerformClick();
-
-                    myFillGridDetail();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+        private void txt_gov_tax_Click(object sender, EventArgs e)
+        {
+            txt_gov_tax.SelectAll();
         }
     }
 }

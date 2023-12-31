@@ -48,10 +48,12 @@
             // dtp_salary_begin
             // 
             this.dtp_salary_begin.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_salary_begin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_salary_begin.Location = new System.Drawing.Point(36, 270);
             this.dtp_salary_begin.Name = "dtp_salary_begin";
             this.dtp_salary_begin.Size = new System.Drawing.Size(196, 33);
             this.dtp_salary_begin.TabIndex = 31;
+            this.dtp_salary_begin.ValueChanged += new System.EventHandler(this.dtp_salary_begin_ValueChanged);
             // 
             // label10
             // 
@@ -70,6 +72,9 @@
             this.txt_gov_tax.Name = "txt_gov_tax";
             this.txt_gov_tax.Size = new System.Drawing.Size(196, 33);
             this.txt_gov_tax.TabIndex = 29;
+            this.txt_gov_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_gov_tax.Click += new System.EventHandler(this.txt_gov_tax_Click);
+            this.txt_gov_tax.TextChanged += new System.EventHandler(this.txt_gov_tax_TextChanged);
             // 
             // label6
             // 
@@ -94,10 +99,12 @@
             // dtp_salary_end
             // 
             this.dtp_salary_end.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_salary_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_salary_end.Location = new System.Drawing.Point(37, 384);
             this.dtp_salary_end.Name = "dtp_salary_end";
             this.dtp_salary_end.Size = new System.Drawing.Size(195, 33);
             this.dtp_salary_end.TabIndex = 33;
+            this.dtp_salary_end.ValueChanged += new System.EventHandler(this.dtp_salary_end_ValueChanged);
             // 
             // label2
             // 
@@ -200,6 +207,7 @@
             this.lbl_range.Size = new System.Drawing.Size(104, 31);
             this.lbl_range.TabIndex = 55;
             this.lbl_range.Text = "---------";
+            this.lbl_range.Click += new System.EventHandler(this.lbl_range_Click);
             // 
             // frm_setting
             // 

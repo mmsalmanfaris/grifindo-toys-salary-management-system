@@ -125,6 +125,7 @@
             this.txt_allowance.Name = "txt_allowance";
             this.txt_allowance.Size = new System.Drawing.Size(219, 33);
             this.txt_allowance.TabIndex = 11;
+            this.txt_allowance.Click += new System.EventHandler(this.txt_allowance_Click);
             this.txt_allowance.TextChanged += new System.EventHandler(this.txt_allowance_TextChanged);
             // 
             // label4

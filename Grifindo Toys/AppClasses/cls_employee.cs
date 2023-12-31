@@ -43,12 +43,11 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-
         public void UpdateData()
         {
             string query = "UPDATE tbl_employee SET name = '" + name + "', nic = '" + nic + "', email = '" + email + "', monthly_salary = '" + salary + "', " +
-                "  emp_type_id = '" + emptype + "', allowance = '" + allowance + "', join_date = '" + joindate + "', job_role = '" + jobrole + "', gender = " + gender
-                + " WHERE emp_id = " + empid;
+                "  emp_type_id = '" + emptype + "', allowance = '" + allowance + "', joindate = '" + joindate + "', job_role = '" + jobrole + "', gender = '" + gender + "'" +
+                " WHERE emp_id = " + empid;
 
             cmn.messages(query, "update");
         }
