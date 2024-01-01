@@ -52,6 +52,7 @@
             this.txt_nic.Name = "txt_nic";
             this.txt_nic.Size = new System.Drawing.Size(219, 33);
             this.txt_nic.TabIndex = 56;
+            this.txt_nic.TextChanged += new System.EventHandler(this.txt_nic_TextChanged);
             // 
             // label5
             // 
@@ -70,6 +71,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(219, 33);
             this.txt_password.TabIndex = 54;
+            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
             // 
             // label1
             // 
@@ -88,6 +90,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(219, 33);
             this.txt_name.TabIndex = 52;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // label2
             // 
@@ -107,6 +110,7 @@
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(219, 33);
             this.txt_username.TabIndex = 50;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
             // label4
             // 
@@ -133,7 +137,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.Location = new System.Drawing.Point(461, 596);
@@ -146,7 +150,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_delete.BackColor = System.Drawing.Color.Red;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Location = new System.Drawing.Point(676, 596);
@@ -172,7 +176,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_save.BackColor = System.Drawing.Color.Lime;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
             this.btn_save.Location = new System.Drawing.Point(256, 596);

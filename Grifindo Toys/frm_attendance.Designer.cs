@@ -138,26 +138,32 @@
             // dtp_date
             // 
             this.dtp_date.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_date.Location = new System.Drawing.Point(51, 265);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(217, 33);
             this.dtp_date.TabIndex = 62;
+            this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
             // 
             // dtp_intime
             // 
             this.dtp_intime.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_intime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtp_intime.Location = new System.Drawing.Point(51, 370);
             this.dtp_intime.Name = "dtp_intime";
             this.dtp_intime.Size = new System.Drawing.Size(217, 33);
             this.dtp_intime.TabIndex = 63;
+            this.dtp_intime.ValueChanged += new System.EventHandler(this.dtp_intime_ValueChanged);
             // 
             // dtp_outime
             // 
             this.dtp_outime.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_outime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtp_outime.Location = new System.Drawing.Point(51, 477);
             this.dtp_outime.Name = "dtp_outime";
             this.dtp_outime.Size = new System.Drawing.Size(217, 33);
             this.dtp_outime.TabIndex = 64;
+            this.dtp_outime.ValueChanged += new System.EventHandler(this.dtp_outime_ValueChanged);
             // 
             // btn_update
             // 
@@ -171,6 +177,7 @@
             this.btn_update.TabIndex = 69;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
             // 
             // btn_delete
             // 
@@ -184,6 +191,7 @@
             this.btn_delete.TabIndex = 68;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
             // 
             // btn_new
             // 
@@ -197,6 +205,7 @@
             this.btn_new.TabIndex = 67;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click_1);
             // 
             // btn_save
             // 
@@ -221,6 +230,7 @@
             this.lbl_totalhours.Size = new System.Drawing.Size(104, 31);
             this.lbl_totalhours.TabIndex = 70;
             this.lbl_totalhours.Text = "---------";
+            this.lbl_totalhours.Click += new System.EventHandler(this.lbl_totalhours_Click);
             // 
             // frm_attendance
             // 

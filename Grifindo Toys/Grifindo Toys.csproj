@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppClasses\cls_admin.cs" />
+    <Compile Include="AppClasses\cls_attrndance.cs" />
     <Compile Include="AppClasses\cls_employee.cs" />
     <Compile Include="AppClasses\cls_employeetype.cs" />
+    <Compile Include="AppClasses\cls_holiday.cs" />
     <Compile Include="AppClasses\cls_leave.cs" />
     <Compile Include="AppClasses\cls_setting.cs" />
     <Compile Include="CommonClasses\Common.cs" />

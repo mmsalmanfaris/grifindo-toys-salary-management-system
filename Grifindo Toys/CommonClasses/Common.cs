@@ -25,6 +25,7 @@ namespace Grifindo_Toys.CommonClasses
                         {
                             RunQuery(qry);
                             
+                            
                             MessageBox.Show("Saved Succesfully", "Saved");
                         }
                         break;

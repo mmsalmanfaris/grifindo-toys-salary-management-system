@@ -95,7 +95,7 @@ namespace Grifindo_Toys
             lbl_range_Click(sender, e);
         }
 
-        void lbl_range_Click(object sender, EventArgs e)
+        private void lbl_range_Click(object sender, EventArgs e)
         {
             DateTime startDate = dtp_salary_begin.Value;
             DateTime endDate = dtp_salary_end.Value;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace Grifindo_Toys
 {
     public partial class frm_admin : Form
     {
+        cls_admin clsadmin = new cls_admin();
+        filloperation fill = new filloperation();
 
         public frm_admin()
         {
@@ -21,152 +25,74 @@ namespace Grifindo_Toys
 
         private void btn_new_Click(object sender, EventArgs e)
         {
+            firstrun();
+        }
 
+        void firstrun()
+        {
+            txt_name.Text = "";
+            txt_nic.Text = "0";
+            txt_username.Text = "";
+            txt_password.Text = "******";
+
+            fill.FillDataGridView("SELECT * FROM tbl_admin", dgv_admin);
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            /*try
-            {
-
-
-                if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "DELETE FROM admin WHERE admin_id = " + id;
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Delete Successfully", "Delete Operation");
-
-                    btn_new.PerformClick();
-                    griddetail();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            clsadmin.DeleteData();
+            firstrun();
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-           /* try
-            {
-
-
-                if (MessageBox.Show("Do you want to update", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "UPDATE admin SET " +
-                        "name = '" + txt_name.Text.Trim() + "'," +
-                        "nic = '" + txt_nic.Text.Trim() + "'," +
-                        "username = '" + txt_username.Text.Trim() + "'," +
-                        "password = '" + txt_password.Text.Trim()+ "'" +
-                        "WHERE admin_id = " + id;
-
-
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Updated Successfully", "Update Operation");
-
-                    btn_new.PerformClick();
-                    griddetail();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            clsadmin.UpdateData();
+            firstrun();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            /*try
-            { 
-                string name = txt_name.Text.Trim();
-                string nic = txt_nic.Text.Trim();
-                string username = txt_username.Text.Trim();
-                string password = txt_password.Text.Trim();
-
-                string qry = "INSERT INTO admin (name, nic, username, password) VALUES('" + name + "','" + nic+ "','" + username+ "','" + password+ "')";
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Saves Successfull");
-
-                griddetail();
-                btn_new.PerformClick();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally 
-            {
-                con.Close();              
-            }*/
+            clsadmin.Insertdata();
+            firstrun();
         }
         void griddetail()
         {
-           /* string qry = "SELECT * FROM admin";
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(qry, con);
-            da.Fill(dt);
-            dgv_admin.DataSource = dt;
 
-            dgv_admin.Columns[0].Visible = false;*/
         }
 
         private void admin_Load(object sender, EventArgs e)
         {
+            firstrun();
         }
 
         private void dgv_admin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*id = dgv_admin.Rows[e.RowIndex].Cells[0].Value.ToString();
+            clsadmin.adminid = Convert.ToInt32(dgv_admin.Rows[e.RowIndex].Cells[0].Value);
+            clsadmin.FillEmployeTypeToField();
+            txt_name.Text = clsadmin.name;
+            txt_nic.Text = clsadmin.name;
+            txt_username.Text = clsadmin.username;
+            txt_password.Text = clsadmin.password;
+        }
 
-            try
-            {
-                string qry = "SELECT * FROM admin WHERE admin_id = " + id;
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                SqlDataReader rdr = cmd.ExecuteReader();
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+            clsadmin.name = txt_name.Text;
+        }
 
-                if (rdr.Read())
-                {
-                    txt_name.Text = rdr[1].ToString();
-                    txt_nic.Text = rdr[2].ToString();
-                    txt_username.Text= rdr[3].ToString();
-                    txt_password.Text = rdr[4].ToString();
-                }
+        private void txt_nic_TextChanged(object sender, EventArgs e)
+        {
+            clsadmin.nic = txt_nic.Text;
+        }
 
-                btn_new.Enabled = false;
-                btn_save.Enabled = false;
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            */
+        private void txt_username_TextChanged(object sender, EventArgs e)
+        {
+            clsadmin.username = txt_username.Text;
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+            clsadmin.password = txt_password.Text;
         }
     }
 }

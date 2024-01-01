@@ -48,6 +48,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(197, 33);
             this.txt_name.TabIndex = 73;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // label7
             // 
@@ -88,6 +89,7 @@
             this.btn_delete.TabIndex = 67;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_new
             // 
@@ -130,10 +132,12 @@
             // dtp_date
             // 
             this.dtp_date.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_date.Location = new System.Drawing.Point(291, 155);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(242, 33);
             this.dtp_date.TabIndex = 61;
+            this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
             // 
             // label10
             // 
@@ -151,9 +155,9 @@
             this.yyy.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yyy.Location = new System.Drawing.Point(40, 122);
             this.yyy.Name = "yyy";
-            this.yyy.Size = new System.Drawing.Size(73, 31);
+            this.yyy.Size = new System.Drawing.Size(253, 39);
             this.yyy.TabIndex = 59;
-            this.yyy.Text = "Name:";
+            this.yyy.Text = "Name of the holiday:";
             // 
             // Holidays
             // 
@@ -173,6 +177,7 @@
             this.Controls.Add(this.yyy);
             this.Name = "Holidays";
             this.Text = "Holidays";
+            this.Load += new System.EventHandler(this.Holidays_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_holiday)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

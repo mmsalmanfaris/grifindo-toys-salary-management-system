@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace Grifindo_Toys
 {
     public partial class frm_attendance : Form
     {
+        filloperation fill = new filloperation();
+        cls_attrndance clsattendace = new cls_attrndance();
 
         public frm_attendance()
         {
@@ -21,20 +25,19 @@ namespace Grifindo_Toys
 
         private void attendance_Load(object sender, EventArgs e)
         {
-            /*GridDetail();
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
+            firstrun();
+        }
 
-            string qry = "SELECT * FROM emp_attendance_salary";
+        void firstrun()
+        {
+            cmb_empid.SelectedIndex = 0;
+            dtp_date.Value = DateTime.Now;
+            dtp_intime.Value = DateTime.Now;
+            dtp_outime.Value = DateTime.Now;
+            lbl_totalhours.Text = "";
 
-            SqlDataAdapter da = new SqlDataAdapter(qry, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            cmb_empid.DisplayMember = "name";
-            cmb_empid.ValueMember = "emp_id";
-            cmb_empid.DataSource = dt;
-
-            cmb_empid.SelectedIndex = 0;*/
-
+            fill.FillDataGridView("SELECT * FROM tbl_attendance", dgv_attendance);
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -44,171 +47,37 @@ namespace Grifindo_Toys
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-           /* try
-            {
-                int selectedemp = Convert.ToInt32(cmb_empid.SelectedValue);
-                string leaves = txt_leave.Text.Trim();
-                string absent = txt_absent.Text.Trim();
-                string holidays = txt_holiday.Text.Trim();
-                string overtime = txt_overtime.Text.Trim();
-
-                string qry = "UPDATE emp_attendance_salary " +
-                    "SET no_leaves = '" + leaves + "', no_absent = '" + absent + "', no_holidays = '" + holidays + "', " +
-                    "overtime_hours = '" + overtime + "' " +
-                    "WHERE emp_id = " + selectedemp;
-
-                string qry = "INSERT INTO emp_attendance_salary" +
-                    "(no_leaves, no_absent, no_holidays, overtime_hours)" +
-                    " VALUES('" + leaves + "','" + absent + "','" + holidays + "','" + overtime + "')";
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Saved Successfully");
-
-                btn_new.PerformClick();
-
-                GridDetail();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            
         }
         void GridDetail()
         {
-            /*try
-            {
-                string qry = "SELECT * FROM emp_attendance_salary";
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(qry, con);
-                da.Fill(dt);
-                dgv_attendance.DataSource = dt;
 
-                //dgv_attendance.Columns[0].Visible = false;
-                //dgv_employee.Columns[1].HeaderText = "First Name";
-                dgv_attendance.Columns[1].Width = 50;
-
-            }
-            catch (SqlException exex)
-            {
-                MessageBox.Show(exex.Message);
-            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-           /* try
-            {
-
-
-                if (MessageBox.Show("Do you want to update", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "UPDATE attendance SET " +
-                        "emp_id = '" + cmb_empid.Text.Trim() + "'," +
-                        "no_leaves = '" + txt_leave.Text.Trim() + "'," +
-                        "no_absent = '" + txt_absent.Text.Trim() + "'," +
-                        "no_holidays = '" + txt_holiday.Text.Trim() + "'," +
-                        "overtime_hours = '" + txt_overtime.Text.Trim() + "'," +
-                        "WHERE attendance_id = " + id;
-
-
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Updated Successfully", "Update Operation");
-                    btn_new.PerformClick();
-
-                    GridDetail();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            /*try
-            {
-
-
-                if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "DELETE FROM attendance WHERE attendance_id = " + id;
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Delete Successfully", "Delete Operation");
-
-                    btn_new.PerformClick();
-
-                    GridDetail();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            
         }
 
         private void dgv_attendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*id = dgv_attendance.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            try
-            {
-                string qry = "SELECT * FROM attendance WHERE attendance_id = " + id;
-                con.Open();
-                SqlCommand cmd = new SqlCommand(qry, con);
-                SqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read())
-                {
-                    cmb_empid.Text = rdr[1].ToString();
-                    txt_leave.Text = rdr[2].ToString();
-                    txt_absent.Text = rdr[3].ToString();
-                    txt_holiday.Text = rdr[4].ToString();
-                    txt_overtime.Text = rdr[5].ToString();
-                    
-                }
-                btn_new.Enabled = false;
-                btn_save.Enabled = false;
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
+            clsattendace.attendanceid = Convert.ToInt32(dgv_attendance.Rows[e.RowIndex].Cells[0].Value);
+            clsattendace.FillEmployeTypeToField();
+            cmb_empid.Text = clsattendace.empid.ToString();
+            dtp_date.Text = clsattendace.date;
+            dtp_intime.Text = clsattendace.intime;
+            dtp_outime.Text = clsattendace.outime;
+            lbl_totalhours.Text = clsattendace.hours.ToString();
         }
 
         private void cmb_employee_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            clsattendace.empid = Convert.ToInt32(cmb_empid.SelectedValue);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -218,7 +87,67 @@ namespace Grifindo_Toys
 
         private void btn_save_Click_1(object sender, EventArgs e)
         {
+            clsattendace.Insertdata();
+            firstrun();
+        }
 
+        private void lbl_totalhours_Click(object sender, EventArgs e)
+        {
+            DateTime intime = dtp_intime.Value;
+            DateTime outtime = dtp_outime.Value;
+
+            // Calculate the time difference
+            TimeSpan difference = (outtime >= intime) ? outtime - intime : TimeSpan.Zero;
+
+            // Extract hours, minutes, and seconds as integers
+            int totalHours = (int)difference.TotalHours;
+            int totalMinutes = (int)difference.Minutes;
+
+            // Display or use the total hours, minutes, and seconds
+            lbl_totalhours.Text = $"{totalHours} hours, {totalMinutes} minutes";
+
+            // add both hour and date to clsattendace.hours
+            clsattendace.hours = $"{totalHours}:{totalMinutes}";
+        }
+
+        private void dtp_date_ValueChanged(object sender, EventArgs e)
+        {
+            clsattendace.date = dtp_date.Value.ToString();
+        }
+
+        private void dtp_intime_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_intime.Format = DateTimePickerFormat.Time;
+            dtp_intime.ShowUpDown = true;
+            clsattendace.intime = dtp_intime.Value.ToString();
+
+            lbl_totalhours_Click(sender, e);
+        }
+
+        private void dtp_outime_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_outime.Format = DateTimePickerFormat.Time;
+            dtp_outime.ShowUpDown = true;
+            clsattendace.outime = dtp_outime.Value.ToString();
+
+            lbl_totalhours_Click(sender, e);
+        }
+
+        private void btn_new_Click_1(object sender, EventArgs e)
+        {
+            firstrun();
+        }
+
+        private void btn_update_Click_1(object sender, EventArgs e)
+        {
+            clsattendace.UpdateData();
+            firstrun();
+        }
+
+        private void btn_delete_Click_1(object sender, EventArgs e)
+        {
+            clsattendace.DeleteData();
+            firstrun();
         }
     }
 }
