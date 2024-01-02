@@ -80,7 +80,7 @@ namespace Grifindo_Toys
             DateTime endDate = dtp_leave_end.Value;
 
             TimeSpan difference = (startDate <= endDate) ? endDate - startDate : TimeSpan.Zero;
-            int daysDifference = difference.Days;
+            int daysDifference = difference.Days + 1;
 
             lbl_total_days.Text = daysDifference.ToString();
 

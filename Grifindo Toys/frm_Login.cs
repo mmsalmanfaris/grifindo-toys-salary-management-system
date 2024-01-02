@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace Grifindo_Toys
 {
     public partial class frm_login : Form
     {
-
+        public SqlConnection mycon = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=Grifindo_Toys;Integrated Security=True;Encrypt=False");
         public frm_login()
         {
             InitializeComponent();
@@ -31,15 +32,15 @@ namespace Grifindo_Toys
 
         private void btn_new_Click(object sender, EventArgs e)
         {
-           /* try
+            try
             {
                 if (txt_username.Text.Trim() != "" && txt_password.Text.Trim() != "")
                 {
-                    con.Open();
-                    string qry = "SELECT * FROM admin WHERE username = '" + txt_username.Text.Trim() + "' " +
+                    mycon.Open();
+                    string qry = "SELECT * FROM tbl_admin WHERE username = '" + txt_username.Text.Trim() + "' " +
                     "AND password = '" + txt_password.Text.Trim() + "' ";
 
-                    SqlCommand cmd = new SqlCommand(qry, con);
+                    SqlCommand cmd = new SqlCommand(qry, mycon);
                     SqlDataReader rdr = cmd.ExecuteReader();
 
                     if (rdr.Read())
@@ -60,7 +61,7 @@ namespace Grifindo_Toys
 
                 MessageBox.Show(ex.Message);
             }
-            finally { con.Close(); }*/
+            finally { mycon.Close(); }
             
         }
     }

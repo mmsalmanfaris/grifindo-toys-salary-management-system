@@ -16,7 +16,7 @@ namespace Grifindo_Toys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_attendance());
+            Application.Run(new frm_login());
         }
     }
 }

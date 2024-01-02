@@ -101,18 +101,18 @@ namespace Grifindo_Toys
 
             // Extract hours, minutes, and seconds as integers
             int totalHours = (int)difference.TotalHours;
-            int totalMinutes = (int)difference.Minutes;
+            int totalMinutes = difference.Minutes;
 
             // Display or use the total hours, minutes, and seconds
             lbl_totalhours.Text = $"{totalHours} hours, {totalMinutes} minutes";
 
             // add both hour and date to clsattendace.hours
-            clsattendace.hours = $"{totalHours}:{totalMinutes}";
+            clsattendace.hours = Convert.ToString($"{totalHours}:{totalMinutes}");
         }
 
         private void dtp_date_ValueChanged(object sender, EventArgs e)
         {
-            clsattendace.date = dtp_date.Value.ToString();
+            clsattendace.date = dtp_date.Value.Date.ToString();
         }
 
         private void dtp_intime_ValueChanged(object sender, EventArgs e)

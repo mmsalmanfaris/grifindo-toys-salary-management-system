@@ -380,7 +380,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1160, 1104);
+            this.ClientSize = new System.Drawing.Size(1160, 1055);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lbl_grosspay);
             this.Controls.Add(this.lbl_basepay);
