@@ -219,7 +219,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.label4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "System Admin";
             this.Load += new System.EventHandler(this.admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_admin)).EndInit();

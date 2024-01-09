@@ -54,8 +54,8 @@ namespace Grifindo_Toys
 
         private void btn_admin_Click(object sender, EventArgs e)
         {
-            frm_admin admin_frm = new frm_admin();
-            admin_frm.ShowDialog();
+            Leave leave_frm = new Leave();
+            leave_frm.ShowDialog();
         }
 
         private void btn_attendance_Click(object sender, EventArgs e)
@@ -67,6 +67,18 @@ namespace Grifindo_Toys
         private void btn_home_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_holiday_Click(object sender, EventArgs e)
+        {
+            Holidays holiday_frm = new Holidays();
+            holiday_frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frm_admin admin_frm = new frm_admin();
+            admin_frm.ShowDialog();
         }
     }
 }

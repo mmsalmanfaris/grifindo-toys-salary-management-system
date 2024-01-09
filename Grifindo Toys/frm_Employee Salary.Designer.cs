@@ -306,6 +306,7 @@
             this.lbl_holidays.Size = new System.Drawing.Size(104, 31);
             this.lbl_holidays.TabIndex = 76;
             this.lbl_holidays.Text = "---------";
+            this.lbl_holidays.Click += new System.EventHandler(this.lbl_holidays_Click);
             // 
             // lbl_nopay
             // 
@@ -412,7 +413,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_salary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.frm_salary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empoyee_salary)).EndInit();

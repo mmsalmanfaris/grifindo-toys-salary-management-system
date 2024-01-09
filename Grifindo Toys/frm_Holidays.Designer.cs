@@ -155,7 +155,7 @@
             this.yyy.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yyy.Location = new System.Drawing.Point(40, 122);
             this.yyy.Name = "yyy";
-            this.yyy.Size = new System.Drawing.Size(253, 39);
+            this.yyy.Size = new System.Drawing.Size(202, 31);
             this.yyy.TabIndex = 59;
             this.yyy.Text = "Name of the holiday:";
             // 
@@ -175,7 +175,10 @@
             this.Controls.Add(this.dtp_date);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.yyy);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Holidays";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holidays";
             this.Load += new System.EventHandler(this.Holidays_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_holiday)).EndInit();

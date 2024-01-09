@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
+using System.Drawing;
 
 namespace Grifindo_Toys.AppClasses
 {
@@ -25,20 +26,20 @@ namespace Grifindo_Toys.AppClasses
 
         public string range { get; set; }
 
-
+        public string yearmonth { get; set; }
 
 
         public void Insertdata()
         {
-            string query = "INSERT INTO tbl_setting(gov_tax_rate, begin_date, end_date, cycle_range) " +
-                           "VALUES('" + gov_tax + "' , '" + begindate + "' , '" + endDate + "' , '" + range + "')";
+            string query = "INSERT INTO tbl_setting(gov_tax_rate, yearmonth, begin_date, end_date, cycle_range) " +
+                           "VALUES('" + gov_tax + "' , '" + yearmonth + "' , '" + begindate + "' , '" + endDate + "' , '" + range + "')";
 
             cmn.messages(query, "insert");
         }
 
         public void UpdateData()
         {
-            string query = "UPDATE tbl_setting SET gov_tax_rate = '" + gov_tax + "', begin_date = '" + begindate + "', end_date = '" + endDate + "'," +
+            string query = "UPDATE tbl_setting SET gov_tax_rate = '" + gov_tax + "', yearmonth = '" + yearmonth + "', begin_date = '" + begindate + "', end_date = '" + endDate + "'," +
                 " cycle_range = '" + range + "' WHERE emp_id = " + seting_id;
 
             cmn.messages(query, "update");
@@ -61,6 +62,7 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 gov_tax = Convert.ToDecimal(rd["gov_tax_rate"]);
+                yearmonth = rd["yearmonth"].ToString();
                 begindate = rd["begin_date"].ToString();
                 endDate = rd["end_date"].ToString();
                 range = rd["cycle_range"].ToString();

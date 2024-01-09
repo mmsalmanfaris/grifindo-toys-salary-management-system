@@ -113,5 +113,14 @@ namespace Grifindo_Toys
         {
             txt_gov_tax.SelectAll();
         }
+
+        private void cmb_month_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void dtp_monthyear_ValueChanged(object sender, EventArgs e)
+        {
+            string yearMonth = DateTime.Now.ToString("yyyyMM");
+        }
     }
 }

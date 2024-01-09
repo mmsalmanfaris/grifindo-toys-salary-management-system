@@ -254,7 +254,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_attendance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "attendance";
             this.Load += new System.EventHandler(this.attendance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_attendance)).EndInit();

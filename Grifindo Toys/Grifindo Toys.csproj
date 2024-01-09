@@ -53,6 +53,7 @@
     <Compile Include="AppClasses\cls_employeetype.cs" />
     <Compile Include="AppClasses\cls_holiday.cs" />
     <Compile Include="AppClasses\cls_leave.cs" />
+    <Compile Include="AppClasses\cls_salary.cs" />
     <Compile Include="AppClasses\cls_setting.cs" />
     <Compile Include="CommonClasses\Common.cs" />
     <Compile Include="CommonClasses\dbconnection.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frm_Setting.resx">
       <DependentUpon>frm_Setting.cs</DependentUpon>
@@ -171,6 +173,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

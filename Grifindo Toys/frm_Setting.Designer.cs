@@ -42,6 +42,8 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_range = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtp_monthyear = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_salary_setting)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             this.dtp_salary_begin.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_salary_begin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_salary_begin.Location = new System.Drawing.Point(36, 270);
+            this.dtp_salary_begin.Location = new System.Drawing.Point(38, 364);
             this.dtp_salary_begin.Name = "dtp_salary_begin";
             this.dtp_salary_begin.Size = new System.Drawing.Size(196, 33);
             this.dtp_salary_begin.TabIndex = 31;
@@ -59,7 +61,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 231);
+            this.label10.Location = new System.Drawing.Point(33, 325);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(177, 31);
             this.label10.TabIndex = 30;
@@ -90,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 456);
+            this.label1.Location = new System.Drawing.Point(31, 550);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 31);
             this.label1.TabIndex = 26;
@@ -100,7 +102,7 @@
             // 
             this.dtp_salary_end.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_salary_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_salary_end.Location = new System.Drawing.Point(37, 384);
+            this.dtp_salary_end.Location = new System.Drawing.Point(39, 478);
             this.dtp_salary_end.Name = "dtp_salary_end";
             this.dtp_salary_end.Size = new System.Drawing.Size(195, 33);
             this.dtp_salary_end.TabIndex = 33;
@@ -110,7 +112,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 345);
+            this.label2.Location = new System.Drawing.Point(34, 439);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 31);
             this.label2.TabIndex = 32;
@@ -120,11 +122,11 @@
             // 
             this.dgv_salary_setting.BackgroundColor = System.Drawing.Color.White;
             this.dgv_salary_setting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_salary_setting.Location = new System.Drawing.Point(290, 121);
+            this.dgv_salary_setting.Location = new System.Drawing.Point(292, 121);
             this.dgv_salary_setting.Name = "dgv_salary_setting";
             this.dgv_salary_setting.RowHeadersWidth = 51;
             this.dgv_salary_setting.RowTemplate.Height = 24;
-            this.dgv_salary_setting.Size = new System.Drawing.Size(522, 418);
+            this.dgv_salary_setting.Size = new System.Drawing.Size(522, 494);
             this.dgv_salary_setting.TabIndex = 34;
             this.dgv_salary_setting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_salary_setting_CellContentClick);
             this.dgv_salary_setting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_salary_setting_CellDoubleClick);
@@ -135,7 +137,7 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(441, 595);
+            this.btn_update.Location = new System.Drawing.Point(443, 671);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
             this.btn_update.TabIndex = 38;
@@ -149,7 +151,7 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(649, 595);
+            this.btn_delete.Location = new System.Drawing.Point(651, 671);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
             this.btn_delete.TabIndex = 37;
@@ -163,7 +165,7 @@
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(36, 595);
+            this.btn_new.Location = new System.Drawing.Point(38, 671);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(156, 58);
             this.btn_new.TabIndex = 36;
@@ -177,7 +179,7 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(234, 595);
+            this.btn_save.Location = new System.Drawing.Point(236, 671);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
             this.btn_save.TabIndex = 35;
@@ -202,19 +204,41 @@
             // 
             this.lbl_range.AutoSize = true;
             this.lbl_range.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_range.Location = new System.Drawing.Point(30, 487);
+            this.lbl_range.Location = new System.Drawing.Point(32, 581);
             this.lbl_range.Name = "lbl_range";
             this.lbl_range.Size = new System.Drawing.Size(104, 31);
             this.lbl_range.TabIndex = 55;
             this.lbl_range.Text = "---------";
             this.lbl_range.Click += new System.EventHandler(this.lbl_range_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 223);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 31);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Goverment Tax Rate:";
+            // 
+            // dtp_monthyear
+            // 
+            this.dtp_monthyear.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_monthyear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_monthyear.Location = new System.Drawing.Point(37, 257);
+            this.dtp_monthyear.Name = "dtp_monthyear";
+            this.dtp_monthyear.Size = new System.Drawing.Size(196, 33);
+            this.dtp_monthyear.TabIndex = 57;
+            this.dtp_monthyear.ValueChanged += new System.EventHandler(this.dtp_monthyear_ValueChanged);
+            // 
             // frm_setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 693);
+            this.ClientSize = new System.Drawing.Size(857, 762);
+            this.Controls.Add(this.dtp_monthyear);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_range);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_update);
@@ -229,7 +253,10 @@
             this.Controls.Add(this.txt_gov_tax);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_setting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salary Setting";
             this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_salary_setting)).EndInit();
@@ -254,5 +281,7 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_range;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtp_monthyear;
     }
 }

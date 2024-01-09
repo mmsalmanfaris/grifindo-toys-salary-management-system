@@ -197,7 +197,10 @@
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dgv_emp_type);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_emp_type";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Type";
             this.Load += new System.EventHandler(this.frm_emp_type_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_emp_type)).EndInit();

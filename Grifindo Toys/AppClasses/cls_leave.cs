@@ -11,6 +11,7 @@ namespace Grifindo_Toys.AppClasses
     internal class cls_leave
     {
         Common cmn = new Common();
+        filloperation filloperation = new filloperation();
 
 
         public int leaveid { get; set; }
@@ -25,8 +26,13 @@ namespace Grifindo_Toys.AppClasses
 
         public string reason { get; set; }
 
+        public int availableleave { get; set; }
 
 
+        public void getavailableleave()
+        {
+            availableleave = (int)(filloperation.TotalLeave(empid) - filloperation.AvailableLeave(empid));
+        }
 
         public void Insertdata()
         {

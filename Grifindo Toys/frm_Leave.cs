@@ -58,6 +58,9 @@ namespace Grifindo_Toys
         private void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
         {
             clsleave.empid = Convert.ToInt32(cmb_empid.SelectedValue.ToString());
+
+            clsleave.getavailableleave();
+            lbl_available_leaves.Text = clsleave.availableleave.ToString();
         }
 
         private void dtp_leave_start_ValueChanged(object sender, EventArgs e)

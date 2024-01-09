@@ -367,7 +367,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_emp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Form";
             this.Load += new System.EventHandler(this.frm_emp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_emp)).EndInit();

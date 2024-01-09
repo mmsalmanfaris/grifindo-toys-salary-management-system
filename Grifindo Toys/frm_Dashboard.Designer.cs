@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btn_holiday = new System.Windows.Forms.Button();
             this.btn_leave = new System.Windows.Forms.Button();
             this.btn_attendance = new System.Windows.Forms.Button();
             this.btn_salary = new System.Windows.Forms.Button();
             this.btn_emp = new System.Windows.Forms.Button();
             this.btn_emp_type = new System.Windows.Forms.Button();
-            this.btn_home = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_report = new System.Windows.Forms.Button();
             this.btn_setting = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -48,8 +48,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.btn_holiday = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,14 +65,41 @@
             this.panel1.Controls.Add(this.btn_salary);
             this.panel1.Controls.Add(this.btn_emp);
             this.panel1.Controls.Add(this.btn_emp_type);
-            this.panel1.Controls.Add(this.btn_home);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(263, 959);
+            this.panel1.Size = new System.Drawing.Size(263, 875);
             this.panel1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(27, 783);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(205, 63);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Admin";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btn_holiday
+            // 
+            this.btn_holiday.BackColor = System.Drawing.Color.White;
+            this.btn_holiday.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_holiday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_holiday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_holiday.Location = new System.Drawing.Point(27, 682);
+            this.btn_holiday.Name = "btn_holiday";
+            this.btn_holiday.Size = new System.Drawing.Size(205, 63);
+            this.btn_holiday.TabIndex = 8;
+            this.btn_holiday.Text = "Holiday";
+            this.btn_holiday.UseVisualStyleBackColor = false;
+            this.btn_holiday.Click += new System.EventHandler(this.btn_holiday_Click);
             // 
             // btn_leave
             // 
@@ -81,7 +107,7 @@
             this.btn_leave.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_leave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_leave.Location = new System.Drawing.Point(29, 668);
+            this.btn_leave.Location = new System.Drawing.Point(27, 582);
             this.btn_leave.Name = "btn_leave";
             this.btn_leave.Size = new System.Drawing.Size(205, 63);
             this.btn_leave.TabIndex = 6;
@@ -95,7 +121,7 @@
             this.btn_attendance.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_attendance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_attendance.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_attendance.Location = new System.Drawing.Point(29, 574);
+            this.btn_attendance.Location = new System.Drawing.Point(27, 488);
             this.btn_attendance.Name = "btn_attendance";
             this.btn_attendance.Size = new System.Drawing.Size(205, 63);
             this.btn_attendance.TabIndex = 5;
@@ -109,7 +135,7 @@
             this.btn_salary.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_salary.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_salary.Location = new System.Drawing.Point(29, 477);
+            this.btn_salary.Location = new System.Drawing.Point(27, 391);
             this.btn_salary.Name = "btn_salary";
             this.btn_salary.Size = new System.Drawing.Size(205, 63);
             this.btn_salary.TabIndex = 4;
@@ -123,7 +149,7 @@
             this.btn_emp.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_emp.Location = new System.Drawing.Point(29, 379);
+            this.btn_emp.Location = new System.Drawing.Point(27, 293);
             this.btn_emp.Name = "btn_emp";
             this.btn_emp.Size = new System.Drawing.Size(205, 63);
             this.btn_emp.TabIndex = 3;
@@ -137,27 +163,13 @@
             this.btn_emp_type.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emp_type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_emp_type.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_emp_type.Location = new System.Drawing.Point(29, 281);
+            this.btn_emp_type.Location = new System.Drawing.Point(27, 195);
             this.btn_emp_type.Name = "btn_emp_type";
             this.btn_emp_type.Size = new System.Drawing.Size(205, 63);
             this.btn_emp_type.TabIndex = 2;
             this.btn_emp_type.Text = "Emp.Type";
             this.btn_emp_type.UseVisualStyleBackColor = false;
             this.btn_emp_type.Click += new System.EventHandler(this.btn_emp_type_Click);
-            // 
-            // btn_home
-            // 
-            this.btn_home.BackColor = System.Drawing.Color.White;
-            this.btn_home.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_home.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_home.Location = new System.Drawing.Point(29, 183);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(205, 63);
-            this.btn_home.TabIndex = 1;
-            this.btn_home.Text = "Home";
-            this.btn_home.UseVisualStyleBackColor = false;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // pictureBox1
             // 
@@ -204,27 +216,13 @@
             this.panel2.Size = new System.Drawing.Size(1096, 110);
             this.panel2.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(943, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 60);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btn_report
             // 
             this.btn_report.BackColor = System.Drawing.Color.White;
             this.btn_report.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_report.Location = new System.Drawing.Point(703, 25);
+            this.btn_report.Location = new System.Drawing.Point(748, 25);
             this.btn_report.Name = "btn_report";
             this.btn_report.Size = new System.Drawing.Size(114, 60);
             this.btn_report.TabIndex = 7;
@@ -237,7 +235,7 @@
             this.btn_setting.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_setting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_setting.Image = ((System.Drawing.Image)(resources.GetObject("btn_setting.Image")));
-            this.btn_setting.Location = new System.Drawing.Point(849, 25);
+            this.btn_setting.Location = new System.Drawing.Point(901, 25);
             this.btn_setting.Name = "btn_setting";
             this.btn_setting.Size = new System.Drawing.Size(61, 60);
             this.btn_setting.TabIndex = 7;
@@ -322,41 +320,30 @@
             this.button12.Text = "Home";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // btn_holiday
+            // button1
             // 
-            this.btn_holiday.BackColor = System.Drawing.Color.White;
-            this.btn_holiday.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_holiday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_holiday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_holiday.Location = new System.Drawing.Point(29, 768);
-            this.btn_holiday.Name = "btn_holiday";
-            this.btn_holiday.Size = new System.Drawing.Size(205, 63);
-            this.btn_holiday.TabIndex = 8;
-            this.btn_holiday.Text = "Holiday";
-            this.btn_holiday.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(29, 869);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(205, 63);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Admin";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(996, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 60);
+            this.button1.TabIndex = 36;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frm_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1349, 959);
+            this.ClientSize = new System.Drawing.Size(1349, 875);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -370,7 +357,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_attendance;
         private System.Windows.Forms.Button btn_salary;
         private System.Windows.Forms.Button btn_emp;
@@ -386,8 +372,8 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button btn_report;
         private System.Windows.Forms.Button btn_setting;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_holiday;
+        private System.Windows.Forms.Button button1;
     }
 }

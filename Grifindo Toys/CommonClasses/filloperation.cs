@@ -13,6 +13,9 @@ namespace Grifindo_Toys.CommonClasses
     {
         dbconnection con = new dbconnection();
 
+        double leaves;
+        double totalleaves;
+
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
             DataTable dt = new DataTable();
@@ -39,5 +42,59 @@ namespace Grifindo_Toys.CommonClasses
             return rdr;
         }
 
+        public double AvailableLeave(int empid)
+        {
+            try
+            {
+                con.mycon.Open();
+                string qry = "SELECT SUM(TRY_CONVERT(INT, days)) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
+                SqlCommand cmd = new SqlCommand(qry, con.mycon);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read() && rdr["TotalLeaves"] != DBNull.Value)
+                {
+                    leaves = Convert.ToInt32(rdr["TotalLeaves"]);
+                }
+
+                return leaves;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.mycon.Close();
+            }
+
+        }
+
+        public double TotalLeave(int emp_id)
+        {
+            try
+            {
+                con.mycon.Open();
+                string qry = "SELECT et.annual_leave FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
+                SqlCommand cmd = new SqlCommand(qry, con.mycon);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    totalleaves = Convert.ToInt32(rdr["annual_leave"]);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.mycon.Close();
+            }
+
+            return totalleaves;
+        }
+
     }
+
 }

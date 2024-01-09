@@ -219,5 +219,11 @@ namespace Grifindo_Toys
         {
 
         }
+
+        private void lbl_holidays_Click(object sender, EventArgs e)
+        {/*
+            int totalholidays = SELECT SUM(TRY_CONVERT(INT, days)) as Total_Leaves FROM tbl_leave WHERE start_date >= TRY_CONVERT(datetime, '12/31/2023') AND end_date <= TRY_CONVERT(datetime, '1/20/2024')
+            */
+        }
     }
 }
