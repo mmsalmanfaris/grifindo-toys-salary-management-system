@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +15,24 @@ namespace Grifindo_Toys
 {
     public partial class frm_salary : Form
     {
-
+        filloperation fill = new filloperation();
+        cls_salary salary = new cls_salary();
 
         public frm_salary()
         {
             InitializeComponent();
         }
 
+        void clearAll()
+        {
+            lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
+            salary.yearmonth = DateTime.Now.ToString("MMMM");
+            salary.SettingDetails();
+            fill.FillCombobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_idv");
+
+           // lbl.Text = salary.No_of_Holidays.ToString() + " Days";
+
+        }
         private void btn_delete_Click(object sender, EventArgs e)
         {
            /* try
@@ -55,7 +68,7 @@ namespace Grifindo_Toys
 
         private void frm_salary_Load(object sender, EventArgs e)
         {
-
+            clearAll();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -224,6 +237,16 @@ namespace Grifindo_Toys
         {/*
             int totalholidays = SELECT SUM(TRY_CONVERT(INT, days)) as Total_Leaves FROM tbl_leave WHERE start_date >= TRY_CONVERT(datetime, '12/31/2023') AND end_date <= TRY_CONVERT(datetime, '1/20/2024')
             */
+        }
+
+        private void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Grifindo_Toys.CommonClasses;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +14,24 @@ namespace Grifindo_Toys.AppClasses
     {
 
         Common cmn = new Common();
+        filloperation fill = new filloperation();
+        dbconnection con = new dbconnection();
+
+        public int salaryid { get; set; }
 
         public int empid { get; set; }
 
-        public string yearmoth { get; set; }
+        public string empname { get; set; }
 
-        public string begindate { get; set; }
+        public string yearmonth { get; set; }
 
-        public string enddate { get; set; }
+        public DateTime begindate { get; set; }
+
+        public DateTime enddate { get; set; }
+
+        public int cycle_range { get; set; }
+
+        public double gov_tax_rate { get; set; }
 
         public int leaves { get; set; }
 
@@ -64,25 +76,50 @@ namespace Grifindo_Toys.AppClasses
             cmn.messages(query, "delete");
         }*/
 
-        /*
-        public void FillEmployeTypeToField()
-        {
-            string qry = "SELECT * FROM tbl_employee WHERE emp_id = " + empid;
-            filloperation fill = new filloperation();
-            SqlDataReader rd = fill.FillWithID(qry);
+            /*
+            public void FillEmployeTypeToField()
+            {
+                string qry = "SELECT * FROM tbl_employee WHERE emp_id = " + empid;
+                filloperation fill = new filloperation();
+                SqlDataReader rd = fill.FillWithID(qry);
 
+                if (rd.Read())
+                {
+                    name = rd["name"].ToString();
+                    nic = Convert.ToInt32(rd["nic"]);
+                    email = rd["email"].ToString();
+                    salary = Convert.ToInt32(rd["monthly_salary"]);
+                    emptype = rd["emp_type_id"].ToString();
+                    allowance = Convert.ToInt32(rd["allowance"]);
+                    joindate = rd["joindate"].ToString();
+                    jobrole = rd["job_role"].ToString();
+                    gender = rd["gender"].ToString();
+                }*/
+        }
+
+        public void SettingDetails()
+        {
+            SqlDataReader rd = fill.getBeginDate(yearmonth);
             if (rd.Read())
             {
-                name = rd["name"].ToString();
-                nic = Convert.ToInt32(rd["nic"]);
-                email = rd["email"].ToString();
-                salary = Convert.ToInt32(rd["monthly_salary"]);
-                emptype = rd["emp_type_id"].ToString();
-                allowance = Convert.ToInt32(rd["allowance"]);
-                joindate = rd["joindate"].ToString();
-                jobrole = rd["job_role"].ToString();
-                gender = rd["gender"].ToString();
-            }*/
+                begindate = Convert.ToDateTime(rd["begin_date"].ToString());
+                enddate = Convert.ToDateTime(rd["end_date"].ToString());
+                cycle_range = Convert.ToInt32(rd["cycle_range"]);
+                gov_tax_rate = Convert.ToInt32(rd["gov_tax_rate"]);
+            }
+
+        }
+        public void TotalLeave()
+        {
+            string qry = $"SELECT SUM(days) AS TotalLeave FROM tbl_leave WHERE start_date >= '{begindate.ToString("yyyy-MM-dd")}' AND end_date <='{enddate.ToString("yyyy-MM-dd")}' AND emp_id = " + empid;
+
+            SqlDataReader rd = fill.runReader(qry);
+            if (rd.Read())
+            {
+                leaves = Convert.ToInt32(rd["TotalLeave"]);
+
+            }
+            con.mycon.Close();
         }
     }
 }

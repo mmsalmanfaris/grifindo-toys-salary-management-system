@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -93,6 +94,45 @@ namespace Grifindo_Toys.CommonClasses
             }
 
             return totalleaves;
+        }
+
+        public SqlDataReader getBeginDate(string yearmonth)
+        {
+            con.mycon.Open();
+            string qry = $"SELECT * FROM tbl_setting WHERE yearmonth = '{yearmonth}'";
+            SqlCommand cmd = new SqlCommand(qry, con.mycon);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            return rdr;
+        }
+
+        public void FillCombobox(string qry, ComboBox cmbox_name, string display_mem, string value_mem)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+            da.Fill(dt);
+            cmbox_name.DisplayMember = display_mem;
+            cmbox_name.ValueMember = value_mem;
+            cmbox_name.DataSource = dt;
+        }
+
+        public SqlDataReader runReader(string qry)
+        {
+            con.mycon.Open();
+            SqlCommand cmd = new SqlCommand(qry, con.mycon);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            return rdr;
+        }
+
+        public DataTable getData(string qry)
+        {
+            con.mycon.Open();
+            SqlCommand cmd = new SqlCommand(qry, con.mycon);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.mycon.Close();
+            return dt;
+
         }
 
     }
