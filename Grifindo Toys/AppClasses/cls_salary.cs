@@ -31,19 +31,27 @@ namespace Grifindo_Toys.AppClasses
 
         public int cycle_range { get; set; }
 
+        public double salary { get; set; }
+
+        public double allowance { get; set; }
+
         public double gov_tax_rate { get; set; }
+
+        public int attendance {  get; set; }
 
         public int leaves { get; set; }
 
         public int holiday { get; set; }
 
-        public int absent { get; set; }
+        public int total_absent { get; set; }
 
         public int nopay { get; set; }
 
-        public int overtime { get; set; }
+        public double overtime { get; set; }
 
         public int rate { get; set; }
+
+        public double overtime_payment {  get; set; }
 
         public int basepay { get; set; }
 
@@ -120,6 +128,61 @@ namespace Grifindo_Toys.AppClasses
 
             }
             con.mycon.Close();
+        }
+
+        public void TotalOverTime()
+        {
+            string qry = $"SELECT SUM(DATEDIFF(MINUTE,in_time,out_time) - 480)  AS Total_Hours, COUNT(working_date) AS Total_Attendance FROM tbl_attendance WHERE working_date >= '{begindate.ToString("yyyy-MM-dd")}' AND working_date <='{enddate.ToString("yyyy-MM-dd")}' AND emp_id = " + empid;
+
+            SqlDataReader rd = fill.runReader(qry);
+            if (rd.Read())
+            {
+                overtime = Convert.ToInt32(rd["Total_Hours"]);
+                attendance = Convert.ToInt32(rd["Total_Attendance"]);
+            }
+            con.mycon.Close();
+        }
+
+        public void GetEmployeeDetails()
+        {
+            string qry = $"SELECT * FROM tbl_employee WHERE emp_id = {empid}";
+            SqlDataReader rd = fill.runReader(qry);
+            if (rd.Read())
+            {
+                //Overtime_Rate_Per_Hour = Convert.ToDouble(rd["Overtime_Rate_Hourly"]);
+                 salary= Convert.ToDouble(rd["monthly_salary"]);
+                 allowance= Convert.ToDouble(rd["allowance"]);
+                 //overtime = Math.Round(overtime / 60) * fill.Overtime_rate;
+
+            }
+            con.mycon.Close();
+        }
+
+        public void overtimerate()
+        {
+            int rate = (int)fill.Overtime_rate(empid);
+            overtime_payment = Math.Round(overtime / 60) * rate;
+        }
+
+        public void TotalHoliday()
+        {
+            string qry = $"SELECT SUM(holiday) AS totalholidays FROM tbl_holiday WHERE holiday >= '{begindate.ToString("yyyy-MM-dd")}' AND holiday <='{enddate.ToString("yyyy-MM-dd")}'";
+
+            SqlDataReader rd = fill.runReader(qry);
+            if (rd.Read())
+            {
+                holiday = Convert.ToInt32(rd["totalholidays"]);
+            }
+            con.mycon.Close();
+        }
+
+
+        public void PayValues()
+        {
+            total_absent = (cycle_range - (attendance + holiday + leaves));
+            nopay = (int)((salary / cycle_range) * total_absent);
+            basepay = (int)(salary + allowance + overtime_payment);
+            grosspay = (int)(basepay - (nopay + (basepay * gov_tax_rate / 100)));
         }
     }
 }

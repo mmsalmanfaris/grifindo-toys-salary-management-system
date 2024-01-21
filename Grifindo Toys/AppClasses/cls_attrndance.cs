@@ -18,20 +18,20 @@ namespace Grifindo_Toys.AppClasses
         public int empid { get; set; }
 
         
-        public string date { get; set; }
+        public DateTime date { get; set; }
 
-        public string intime { get; set; }
+        public DateTime intime { get; set; }
 
-        public string outime { get; set; }
+        public DateTime outime { get; set; }
 
-        public string hours { get; set; }
+        public double hours { get; set; }
 
 
 
 
         public void Insertdata()
         {
-            string query = "INSERT INTO tbl_attendance(emp_id, date, in_time, out_time, hours ) " +
+            string query = "INSERT INTO tbl_attendance(emp_id, working_date, in_time, out_time, working_hours ) " +
                            "VALUES('" + empid + "' , '" + date + "' , '" + intime + "' , '" + outime + "' , '" + hours + "')";
 
             cmn.messages(query, "insert");
@@ -62,10 +62,10 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 empid = (int)rd["emp_id"];
-                date = rd["date"].ToString();
-                intime = rd["in_time"].ToString();
-                outime = rd["out_time"].ToString();
-                hours = rd["hours"].ToString();
+                date = Convert.ToDateTime(rd["date"]);
+                intime = Convert.ToDateTime(rd["in_time"]);
+                outime = Convert.ToDateTime(rd["out_time"]);
+                hours = Convert.ToDouble(rd["hours"]);
             }
         }
     }

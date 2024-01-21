@@ -43,7 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_range = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtp_monthyear = new System.Windows.Forms.DateTimePicker();
+            this.lbl_monthyear = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_salary_setting)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,19 +217,20 @@
             this.label3.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(34, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 31);
+            this.label3.Size = new System.Drawing.Size(154, 39);
             this.label3.TabIndex = 56;
-            this.label3.Text = "Goverment Tax Rate:";
+            this.label3.Text = "Month Year:";
             // 
-            // dtp_monthyear
+            // lbl_monthyear
             // 
-            this.dtp_monthyear.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_monthyear.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_monthyear.Location = new System.Drawing.Point(37, 257);
-            this.dtp_monthyear.Name = "dtp_monthyear";
-            this.dtp_monthyear.Size = new System.Drawing.Size(196, 33);
-            this.dtp_monthyear.TabIndex = 57;
-            this.dtp_monthyear.ValueChanged += new System.EventHandler(this.dtp_monthyear_ValueChanged);
+            this.lbl_monthyear.AutoSize = true;
+            this.lbl_monthyear.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monthyear.Location = new System.Drawing.Point(34, 253);
+            this.lbl_monthyear.Name = "lbl_monthyear";
+            this.lbl_monthyear.Size = new System.Drawing.Size(104, 31);
+            this.lbl_monthyear.TabIndex = 57;
+            this.lbl_monthyear.Text = "---------";
+            this.lbl_monthyear.Click += new System.EventHandler(this.lbl_monthyear_Click);
             // 
             // frm_setting
             // 
@@ -237,7 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(857, 762);
-            this.Controls.Add(this.dtp_monthyear);
+            this.Controls.Add(this.lbl_monthyear);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_range);
             this.Controls.Add(this.label7);
@@ -282,6 +283,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_range;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtp_monthyear;
+        private System.Windows.Forms.Label lbl_monthyear;
     }
 }

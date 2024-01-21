@@ -37,9 +37,11 @@ namespace Grifindo_Toys
         void FirstRun()
         {
             txt_gov_tax.Text = "0";
+            lbl_monthyear.Text = DateTime.Now.ToString("MMMM ") + " " + DateTime.Now.ToString("yyyy");
             dtp_salary_begin.Value = DateTime.Now;
             dtp_salary_end.Value = DateTime.Now;
             lbl_range.Text = "";
+            clssetting.month_year = DateTime.Now.ToString("MMMM ") + " " + DateTime.Now.ToString("yyyy");
 
             fill.FillDataGridView("SELECT * FROM tbl_setting", dgv_salary_setting);
         }
@@ -78,7 +80,7 @@ namespace Grifindo_Toys
 
         private void txt_gov_tax_TextChanged(object sender, EventArgs e)
         {
-            clssetting.gov_tax = (int)Convert.ToDecimal(txt_gov_tax.Text);
+            clssetting.gov_tax = Convert.ToDecimal(txt_gov_tax.Text);
         }
 
         private void dtp_salary_begin_ValueChanged(object sender, EventArgs e)
@@ -121,6 +123,11 @@ namespace Grifindo_Toys
         private void dtp_monthyear_ValueChanged(object sender, EventArgs e)
         {
             string yearMonth = DateTime.Now.ToString("yyyyMM");
+        }
+
+        private void lbl_monthyear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,37 +28,14 @@ namespace Grifindo_Toys
             lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
             salary.yearmonth = DateTime.Now.ToString("MMMM");
             salary.SettingDetails();
-            fill.FillCombobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_idv");
+            fill.FillCombobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
 
            // lbl.Text = salary.No_of_Holidays.ToString() + " Days";
 
         }
         private void btn_delete_Click(object sender, EventArgs e)
         {
-           /* try
-            {
 
-                if (MessageBox.Show("Do you want to delete", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    string qry = "DELETE FROM salary WHERE salary_id = " + id;
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(qry, con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Delete Successfully", "Delete Operation");
-                    btn_new.PerformClick();
-                    GridDetail();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }*/
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -107,22 +84,7 @@ namespace Grifindo_Toys
         }
         void GridDetail()
         {
-           /* try
-            {
-                string qry = "SELECT * FROM salary";
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(qry, con);
-                da.Fill(dt);
-                dgv_empoyee_salary.DataSource = dt;
 
-                dgv_empoyee_salary.Columns[0].Visible = true;
-                //dgv_employee.Columns[1].HeaderText = "First Name";
-                dgv_empoyee_salary.Columns[1].Width = 200;
-            }
-            catch (SqlException exex)
-            {
-                MessageBox.Show(exex.Message);
-            }*/
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -239,9 +201,27 @@ namespace Grifindo_Toys
             */
         }
 
-        private void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
+        public void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            salary.empid = Convert.ToInt32(cmb_empid.SelectedValue);
+            //salary.FK_EmpID = Convert.ToInt32(cmbEmployee.SelectedValue);
+
+            // Total Leaves
+            salary.TotalLeave();
+            lbl_leaves.Text = salary.leaves.ToString() + " Days";
+
+
+            salary.TotalOverTime();
+            lbl_overtime.Text = (Math.Round(salary.overtime / 60)).ToString();
+            salary.GetEmployeeDetails();
+            lbl_overtimepayment.Text = salary.overtime_payment.ToString();
+
+            lbl_leaves.Text = salary.leaves.ToString();
+
+            salary.PayValues();
+            lbl_nopay.Text = salary.nopay.ToString();
+            lbl_basepay.Text = salary.basepay.ToString();
+            lbl_grosspay.Text = salary.grosspay.ToString();
         }
 
         private void label5_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace Grifindo_Toys
             txt_name.Text = string.Empty;
             dtp_date.Value = DateTime.Now;
 
-            fill.FillDataGridView("SELECT * FROM tbl_holidays", dgv_holiday);
+            fill.FillDataGridView("SELECT * FROM tbl_holiday", dgv_holiday);
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Grifindo_Toys
 
         private void dtp_date_ValueChanged(object sender, EventArgs e)
         {
-            clsholiday.date = dtp_date.Value.ToString();
+            clsholiday.holiday = dtp_date.Value.ToString();
         }
     }
 }

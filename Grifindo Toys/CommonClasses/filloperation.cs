@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace Grifindo_Toys.CommonClasses
 
         double leaves;
         double totalleaves;
+        double overtime_rate;
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
@@ -43,7 +45,7 @@ namespace Grifindo_Toys.CommonClasses
             return rdr;
         }
 
-        public double AvailableLeave(int empid)
+        public double Completed_leaves(int empid)
         {
             try
             {
@@ -70,7 +72,7 @@ namespace Grifindo_Toys.CommonClasses
 
         }
 
-        public double TotalLeave(int emp_id)
+        public double total_leaves(int emp_id)
         {
             try
             {
@@ -95,6 +97,35 @@ namespace Grifindo_Toys.CommonClasses
 
             return totalleaves;
         }
+
+        public double Overtime_rate(int emp_id)
+        {
+            double overtimeRate = 0;
+
+            try
+            {
+                con.mycon.Open();
+                string qry = "SELECT et.overtime_rate_hour FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
+                SqlCommand cmd = new SqlCommand(qry, con.mycon);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    overtimeRate = Convert.ToDouble(rdr["overtime_rate_hour"]);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.mycon.Close();
+            }
+
+            return overtimeRate;
+        }
+
 
         public SqlDataReader getBeginDate(string yearmonth)
         {
@@ -122,6 +153,8 @@ namespace Grifindo_Toys.CommonClasses
             SqlDataReader rdr = cmd.ExecuteReader();
             return rdr;
         }
+          
+
 
         public DataTable getData(string qry)
         {

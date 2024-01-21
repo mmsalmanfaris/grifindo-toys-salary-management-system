@@ -69,9 +69,9 @@ namespace Grifindo_Toys
             clsattendace.attendanceid = Convert.ToInt32(dgv_attendance.Rows[e.RowIndex].Cells[0].Value);
             clsattendace.FillEmployeTypeToField();
             cmb_empid.Text = clsattendace.empid.ToString();
-            dtp_date.Text = clsattendace.date;
-            dtp_intime.Text = clsattendace.intime;
-            dtp_outime.Text = clsattendace.outime;
+            dtp_date.Text = clsattendace.date.ToString();
+            dtp_intime.Text = clsattendace.intime.ToString();
+            dtp_outime.Text = clsattendace.outime.ToString();
             lbl_totalhours.Text = clsattendace.hours.ToString();
         }
 
@@ -96,30 +96,25 @@ namespace Grifindo_Toys
             DateTime intime = dtp_intime.Value;
             DateTime outtime = dtp_outime.Value;
 
-            // Calculate the time difference
             TimeSpan difference = (outtime >= intime) ? outtime - intime : TimeSpan.Zero;
 
-            // Extract hours, minutes, and seconds as integers
-            int totalHours = (int)difference.TotalHours;
-            int totalMinutes = difference.Minutes;
+            int totalMinutes = (int)difference.TotalMinutes;
 
-            // Display or use the total hours, minutes, and seconds
-            lbl_totalhours.Text = $"{totalHours} hours, {totalMinutes} minutes";
+            lbl_totalhours.Text = $"{difference.Hours} hours, {difference.Minutes} minutes";
 
-            // add both hour and date to clsattendace.hours
-            clsattendace.hours = Convert.ToString($"{totalHours}:{totalMinutes}");
+            clsattendace.hours = totalMinutes;
         }
 
         private void dtp_date_ValueChanged(object sender, EventArgs e)
         {
-            clsattendace.date = dtp_date.Value.Date.ToString();
+            clsattendace.date = dtp_date.Value.Date;
         }
 
         private void dtp_intime_ValueChanged(object sender, EventArgs e)
         {
             dtp_intime.Format = DateTimePickerFormat.Time;
             dtp_intime.ShowUpDown = true;
-            clsattendace.intime = dtp_intime.Value.ToString();
+            clsattendace.intime = dtp_intime.Value;
 
             lbl_totalhours_Click(sender, e);
         }
@@ -128,7 +123,7 @@ namespace Grifindo_Toys
         {
             dtp_outime.Format = DateTimePickerFormat.Time;
             dtp_outime.ShowUpDown = true;
-            clsattendace.outime = dtp_outime.Value.ToString();
+            clsattendace.outime = dtp_outime.Value;
 
             lbl_totalhours_Click(sender, e);
         }
