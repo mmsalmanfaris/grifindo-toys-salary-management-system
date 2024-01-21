@@ -18,9 +18,9 @@ namespace Grifindo_Toys.AppClasses
 
         public string emptype { get; set;}
 
-        public int Overtimerate { get; set;}
+        public decimal Overtimerate { get; set;}
 
-        public string Annualleaves { get; set;}
+        public int Annualleaves { get; set;}
 
         public void Inserdata()
         {
@@ -50,8 +50,8 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 emptype = rd["emp_type"].ToString();
-                Overtimerate = Convert.ToInt32(rd["overtime_rate_hour"]);
-                Annualleaves = rd["annual_leave"].ToString();
+                Overtimerate = Convert.ToDecimal(rd["overtime_rate_hour"]);
+                Annualleaves = Convert.ToInt32(rd["annual_leave"]);
             }
         }
     }

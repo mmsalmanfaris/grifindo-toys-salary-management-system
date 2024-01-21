@@ -142,7 +142,7 @@ namespace Grifindo_Toys
 
         private void dtp_joiningdate_ValueChanged(object sender, EventArgs e)
         {
-            clsemp.joindate = dtp_joiningdate.Value.ToString();
+            clsemp.joindate = dtp_joiningdate.Value;
         }
 
         private void txt_jobrole_TextChanged(object sender, EventArgs e)

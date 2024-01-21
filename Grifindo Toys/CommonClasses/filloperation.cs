@@ -17,7 +17,6 @@ namespace Grifindo_Toys.CommonClasses
 
         double leaves;
         double totalleaves;
-        double overtime_rate;
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
@@ -50,16 +49,17 @@ namespace Grifindo_Toys.CommonClasses
             try
             {
                 con.mycon.Open();
-                string qry = "SELECT SUM(TRY_CONVERT(INT, days)) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
+                string qry = "SELECT SUM(days) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read() && rdr["TotalLeaves"] != DBNull.Value)
+                if (rdr.Read() || rdr["TotalLeaves"] == null)
                 {
-                    leaves = Convert.ToInt32(rdr["TotalLeaves"]);
+                    leaves = Convert.ToDouble(rdr["TotalLeaves"]);
                 }
-
-                return leaves;
+                else
+                {
+                    leaves = 0;
+                }
             }
             catch (Exception)
             {
@@ -69,7 +69,7 @@ namespace Grifindo_Toys.CommonClasses
             {
                 con.mycon.Close();
             }
-
+            return leaves;
         }
 
         public double total_leaves(int emp_id)
@@ -77,7 +77,7 @@ namespace Grifindo_Toys.CommonClasses
             try
             {
                 con.mycon.Open();
-                string qry = "SELECT et.annual_leave FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
+                string qry = "SELECT et.annual_leave AS annual_leave FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -105,13 +105,13 @@ namespace Grifindo_Toys.CommonClasses
             try
             {
                 con.mycon.Open();
-                string qry = "SELECT et.overtime_rate_hour FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
+                string qry = "SELECT et.overtime_rate_hour AS overtime_rate FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
 
                 if (rdr.Read())
                 {
-                    overtimeRate = Convert.ToDouble(rdr["overtime_rate_hour"]);
+                    overtimeRate = Convert.ToDouble(rdr["overtime_rate"]);
                 }
             }
             catch (Exception)
@@ -127,24 +127,16 @@ namespace Grifindo_Toys.CommonClasses
         }
 
 
-        public SqlDataReader getBeginDate(string yearmonth)
+        public SqlDataReader getBeginDate(string monthyear)
         {
             con.mycon.Open();
-            string qry = $"SELECT * FROM tbl_setting WHERE yearmonth = '{yearmonth}'";
+            string qry = $"SELECT * FROM tbl_setting WHERE yearmonth = '{monthyear}'";
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
             return rdr;
         }
 
-        public void FillCombobox(string qry, ComboBox cmbox_name, string display_mem, string value_mem)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
-            da.Fill(dt);
-            cmbox_name.DisplayMember = display_mem;
-            cmbox_name.ValueMember = value_mem;
-            cmbox_name.DataSource = dt;
-        }
+        
 
         public SqlDataReader runReader(string qry)
         {

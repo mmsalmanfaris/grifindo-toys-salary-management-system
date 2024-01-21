@@ -14,19 +14,20 @@ namespace Grifindo_Toys.AppClasses
         Common cmn = new Common();
 
         public int empid { get; set; }
+
         public string name {  get; set; }
 
         public int nic { get; set; }
 
         public string email {  get; set; }
 
-        public int salary { get; set; }
+        public decimal salary { get; set; }
 
         public string emptype { get; set; }
 
-        public int allowance { get; set; }
+        public decimal allowance { get; set; }
 
-        public string joindate { get; set;}
+        public DateTime joindate { get; set;}
 
         public string jobrole { get; set;}
 
@@ -74,7 +75,7 @@ namespace Grifindo_Toys.AppClasses
                 salary = Convert.ToInt32(rd["monthly_salary"]);
                 emptype = rd["emp_type_id"].ToString();
                 allowance = Convert.ToInt32(rd["allowance"]);
-                joindate = rd["joindate"].ToString();
+                joindate = Convert.ToDateTime( rd["joindate"]);
                 jobrole = rd["job_role"].ToString();
                 gender = rd["gender"].ToString();
             }

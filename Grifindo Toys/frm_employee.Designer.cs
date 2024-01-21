@@ -177,7 +177,7 @@
             this.dgv_emp.Name = "dgv_emp";
             this.dgv_emp.RowHeadersWidth = 51;
             this.dgv_emp.RowTemplate.Height = 24;
-            this.dgv_emp.Size = new System.Drawing.Size(786, 175);
+            this.dgv_emp.Size = new System.Drawing.Size(786, 399);
             this.dgv_emp.TabIndex = 13;
             this.dgv_emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_emp_CellContentClick);
             this.dgv_emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_emp_CellDoubleClick);
@@ -188,7 +188,7 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(256, 665);
+            this.btn_save.Location = new System.Drawing.Point(256, 885);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
             this.btn_save.TabIndex = 14;
@@ -202,7 +202,7 @@
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(48, 665);
+            this.btn_new.Location = new System.Drawing.Point(48, 885);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(163, 58);
             this.btn_new.TabIndex = 15;
@@ -216,7 +216,7 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(676, 665);
+            this.btn_delete.Location = new System.Drawing.Point(676, 885);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
             this.btn_delete.TabIndex = 16;
@@ -230,7 +230,7 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(461, 665);
+            this.btn_update.Location = new System.Drawing.Point(461, 885);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
             this.btn_update.TabIndex = 17;
@@ -343,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(887, 748);
+            this.ClientSize = new System.Drawing.Size(887, 981);
             this.Controls.Add(this.txt_jobrole);
             this.Controls.Add(this.cmb_emptype);
             this.Controls.Add(this.groupBox1);

@@ -100,6 +100,7 @@
             this.label8.TabIndex = 41;
             this.label8.Text = "Employee Salary";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // dgv_empoyee_salary
             // 

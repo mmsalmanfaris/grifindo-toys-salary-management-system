@@ -58,7 +58,7 @@ namespace Grifindo_Toys
             clsemptype.FillEmployeTypeToField();
             txt_emp_type.Text = clsemptype.emptype;
             txt_overtime.Text = clsemptype.Overtimerate.ToString();
-            txt_annualleave.Text = clsemptype.Annualleaves;
+            txt_annualleave.Text = clsemptype.Annualleaves.ToString();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace Grifindo_Toys
 
         private void txt_annualleave_TextChanged(object sender, EventArgs e)
         {
-            clsemptype.Annualleaves = txt_annualleave.Text.Trim();
+            clsemptype.Annualleaves = Convert.ToInt32(txt_annualleave.Text.Trim());
         }
     }   
 }
