@@ -50,7 +50,7 @@ namespace Grifindo_Toys
             cmb_emptype.SelectedIndex = 0;
             txt_allowance.Text = "0.00";
             dtp_joiningdate.Value = DateTime.Now;
-            txt_jobrole.Text = "";
+            cmb_jobrole.SelectedIndex = 0;
             rb_male.Checked = false;
             rb_female.Checked = false;
 
@@ -85,7 +85,7 @@ namespace Grifindo_Toys
             cmb_emptype.Text = clsemp.emptype.ToString();
             txt_allowance.Text = clsemp.allowance.ToString();
             dtp_joiningdate.Text = clsemp.joindate.ToString();
-            txt_jobrole.Text = clsemp.jobrole;
+            cmb_jobrole.Text = clsemp.jobrole;
 
             if ("Male" == clsemp.gender)
             {
@@ -117,7 +117,7 @@ namespace Grifindo_Toys
 
         private void txt_nic_TextChanged(object sender, EventArgs e)
         {
-            clsemp.nic = (int)Convert.ToDecimal(txt_nic.Text.ToString());
+            clsemp.nic = Convert.ToDecimal(txt_nic.Text);
         }
 
         private void txt_email_TextChanged(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace Grifindo_Toys
 
         private void txt_jobrole_TextChanged(object sender, EventArgs e)
         {
-            clsemp.jobrole = txt_jobrole.Text.Trim();
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -189,6 +189,11 @@ namespace Grifindo_Toys
         private void txt_allowance_Click(object sender, EventArgs e)
         {
             txt_allowance.SelectAll();
+        }
+
+        private void cmb_jobrole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clsemp.jobrole = Convert.ToString(cmb_jobrole.SelectedValue);
         }
     }
 }

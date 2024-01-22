@@ -31,7 +31,7 @@ namespace Grifindo_Toys.AppClasses
 
         public void Insertdata()
         {
-            string query = "INSERT INTO tbl_setting(gov_tax_rate, yearmonth, begin_date, end_date, cycle_range) " +
+            string query = "INSERT INTO tbl_setting(gov_tax_rate, month_year, begin_date, end_date, cycle_range) " +
                            "VALUES('" + gov_tax + "' , '" + month_year + "' , '" + begindate + "' , '" + endDate + "' , '" + range + "')";
 
             cmn.messages(query, "insert");
@@ -39,7 +39,7 @@ namespace Grifindo_Toys.AppClasses
 
         public void UpdateData()
         {
-            string query = "UPDATE tbl_setting SET gov_tax_rate = '" + gov_tax + "', yearmonth = '" + month_year + "', begin_date = '" + begindate + "', end_date = '" + endDate + "'," +
+            string query = "UPDATE tbl_setting SET gov_tax_rate = '" + gov_tax + "', month_year = '" + month_year + "', begin_date = '" + begindate + "', end_date = '" + endDate + "'," +
                 " cycle_range = '" + range + "' WHERE emp_id = " + seting_id;
 
             cmn.messages(query, "update");
@@ -62,7 +62,7 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 gov_tax = Convert.ToDecimal(rd["gov_tax_rate"]);
-                month_year = rd["yearmonth"].ToString();
+                month_year = rd["month_year"].ToString();
                 begindate = rd["begin_date"].ToString();
                 endDate = rd["end_date"].ToString();
                 range = rd["cycle_range"].ToString();

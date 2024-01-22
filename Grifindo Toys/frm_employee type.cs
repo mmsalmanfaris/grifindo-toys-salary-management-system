@@ -91,19 +91,12 @@ namespace Grifindo_Toys
 
         private void txt_overtime_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(txt_overtime.Text, out int overtime))
-            {
-                clsemptype.Overtimerate = overtime;
-            }
-            else
-            {
-                clsemptype.Overtimerate = 0;
-            }
+            clsemptype.Overtimerate = Convert.ToDecimal(txt_overtime.Text);
         }
 
         private void txt_annualleave_TextChanged(object sender, EventArgs e)
         {
-            clsemptype.Annualleaves = Convert.ToInt32(txt_annualleave.Text.Trim());
+            clsemptype.Annualleaves = Convert.ToInt32(txt_annualleave.Text);
         }
     }   
 }

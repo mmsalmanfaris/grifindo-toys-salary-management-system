@@ -17,7 +17,7 @@ namespace Grifindo_Toys.AppClasses
 
         public string name {  get; set; }
 
-        public int nic { get; set; }
+        public Decimal nic { get; set; }
 
         public string email {  get; set; }
 

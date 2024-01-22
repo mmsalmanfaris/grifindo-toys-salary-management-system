@@ -52,7 +52,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_emptype = new System.Windows.Forms.ComboBox();
-            this.txt_jobrole = new System.Windows.Forms.TextBox();
+            this.cmb_jobrole = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_emp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -329,14 +329,24 @@
             this.cmb_emptype.TabIndex = 29;
             this.cmb_emptype.SelectedIndexChanged += new System.EventHandler(this.cmb_emptype_SelectedIndexChanged);
             // 
-            // txt_jobrole
+            // cmb_jobrole
             // 
-            this.txt_jobrole.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_jobrole.Location = new System.Drawing.Point(334, 358);
-            this.txt_jobrole.Name = "txt_jobrole";
-            this.txt_jobrole.Size = new System.Drawing.Size(219, 33);
-            this.txt_jobrole.TabIndex = 30;
-            this.txt_jobrole.TextChanged += new System.EventHandler(this.txt_jobrole_TextChanged);
+            this.cmb_jobrole.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_jobrole.FormattingEnabled = true;
+            this.cmb_jobrole.Items.AddRange(new object[] {
+            "Manager",
+            "Accountant",
+            "IT",
+            "Sales",
+            "Marketing",
+            "Toy Maker",
+            "Toy Repair",
+            "R&D"});
+            this.cmb_jobrole.Location = new System.Drawing.Point(337, 363);
+            this.cmb_jobrole.Name = "cmb_jobrole";
+            this.cmb_jobrole.Size = new System.Drawing.Size(218, 38);
+            this.cmb_jobrole.TabIndex = 30;
+            this.cmb_jobrole.SelectedIndexChanged += new System.EventHandler(this.cmb_jobrole_SelectedIndexChanged);
             // 
             // frm_emp
             // 
@@ -344,7 +354,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(887, 981);
-            this.Controls.Add(this.txt_jobrole);
+            this.Controls.Add(this.cmb_jobrole);
             this.Controls.Add(this.cmb_emptype);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtp_joiningdate);
@@ -407,7 +417,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmb_emptype;
-        private System.Windows.Forms.TextBox txt_jobrole;
+        private System.Windows.Forms.ComboBox cmb_jobrole;
     }
 }
 

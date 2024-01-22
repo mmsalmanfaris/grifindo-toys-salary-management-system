@@ -130,7 +130,7 @@ namespace Grifindo_Toys.CommonClasses
         public SqlDataReader getBeginDate(string monthyear)
         {
             con.mycon.Open();
-            string qry = $"SELECT * FROM tbl_setting WHERE yearmonth = '{monthyear}'";
+            string qry = $"SELECT * FROM tbl_setting WHERE month_year = '{monthyear}'";
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
             return rdr;

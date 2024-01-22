@@ -85,7 +85,6 @@ namespace Grifindo_Toys.AppClasses
                 gov_tax_rate = Convert.ToInt32(rd["gov_tax_rate"]);
                 //TotalHoliday();
 
-                
             }
             con.mycon.Close();
         }
