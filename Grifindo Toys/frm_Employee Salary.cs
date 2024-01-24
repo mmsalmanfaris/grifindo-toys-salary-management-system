@@ -27,6 +27,7 @@ namespace Grifindo_Toys
         {
             lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
             salary.monthyear = DateTime.Now.ToString("MMMM") /*+ " " + DateTime.Now.ToString("yyyy")*/;
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
 
 
             salary.SettingDetails();
@@ -46,8 +47,6 @@ namespace Grifindo_Toys
 
         private void frm_salary_Load(object sender, EventArgs e)
         {
-            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
-
             clearAll();
         }
 
@@ -115,7 +114,7 @@ namespace Grifindo_Toys
         {
             salary.empid = Convert.ToInt32(cmb_empid.SelectedValue);
             //salary.FK_EmpID = Convert.ToInt32(cmbEmployee.SelectedValue);
-
+            salary.SettingDetails();
             // Total Leaves
             salary.TotalLeave();
             lbl_leaves.Text = salary.leaves.ToString() + " Days";

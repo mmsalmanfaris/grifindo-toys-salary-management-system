@@ -17,7 +17,7 @@ namespace Grifindo_Toys.AppClasses
 
         public string name {  get; set; }
 
-        public Decimal nic { get; set; }
+        public string nic { get; set; }
 
         public string email {  get; set; }
 
@@ -70,13 +70,13 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 name = rd["name"].ToString();
-                nic =  Convert.ToInt32(rd["nic"]);
+                nic =  Convert.ToString(rd["nic"]);
                 email = rd["email"].ToString();
                 salary = Convert.ToInt32(rd["monthly_salary"]);
                 emptype = rd["emp_type_id"].ToString();
                 allowance = Convert.ToInt32(rd["allowance"]);
                 joindate = Convert.ToDateTime( rd["joindate"]);
-                jobrole = rd["job_role"].ToString();
+                jobrole = Convert.ToString(rd["job_role"]);
                 gender = rd["gender"].ToString();
             }
         }

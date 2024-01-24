@@ -35,7 +35,7 @@ namespace Grifindo_Toys
             dtp_date.Value = DateTime.Now;
             dtp_intime.Value = DateTime.Now;
             dtp_outime.Value = DateTime.Now;
-            lbl_totalhours.Text = "";
+            lbl_totalminutes.Text = "";
 
             fill.FillDataGridView("SELECT * FROM tbl_attendance", dgv_attendance);
         }
@@ -72,7 +72,7 @@ namespace Grifindo_Toys
             dtp_date.Text = clsattendace.date.ToString();
             dtp_intime.Text = clsattendace.intime.ToString();
             dtp_outime.Text = clsattendace.outime.ToString();
-            lbl_totalhours.Text = clsattendace.hours.ToString();
+            lbl_totalminutes.Text = clsattendace.minutes.ToString();
         }
 
         private void cmb_employee_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,9 +100,9 @@ namespace Grifindo_Toys
 
             int totalMinutes = (int)difference.TotalMinutes;
 
-            lbl_totalhours.Text = $"{difference.Hours} hours, {difference.Minutes} minutes";
+            lbl_totalminutes.Text = $"{difference.Hours} hours, {difference.Minutes} minutes";
 
-            clsattendace.hours = totalMinutes;
+            clsattendace.minutes = totalMinutes;
         }
 
         private void dtp_date_ValueChanged(object sender, EventArgs e)

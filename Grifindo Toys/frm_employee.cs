@@ -85,7 +85,7 @@ namespace Grifindo_Toys
             cmb_emptype.Text = clsemp.emptype.ToString();
             txt_allowance.Text = clsemp.allowance.ToString();
             dtp_joiningdate.Text = clsemp.joindate.ToString();
-            cmb_jobrole.Text = clsemp.jobrole;
+            cmb_jobrole.Text = clsemp.jobrole.ToString();
 
             if ("Male" == clsemp.gender)
             {
@@ -117,7 +117,7 @@ namespace Grifindo_Toys
 
         private void txt_nic_TextChanged(object sender, EventArgs e)
         {
-            clsemp.nic = Convert.ToDecimal(txt_nic.Text);
+            clsemp.nic = Convert.ToString(txt_nic.Text);
         }
 
         private void txt_email_TextChanged(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace Grifindo_Toys
 
         private void cmb_jobrole_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clsemp.jobrole = Convert.ToString(cmb_jobrole.SelectedValue);
+            clsemp.jobrole = Convert.ToString(cmb_jobrole.SelectedItem);
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Grifindo_Toys.CommonClasses
                 string qry = "SELECT SUM(days) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
+
                 if (rdr.Read() || rdr["TotalLeaves"] == null)
                 {
                     leaves = Convert.ToDouble(rdr["TotalLeaves"]);
@@ -133,19 +134,21 @@ namespace Grifindo_Toys.CommonClasses
             string qry = $"SELECT * FROM tbl_setting WHERE month_year = '{monthyear}'";
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
+
+
             return rdr;
         }
 
-        
 
-        public SqlDataReader runReader(string qry)
-        {
-            con.mycon.Open();
-            SqlCommand cmd = new SqlCommand(qry, con.mycon);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            return rdr;
-        }
-          
+
+       public SqlDataReader runReader(string qry)
+       {
+           con.mycon.Open();
+           SqlCommand cmd = new SqlCommand(qry, con.mycon);
+           SqlDataReader rdr = cmd.ExecuteReader();
+           return rdr;
+       }
+
 
 
         public DataTable getData(string qry)

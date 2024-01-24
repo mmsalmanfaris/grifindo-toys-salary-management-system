@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,23 +84,38 @@ namespace Grifindo_Toys.AppClasses
                 enddate = Convert.ToDateTime(rd["end_date"]);
                 cycle_range = Convert.ToInt32(rd["cycle_range"]);
                 gov_tax_rate = Convert.ToInt32(rd["gov_tax_rate"]);
-                //TotalHoliday();
 
+                con.mycon.Close();
+
+                TotalHoliday();
             }
-            con.mycon.Close();
         }
 
         public void TotalLeave()
         {
             string qry = $"SELECT SUM(days) AS TotalLeave FROM tbl_leave WHERE start_date >= '{begindate.ToString("yyyy-MM-dd")}' AND end_date <='{enddate.ToString("yyyy-MM-dd")}' AND emp_id = " + empid;
 
-            SqlDataReader rd = fill.runReader(qry);
-            if (rd.Read())
+            // Wrap SqlDataReader in a using statement to ensure proper disposal
+            using (SqlDataReader rd = fill.runReader(qry))
             {
-                leaves = Convert.ToInt32(rd["TotalLeave"]);
+                // Check if there are rows before reading
+                if (rd.HasRows)
+                {
+                    // Read the first (and only) row
+                    rd.Read();
+
+                    // Check if the column "TotalLeave" is not DBNull before accessing it
+                    if (rd["TotalLeave"] != DBNull.Value)
+                    {
+                        leaves = Convert.ToInt32(rd["TotalLeave"]);
+                    }
+                }
+                // SqlDataReader will be closed automatically when exiting the using block
             }
-            con.mycon.Close();
+            // No need to close the connection here since it's managed by the runReader method
         }
+
+
 
         public void TotalOverTime()
         {
@@ -141,13 +157,15 @@ namespace Grifindo_Toys.AppClasses
         public void TotalHoliday()
         {
             string qry = $"SELECT COUNT(holiday) AS totalholidays FROM tbl_holiday WHERE holiday >= '{begindate.ToString("yyyy-MM-dd")}' AND holiday <='{enddate.ToString("yyyy-MM-dd")}'";
+            con.mycon.Close();
 
             SqlDataReader rd = fill.runReader(qry);
+
+
             if (rd.Read())
             {
                 holiday = Convert.ToInt32(rd["totalholidays"]);
             }
-            con.mycon.Close();
         }
 
 

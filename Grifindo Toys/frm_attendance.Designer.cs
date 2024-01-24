@@ -43,7 +43,7 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
-            this.lbl_totalhours = new System.Windows.Forms.Label();
+            this.lbl_totalminutes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_attendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,16 +221,16 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
             // 
-            // lbl_totalhours
+            // lbl_totalminutes
             // 
-            this.lbl_totalhours.AutoSize = true;
-            this.lbl_totalhours.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalhours.Location = new System.Drawing.Point(45, 579);
-            this.lbl_totalhours.Name = "lbl_totalhours";
-            this.lbl_totalhours.Size = new System.Drawing.Size(104, 31);
-            this.lbl_totalhours.TabIndex = 70;
-            this.lbl_totalhours.Text = "---------";
-            this.lbl_totalhours.Click += new System.EventHandler(this.lbl_totalhours_Click);
+            this.lbl_totalminutes.AutoSize = true;
+            this.lbl_totalminutes.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalminutes.Location = new System.Drawing.Point(45, 579);
+            this.lbl_totalminutes.Name = "lbl_totalminutes";
+            this.lbl_totalminutes.Size = new System.Drawing.Size(104, 31);
+            this.lbl_totalminutes.TabIndex = 70;
+            this.lbl_totalminutes.Text = "---------";
+            this.lbl_totalminutes.Click += new System.EventHandler(this.lbl_totalhours_Click);
             // 
             // frm_attendance
             // 
@@ -238,7 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(895, 771);
-            this.Controls.Add(this.lbl_totalhours);
+            this.Controls.Add(this.lbl_totalminutes);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_new);
@@ -282,6 +282,6 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_new;
         private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Label lbl_totalhours;
+        private System.Windows.Forms.Label lbl_totalminutes;
     }
 }

@@ -24,15 +24,14 @@ namespace Grifindo_Toys.AppClasses
 
         public DateTime outime { get; set; }
 
-        public double hours { get; set; }
-
+        public double minutes { get; set; }
 
 
 
         public void Insertdata()
         {
-            string query = "INSERT INTO tbl_attendance(emp_id, working_date, in_time, out_time, working_hours ) " +
-                           "VALUES('" + empid + "' , '" + date + "' , '" + intime + "' , '" + outime + "' , '" + hours + "')";
+            string query = "INSERT INTO tbl_attendance(emp_id, working_date, in_time, out_time, working_minutes ) " +
+                           "VALUES('" + empid + "' , '" + date + "' , '" + intime + "' , '" + outime + "' , '" + minutes + "')";
 
             cmn.messages(query, "insert");
         }
@@ -40,7 +39,7 @@ namespace Grifindo_Toys.AppClasses
         public void UpdateData()
         {
             string query = "UPDATE tbl_attendance SET emp_id = '" + empid + "', date = '" + date + "', in_time = '" + intime + "'," +
-                           " out_time = '" + outime + "', hours = '" + hours + "' WHERE attendance_id = " + attendanceid;
+                           " out_time = '" + outime + "', working_minutes = '" + minutes + "' WHERE attendance_id = " + attendanceid;
 
             cmn.messages(query, "update");
         }
@@ -65,7 +64,7 @@ namespace Grifindo_Toys.AppClasses
                 date = Convert.ToDateTime(rd["date"]);
                 intime = Convert.ToDateTime(rd["in_time"]);
                 outime = Convert.ToDateTime(rd["out_time"]);
-                hours = Convert.ToDouble(rd["hours"]);
+                minutes = Convert.ToDouble(rd["working_minutes"]);
             }
         }
     }
