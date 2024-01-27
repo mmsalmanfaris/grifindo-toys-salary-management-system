@@ -86,7 +86,8 @@ namespace Grifindo_Toys.AppClasses
                 gov_tax_rate = Convert.ToInt32(rd["gov_tax_rate"]);
 
                 con.mycon.Close();
-
+                rd.Close();
+                rd = null;
                 TotalHoliday();
             }
         }
@@ -95,24 +96,19 @@ namespace Grifindo_Toys.AppClasses
         {
             string qry = $"SELECT SUM(days) AS TotalLeave FROM tbl_leave WHERE start_date >= '{begindate.ToString("yyyy-MM-dd")}' AND end_date <='{enddate.ToString("yyyy-MM-dd")}' AND emp_id = " + empid;
 
-            // Wrap SqlDataReader in a using statement to ensure proper disposal
             using (SqlDataReader rd = fill.runReader(qry))
             {
-                // Check if there are rows before reading
                 if (rd.HasRows)
                 {
-                    // Read the first (and only) row
                     rd.Read();
 
-                    // Check if the column "TotalLeave" is not DBNull before accessing it
                     if (rd["TotalLeave"] != DBNull.Value)
                     {
                         leaves = Convert.ToInt32(rd["TotalLeave"]);
+                        rd.Close();
                     }
                 }
-                // SqlDataReader will be closed automatically when exiting the using block
             }
-            // No need to close the connection here since it's managed by the runReader method
         }
 
 
@@ -127,6 +123,8 @@ namespace Grifindo_Toys.AppClasses
                 overtime = Convert.ToInt32(rd["Total_Hours"]);
                 attendance = Convert.ToInt32(rd["Total_Attendance"]);
             }
+            rd.Close();
+            rd = null;
             con.mycon.Close();
         }
 
@@ -137,27 +135,24 @@ namespace Grifindo_Toys.AppClasses
             SqlDataReader rd = fill.runReader(qry);
             if (rd.Read())
             {
-                //Overtime_Rate_Per_Hour = Convert.ToDouble(rd["Overtime_Rate_Hourly"]);
-                 salary= Convert.ToDouble(rd["monthly_salary"]);
-                 allowance= Convert.ToDouble(rd["allowance"]);
-                //overtime = Math.Round(overtime / 60) * fill.Overtime_rate;
-
-                rate = (int)fill.Overtime_rate(empid);
-                overtime_payment = Math.Round(overtime / 60) * rate;
+                salary= Convert.ToDouble(rd["monthly_salary"]);
+                allowance= Convert.ToDouble(rd["allowance"]);
+                
             }
+            rd.Close();
+            rd = null;
             con.mycon.Close();
         }
 
-        /*public void overtimerate()
+        public void overtimerate()
         {
             rate = (int)fill.Overtime_rate(empid);
             overtime_payment = Math.Round(overtime / 60) * rate;
-        }*/
+        }
 
         public void TotalHoliday()
         {
             string qry = $"SELECT COUNT(holiday) AS totalholidays FROM tbl_holiday WHERE holiday >= '{begindate.ToString("yyyy-MM-dd")}' AND holiday <='{enddate.ToString("yyyy-MM-dd")}'";
-            con.mycon.Close();
 
             SqlDataReader rd = fill.runReader(qry);
 
@@ -166,6 +161,9 @@ namespace Grifindo_Toys.AppClasses
             {
                 holiday = Convert.ToInt32(rd["totalholidays"]);
             }
+            rd.Close();
+            rd = null;
+            con.mycon.Close() ;
         }
 
 

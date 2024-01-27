@@ -105,32 +105,29 @@ namespace Grifindo_Toys
         }
 
         private void lbl_holidays_Click(object sender, EventArgs e)
-        {/*
-            int totalholidays = SELECT SUM(TRY_CONVERT(INT, days)) as Total_Leaves FROM tbl_leave WHERE start_date >= TRY_CONVERT(datetime, '12/31/2023') AND end_date <= TRY_CONVERT(datetime, '1/20/2024')
-            */
+        {
         }
 
         public void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
         {
             salary.empid = Convert.ToInt32(cmb_empid.SelectedValue);
-            //salary.FK_EmpID = Convert.ToInt32(cmbEmployee.SelectedValue);
             salary.SettingDetails();
-            // Total Leaves
             salary.TotalLeave();
             lbl_leaves.Text = salary.leaves.ToString() + " Days";
+            lbl_holidays.Text = salary.holiday.ToString();
 
 
             salary.TotalOverTime();
-            lbl_overtime.Text = (Math.Round(salary.overtime / 60)).ToString();
+            lbl_overtime.Text = Math.Round(salary.overtime / 60).ToString();
             salary.GetEmployeeDetails();
-            lbl_overtimepayment.Text = salary.overtime_payment.ToString();
+            salary.overtimerate();
+
 
             lbl_leaves.Text = salary.leaves.ToString();
 
             salary.PayValues();
-            lbl_nopay.Text = salary.nopay.ToString();
-            lbl_basepay.Text = salary.basepay.ToString();
-            lbl_grosspay.Text = salary.grosspay.ToString();
+            lbl_absents.Text = salary.total_absent.ToString();
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -141,6 +138,14 @@ namespace Grifindo_Toys
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbl_overtimepayment.Text = salary.overtime_payment.ToString();
+            lbl_nopay.Text = salary.nopay.ToString();
+            lbl_basepay.Text = salary.basepay.ToString();
+            lbl_grosspay.Text = salary.grosspay.ToString();
         }
     }
 }

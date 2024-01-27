@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
@@ -38,7 +39,10 @@ namespace Grifindo_Toys.CommonClasses
 
         public SqlDataReader FillWithID(string qry)
         {
-            con.mycon.Open();
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
             return rdr;
@@ -48,7 +52,10 @@ namespace Grifindo_Toys.CommonClasses
         {
             try
             {
-                con.mycon.Open();
+                if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+                {
+                    con.mycon.Open();
+                }
                 string qry = "SELECT SUM(days) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -77,7 +84,10 @@ namespace Grifindo_Toys.CommonClasses
         {
             try
             {
-                con.mycon.Open();
+                if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+                {
+                    con.mycon.Open();
+                }
                 string qry = "SELECT et.annual_leave AS annual_leave FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -105,7 +115,10 @@ namespace Grifindo_Toys.CommonClasses
 
             try
             {
-                con.mycon.Open();
+                if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+                {
+                    con.mycon.Open();
+                }
                 string qry = "SELECT et.overtime_rate_hour AS overtime_rate FROM tbl_employee e INNER JOIN tbl_employeetype et ON e.emp_type_id = et.emp_type_id WHERE e.emp_id = " + emp_id;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -130,7 +143,10 @@ namespace Grifindo_Toys.CommonClasses
 
         public SqlDataReader getBeginDate(string monthyear)
         {
-            con.mycon.Open();
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
             string qry = $"SELECT * FROM tbl_setting WHERE month_year = '{monthyear}'";
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -143,8 +159,12 @@ namespace Grifindo_Toys.CommonClasses
 
        public SqlDataReader runReader(string qry)
        {
-           con.mycon.Open();
-           SqlCommand cmd = new SqlCommand(qry, con.mycon);
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
+
+            SqlCommand cmd = new SqlCommand(qry, con.mycon);
            SqlDataReader rdr = cmd.ExecuteReader();
            return rdr;
        }
@@ -153,7 +173,10 @@ namespace Grifindo_Toys.CommonClasses
 
         public DataTable getData(string qry)
         {
-            con.mycon.Open();
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
