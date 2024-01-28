@@ -26,14 +26,10 @@ namespace Grifindo_Toys
         void clearAll()
         {
             lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
-            salary.monthyear = DateTime.Now.ToString("MMMM") /*+ " " + DateTime.Now.ToString("yyyy")*/;
+            salary.monthyear = DateTime.Now.ToString("MMMM");
             fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
 
-
             salary.SettingDetails();
-
-            // lbl.Text = salary.No_of_Holidays.ToString() + " Days";
-
         }
         private void btn_delete_Click(object sender, EventArgs e)
         {
@@ -113,21 +109,20 @@ namespace Grifindo_Toys
             salary.empid = Convert.ToInt32(cmb_empid.SelectedValue);
             salary.SettingDetails();
             salary.TotalLeave();
-            lbl_leaves.Text = salary.leaves.ToString() + " Days";
-            lbl_holidays.Text = salary.holiday.ToString();
-
-
             salary.TotalOverTime();
-            lbl_overtime.Text = Math.Round(salary.overtime / 60).ToString();
+            lbl_attendence.Text = salary.attendance.ToString() + " Days";
+            lbl_leaves.Text = salary.leaves.ToString() + " Days";
+            lbl_holidays.Text = salary.holiday.ToString() + " Days";
+            lbl_absents.Text = salary.total_absent.ToString() + " Days";
+            lbl_overtime.Text = Math.Round(salary.overtime / 60).ToString() + " Hours";
+            lbl_taxrate.Text = salary.gov_tax_rate.ToString() + "%";
+
             salary.GetEmployeeDetails();
             salary.overtimerate();
-
-
-            lbl_leaves.Text = salary.leaves.ToString();
-
+            lbl_monthlysalary.Text = salary.salary.ToString() + " lkr";
+            lbl_allowance.Text = salary.allowance.ToString() + " lkr";
+            lbl_overtimerate.Text = salary.rate.ToString() + " lkr";
             salary.PayValues();
-            lbl_absents.Text = salary.total_absent.ToString();
-            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -142,10 +137,30 @@ namespace Grifindo_Toys
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lbl_overtimepayment.Text = salary.overtime_payment.ToString();
-            lbl_nopay.Text = salary.nopay.ToString();
-            lbl_basepay.Text = salary.basepay.ToString();
-            lbl_grosspay.Text = salary.grosspay.ToString();
+            lbl_overtimepayment.Text = "= " + salary.overtime_payment.ToString();
+            lbl_nopay.Text = "= " + salary.nopay.ToString() + " lkr";
+            lbl_basepay.Text = "= " + salary.basepay.ToString() + " lkr";
+            lbl_grosspay.Text = "= " + salary.grosspay.ToString() + " lkr";
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_absents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_leaves_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
