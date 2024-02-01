@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_report = new System.Windows.Forms.Button();
             this.btn_setting = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -48,10 +49,13 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.dgv_search = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_search)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,6 +220,18 @@
             this.panel2.Size = new System.Drawing.Size(1096, 110);
             this.panel2.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(996, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 60);
+            this.button1.TabIndex = 36;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // btn_report
             // 
             this.btn_report.BackColor = System.Drawing.Color.White;
@@ -320,17 +336,41 @@
             this.button12.Text = "Home";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // txt_search
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(996, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 60);
-            this.button1.TabIndex = 36;
-            this.button1.UseVisualStyleBackColor = false;
+            this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_search.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_search.Location = new System.Drawing.Point(316, 156);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(807, 37);
+            this.txt_search.TabIndex = 9;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
+            this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_search.Location = new System.Drawing.Point(1162, 153);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(156, 46);
+            this.btn_search.TabIndex = 10;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // dgv_search
+            // 
+            this.dgv_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_search.Location = new System.Drawing.Point(316, 253);
+            this.dgv_search.Name = "dgv_search";
+            this.dgv_search.RowHeadersWidth = 51;
+            this.dgv_search.RowTemplate.Height = 24;
+            this.dgv_search.Size = new System.Drawing.Size(1002, 462);
+            this.dgv_search.TabIndex = 11;
             // 
             // frm_dashboard
             // 
@@ -338,6 +378,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1349, 875);
+            this.Controls.Add(this.dgv_search);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
@@ -345,11 +388,14 @@
             this.Name = "frm_dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.frm_dashboard_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_search)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -375,5 +421,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_holiday;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_search;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.DataGridView dgv_search;
     }
 }

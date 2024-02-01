@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Grifindo_Toys.CommonClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +16,10 @@ namespace Grifindo_Toys
 {
     public partial class frm_dashboard : Form
     {
+        dbconnection con = new dbconnection();
+        DataTable dt = new DataTable();
+
+
         public frm_dashboard()
         {
             InitializeComponent();
@@ -79,6 +87,31 @@ namespace Grifindo_Toys
         {
             frm_admin admin_frm = new frm_admin();
             admin_frm.ShowDialog();
+        }
+
+        public void btn_search_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        public void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = "name Like '%" + txt_search.Text + "%'";
+        }
+
+        private void frm_dashboard_Load(object sender, EventArgs e)
+        {      
+            string qry = "SELECT * FROM tbl_employee";
+            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+            da.Fill(dt);
+            dgv_search.DataSource = dt;
         }
     }
 }
