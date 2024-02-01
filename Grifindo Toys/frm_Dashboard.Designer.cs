@@ -52,10 +52,15 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.dgv_search = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_searchjobrole = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_search)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -192,7 +197,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(48, 34);
+            this.label3.Location = new System.Drawing.Point(26, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(234, 40);
             this.label3.TabIndex = 35;
@@ -338,12 +343,13 @@
             // 
             // txt_search
             // 
+            this.txt_search.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_search.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_search.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_search.Location = new System.Drawing.Point(316, 156);
+            this.txt_search.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txt_search.Location = new System.Drawing.Point(214, 39);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(807, 37);
+            this.txt_search.Size = new System.Drawing.Size(338, 37);
             this.txt_search.TabIndex = 9;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
@@ -364,13 +370,59 @@
             // 
             // dgv_search
             // 
+            this.dgv_search.BackgroundColor = System.Drawing.Color.White;
             this.dgv_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_search.Location = new System.Drawing.Point(316, 253);
+            this.dgv_search.Location = new System.Drawing.Point(294, 294);
             this.dgv_search.Name = "dgv_search";
             this.dgv_search.RowHeadersWidth = 51;
             this.dgv_search.RowTemplate.Height = 24;
-            this.dgv_search.Size = new System.Drawing.Size(1002, 462);
+            this.dgv_search.Size = new System.Drawing.Size(1024, 553);
             this.dgv_search.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 36);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Employee Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(582, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 36);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Job Role:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txt_searchjobrole
+            // 
+            this.txt_searchjobrole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_searchjobrole.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_searchjobrole.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txt_searchjobrole.Location = new System.Drawing.Point(692, 38);
+            this.txt_searchjobrole.Name = "txt_searchjobrole";
+            this.txt_searchjobrole.Size = new System.Drawing.Size(302, 37);
+            this.txt_searchjobrole.TabIndex = 13;
+            this.txt_searchjobrole.TextChanged += new System.EventHandler(this.txt_searchjobrole_TextChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_searchjobrole);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txt_search);
+            this.groupBox1.Location = new System.Drawing.Point(294, 140);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1023, 107);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search Box";
             // 
             // frm_dashboard
             // 
@@ -378,9 +430,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1349, 875);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv_search);
             this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.txt_search);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
@@ -394,8 +446,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_search)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -424,5 +477,9 @@
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.DataGridView dgv_search;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_searchjobrole;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

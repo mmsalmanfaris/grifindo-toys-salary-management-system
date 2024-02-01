@@ -41,7 +41,7 @@ namespace Grifindo_Toys
             dtp_salary_begin.Value = DateTime.Now;
             dtp_salary_end.Value = DateTime.Now;
             lbl_range.Text = "";
-            clssetting.month_year = DateTime.Now.ToString("MMMM ") /*+ " " + DateTime.Now.ToString("yyyy")*/;
+            clssetting.month_year = DateTime.Now.ToString("MMMM ") + " " + DateTime.Now.ToString("yyyy");
 
             fill.FillDataGridView("SELECT * FROM tbl_setting", dgv_salary_setting);
         }

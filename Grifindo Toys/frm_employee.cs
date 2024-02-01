@@ -44,6 +44,7 @@ namespace Grifindo_Toys
         void FirstRun()
         {
             txt_name.Text = "";
+            txt_fullname.Text = "";
             txt_nic.Text = "123";
             txt_email.Text = "";
             txt_salary.Text = "0.00";
@@ -76,9 +77,9 @@ namespace Grifindo_Toys
 
         private void dgv_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            clsemp.empid = Convert.ToInt32(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
+            txt_name.Text = Convert.ToString(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
             clsemp.FillEmployeTypeToField();
-            txt_name.Text = clsemp.name;
+            txt_fullname.Text = clsemp.fullname;
             txt_nic.Text = clsemp.nic.ToString();
             txt_email.Text = clsemp.email;
             txt_salary.Text = clsemp.salary.ToString();
@@ -194,6 +195,11 @@ namespace Grifindo_Toys
         private void cmb_jobrole_SelectedIndexChanged(object sender, EventArgs e)
         {
             clsemp.jobrole = Convert.ToString(cmb_jobrole.SelectedItem);
+        }
+
+        private void txt_fullname_TextChanged(object sender, EventArgs e)
+        {
+            clsemp.fullname = txt_fullname.Text;
         }
     }
 }
