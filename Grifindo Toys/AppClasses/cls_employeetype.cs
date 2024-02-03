@@ -25,7 +25,7 @@ namespace Grifindo_Toys.AppClasses
         public void Inserdata()
         {
             string query = "INSERT INTO tbl_employeetype(emp_type, overtime_rate_hour, annual_leave) VALUES " +
-                "('" + emptype + "' , " + Overtimerate + " , '" + Annualleaves + "')";
+                "('" + emptype + "' , " + Overtimerate + " , " + Annualleaves + ")";
             cmn.messages(query, "insert");
         }
 

@@ -157,7 +157,6 @@
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.Size = new System.Drawing.Size(219, 33);
             this.txt_salary.TabIndex = 7;
-            this.txt_salary.Text = "0.00";
             this.txt_salary.Click += new System.EventHandler(this.txt_salary_Click);
             this.txt_salary.TextChanged += new System.EventHandler(this.txt_salary_TextChanged);
             // 

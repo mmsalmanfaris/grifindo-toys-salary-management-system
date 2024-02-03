@@ -26,8 +26,8 @@ namespace Grifindo_Toys
         void firstRun()
         {
             txt_emp_type.Text = "";
-            txt_overtime.Text = "";
-            txt_annualleave.Text = "";
+            txt_overtime.Text = "0.00";
+            txt_annualleave.Text = "00";
 
             fill.FillDataGridView("SELECT * FROM tbl_employeetype", dgv_emp_type);
         }
@@ -56,7 +56,7 @@ namespace Grifindo_Toys
         {
             clsemptype.emptype_id = Convert.ToInt32(dgv_emp_type.Rows[e.RowIndex].Cells[0].Value);
             clsemptype.FillEmployeTypeToField();
-            txt_emp_type.Text = clsemptype.emptype;
+            txt_emp_type.Text = clsemptype.emptype.ToString();
             txt_overtime.Text = clsemptype.Overtimerate.ToString();
             txt_annualleave.Text = clsemptype.Annualleaves.ToString();
         }
@@ -97,6 +97,16 @@ namespace Grifindo_Toys
         private void txt_annualleave_TextChanged(object sender, EventArgs e)
         {
             clsemptype.Annualleaves = Convert.ToInt32(txt_annualleave.Text);
+        }
+
+        private void txt_overtime_Click(object sender, EventArgs e)
+        {
+            txt_overtime.SelectAll();
+        }
+
+        private void txt_annualleave_Click(object sender, EventArgs e)
+        {
+            txt_annualleave.SelectAll();
         }
     }   
 }
