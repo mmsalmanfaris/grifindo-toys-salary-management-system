@@ -103,15 +103,27 @@ namespace Grifindo_Toys
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
             DataView dv = dt.DefaultView;
-            dv.RowFilter = "name Like '%" + txt_search.Text + "%'";
+            dv.RowFilter = "full_name Like '%" + txt_search.Text + "%'";
         }
 
         private void frm_dashboard_Load(object sender, EventArgs e)
         {      
             string qry = "SELECT * FROM tbl_employee";
+
             SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
             da.Fill(dt);
             dgv_search.DataSource = dt;
+
+            dgv_search.Columns[0].HeaderText = "ID";
+            dgv_search.Columns[1].HeaderText = "Full Name";
+            dgv_search.Columns[2].HeaderText = "Salary";
+            dgv_search.Columns[3].HeaderText = "Joined Date";
+            dgv_search.Columns[4].HeaderText = "NIC";
+            dgv_search.Columns[5].HeaderText = "Type";
+            dgv_search.Columns[6].HeaderText = "Role";
+            dgv_search.Columns[7].HeaderText = "Email";
+            dgv_search.Columns[8].HeaderText = "Allowance";
+            dgv_search.Columns[9].HeaderText = "Gender";
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -43,7 +43,6 @@ namespace Grifindo_Toys
 
         void FirstRun()
         {
-            txt_name.Text = "";
             txt_fullname.Text = "";
             txt_nic.Text = "123";
             txt_email.Text = "";
@@ -58,7 +57,7 @@ namespace Grifindo_Toys
             fill.FillDataGridView("SELECT * FROM tbl_employee", dgv_emp);
             dgv_emp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgv_emp.Columns[0].HeaderText = "Username";
+            dgv_emp.Columns[0].HeaderText = "ID";
             dgv_emp.Columns[1].HeaderText = "Full Name";
             dgv_emp.Columns[2].HeaderText = "Salary";
             dgv_emp.Columns[3].HeaderText = "Joined Date";
@@ -78,7 +77,7 @@ namespace Grifindo_Toys
         private void btn_new_Click(object sender, EventArgs e)
         {
             FirstRun();
-            txt_name.Focus();
+            txt_fullname.Focus();
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -89,7 +88,7 @@ namespace Grifindo_Toys
 
         private void dgv_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_name.Text = Convert.ToString(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
+            clsemp.empid = Convert.ToInt32(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
             clsemp.FillEmployeTypeToField();
             txt_fullname.Text = clsemp.fullname;
             txt_nic.Text = clsemp.nic.ToString();
@@ -125,7 +124,6 @@ namespace Grifindo_Toys
 
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
-            clsemp.name = txt_name.Text.Trim();
         }
 
         private void txt_nic_TextChanged(object sender, EventArgs e)

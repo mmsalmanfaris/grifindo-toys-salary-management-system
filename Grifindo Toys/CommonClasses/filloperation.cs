@@ -1,4 +1,5 @@
-﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,6 +22,11 @@ namespace Grifindo_Toys.CommonClasses
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
+
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
             da.Fill(dt);
@@ -31,6 +37,11 @@ namespace Grifindo_Toys.CommonClasses
 
         public void FillDataGridView(string qry, DataGridView dgv)
         {
+            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            {
+                con.mycon.Open();
+            }
+
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
             da.Fill(dt);
@@ -48,15 +59,15 @@ namespace Grifindo_Toys.CommonClasses
             return rdr;
         }
 
-        public double Completed_leaves(int empid)
+        public double Completed_leaves(int emp_id)
         {
             try
             {
-                if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+                if (con.mycon != null || con.mycon.State == ConnectionState.Closed)
                 {
                     con.mycon.Open();
                 }
-                string qry = "SELECT SUM(days) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + empid;
+                string qry = "SELECT SUM(days) AS TotalLeaves FROM tbl_leave WHERE emp_id = " + emp_id;
                 SqlCommand cmd = new SqlCommand(qry, con.mycon);
                 SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -165,8 +176,8 @@ namespace Grifindo_Toys.CommonClasses
             }
 
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
-           SqlDataReader rdr = cmd.ExecuteReader();
-           return rdr;
+            SqlDataReader rdr = cmd.ExecuteReader();
+            return rdr;
        }
 
 
@@ -185,7 +196,6 @@ namespace Grifindo_Toys.CommonClasses
             return dt;
 
         }
-
     }
 
 }

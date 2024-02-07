@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_total_days = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
@@ -70,7 +73,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(842, 98);
+            this.label7.Size = new System.Drawing.Size(1213, 98);
             this.label7.TabIndex = 53;
             this.label7.Text = "Employee Leave Application";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,9 +85,9 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(435, 779);
+            this.btn_update.Location = new System.Drawing.Point(740, 773);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(163, 58);
+            this.btn_update.Size = new System.Drawing.Size(184, 58);
             this.btn_update.TabIndex = 3;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
@@ -96,9 +99,9 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(643, 779);
+            this.btn_delete.Location = new System.Drawing.Point(985, 773);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(163, 58);
+            this.btn_delete.Size = new System.Drawing.Size(190, 58);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -110,9 +113,9 @@
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(30, 779);
+            this.btn_new.Location = new System.Drawing.Point(279, 773);
             this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(156, 58);
+            this.btn_new.Size = new System.Drawing.Size(182, 58);
             this.btn_new.TabIndex = 1;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
@@ -124,9 +127,9 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(228, 779);
+            this.btn_save.Location = new System.Drawing.Point(510, 773);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(163, 58);
+            this.btn_save.Size = new System.Drawing.Size(178, 58);
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -134,13 +137,34 @@
             // 
             // dgv_leave
             // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.dgv_leave.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_leave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_leave.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_leave.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_leave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_leave.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_leave.Location = new System.Drawing.Point(279, 132);
             this.dgv_leave.Name = "dgv_leave";
             this.dgv_leave.RowHeadersWidth = 51;
             this.dgv_leave.RowTemplate.Height = 24;
-            this.dgv_leave.Size = new System.Drawing.Size(527, 604);
+            this.dgv_leave.Size = new System.Drawing.Size(896, 604);
             this.dgv_leave.TabIndex = 48;
             this.dgv_leave.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_leave_CellContentClick);
             this.dgv_leave.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_leave_CellDoubleClick);
@@ -243,6 +267,7 @@
             this.lbl_available_leaves.Size = new System.Drawing.Size(104, 31);
             this.lbl_available_leaves.TabIndex = 59;
             this.lbl_available_leaves.Text = "---------";
+            this.lbl_available_leaves.Click += new System.EventHandler(this.lbl_available_leaves_Click);
             // 
             // label5
             // 
@@ -276,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(842, 866);
+            this.ClientSize = new System.Drawing.Size(1213, 859);
             this.Controls.Add(this.lbl_available_leaves);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_empid);

@@ -26,7 +26,7 @@ namespace Grifindo_Toys
         void clearAll()
         {
             lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
-            salary.monthyear = DateTime.Now.ToString("MMMM");
+            salary.monthyear = DateTime.Now.ToString("MMMM") + "  " + DateTime.Now.ToString("yyyy");
             fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
 
             salary.SettingDetails();

@@ -22,6 +22,13 @@ namespace Grifindo_Toys
             InitializeComponent();
         }
 
+
+        public void getavailableleave()
+        {
+            lbl_available_leaves.Text = Convert.ToString((int)fill.total_leaves(clsleave.emp_id) - (int)fill.Completed_leaves(clsleave.emp_id));
+        }
+
+
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -36,6 +43,14 @@ namespace Grifindo_Toys
             txt_reason.Text = "";
 
             fill.FillDataGridView("SELECT * FROM tbl_leave", dgv_leave);
+            dgv_leave.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_leave.Columns[0].HeaderText = "ID";
+            dgv_leave.Columns[1].HeaderText = "Emp ID";
+            dgv_leave.Columns[2].HeaderText = "Start Date";
+            dgv_leave.Columns[3].HeaderText = "End Date";
+            dgv_leave.Columns[4].HeaderText = "Days";
+            dgv_leave.Columns[5].HeaderText = "Reason";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -46,7 +61,7 @@ namespace Grifindo_Toys
 
         private void Leave_Load(object sender, EventArgs e)
         {
-            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "full_name", "emp_id");
             FirstRun();
         }
 
@@ -57,10 +72,9 @@ namespace Grifindo_Toys
 
         private void cmb_empid_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clsleave.empid = Convert.ToInt32(cmb_empid.SelectedValue.ToString());
-
-            clsleave.getavailableleave();
-            lbl_available_leaves.Text = clsleave.availableleave.ToString();
+            clsleave.emp_id = Convert.ToInt32(cmb_empid.SelectedValue.ToString());
+            getavailableleave();
+            
         }
 
         private void dtp_leave_start_ValueChanged(object sender, EventArgs e)
@@ -116,11 +130,15 @@ namespace Grifindo_Toys
         {
             clsleave.leaveid = Convert.ToInt32(dgv_leave.Rows[e.RowIndex].Cells[0].Value);
             clsleave.FillEmployeTypeToField();
-            cmb_empid.Text = clsleave.empid.ToString();
+            cmb_empid.Text = clsleave.emp_id.ToString();
             dtp_leave_start.Text = clsleave.start;
             dtp_leave_end.Text = clsleave.end;
             lbl_total_days.Text = clsleave.days;
             txt_reason.Text = clsleave.reason;
+        }
+
+        private void lbl_available_leaves_Click(object sender, EventArgs e)
+        {
         }
     }
 }

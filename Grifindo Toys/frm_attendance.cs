@@ -25,7 +25,7 @@ namespace Grifindo_Toys
 
         private void attendance_Load(object sender, EventArgs e)
         {
-            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "full_name", "emp_id");
             firstrun();
         }
 
@@ -38,6 +38,16 @@ namespace Grifindo_Toys
             lbl_totalminutes.Text = "";
 
             fill.FillDataGridView("SELECT * FROM tbl_attendance", dgv_attendance);
+            dgv_attendance.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_attendance.Columns[0].HeaderText = "ID";
+            dgv_attendance.Columns[1].HeaderText = "Emp ID";
+            dgv_attendance.Columns[2].HeaderText = "Date";
+            dgv_attendance.Columns[3].HeaderText = "In Time";
+            dgv_attendance.Columns[4].HeaderText = "Out Time";
+            dgv_attendance.Columns[5].HeaderText = "Total Min";
+
+
         }
 
         private void btn_new_Click(object sender, EventArgs e)

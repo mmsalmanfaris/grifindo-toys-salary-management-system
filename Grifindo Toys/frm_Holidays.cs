@@ -28,6 +28,11 @@ namespace Grifindo_Toys
             dtp_date.Value = DateTime.Now;
 
             fill.FillDataGridView("SELECT * FROM tbl_holiday", dgv_holiday);
+            dgv_holiday.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_holiday.Columns[0].HeaderText = "ID";
+            dgv_holiday.Columns[1].HeaderText = "Holiday";
+            dgv_holiday.Columns[2].HeaderText = "Date";
         }
 
         private void btn_update_Click(object sender, EventArgs e)

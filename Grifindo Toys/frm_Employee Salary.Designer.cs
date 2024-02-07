@@ -410,7 +410,7 @@
             this.lblmonthyear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.lblmonthyear.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmonthyear.ForeColor = System.Drawing.Color.White;
-            this.lblmonthyear.Location = new System.Drawing.Point(938, 21);
+            this.lblmonthyear.Location = new System.Drawing.Point(903, 21);
             this.lblmonthyear.Name = "lblmonthyear";
             this.lblmonthyear.Size = new System.Drawing.Size(143, 40);
             this.lblmonthyear.TabIndex = 83;

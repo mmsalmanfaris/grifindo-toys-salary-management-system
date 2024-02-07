@@ -16,7 +16,7 @@ namespace Grifindo_Toys.AppClasses
 
         public int leaveid { get; set; }
 
-        public int empid { get; set; }
+        public int emp_id { get; set; }
 
         public string start { get; set; }
 
@@ -26,25 +26,20 @@ namespace Grifindo_Toys.AppClasses
 
         public string reason { get; set; }
 
-        public int availableleave { get; set; }
 
-
-        public void getavailableleave()
-        {
-            availableleave = (int)(fill.total_leaves(empid) - fill.Completed_leaves(empid));
-        }
+        
 
         public void Insertdata()
         {
             string query = "INSERT INTO tbl_leave(emp_id, start_date, end_date, days, reason ) " +
-                           "VALUES('" + empid + "' , '" + start + "' , '" + end + "' , '" + days + "' , '" + reason + "')";
+                           "VALUES('" + emp_id + "' , '" + start + "' , '" + end + "' , '" + days + "' , '" + reason + "')";
 
             cmn.messages(query, "insert");
         }
 
         public void UpdateData()
         {
-            string query = "UPDATE tbl_leave SET emp_id = '" + empid + "', start_date = '" + start + "', end_date = '" + end + "'," +
+            string query = "UPDATE tbl_leave SET emp_id = '" + emp_id + "', start_date = '" + start + "', end_date = '" + end + "'," +
                            " days = '" + days + "', reason = '" + reason + "' WHERE leave_id = " + leaveid;
 
             cmn.messages(query, "update");
@@ -66,7 +61,7 @@ namespace Grifindo_Toys.AppClasses
 
             if (rd.Read())
             {
-                empid = (int)rd["emp_id"];
+                emp_id = Convert.ToInt32(rd["emp_id"].ToString());
                 start = rd["start_date"].ToString();
                 end = rd["end_date"].ToString();
                 days = rd["days"].ToString();
