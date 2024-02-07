@@ -54,19 +54,19 @@
             this.lbl_overtimepayment = new System.Windows.Forms.Label();
             this.lbl_allowance = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.aadd = new System.Windows.Forms.Label();
+            this.lbl_overtime = new System.Windows.Forms.Label();
+            this.lbl_attendence = new System.Windows.Forms.Label();
             this.lblmonthyear = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.aadd = new System.Windows.Forms.Label();
-            this.lbl_attendence = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_monthlysalary = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lbl_overtimerate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_taxrate = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lbl_overtime = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empoyee_salary)).BeginInit();
@@ -97,7 +97,7 @@
             this.cmb_empid.Location = new System.Drawing.Point(568, 144);
             this.cmb_empid.Name = "cmb_empid";
             this.cmb_empid.Size = new System.Drawing.Size(197, 44);
-            this.cmb_empid.TabIndex = 25;
+            this.cmb_empid.TabIndex = 0;
             this.cmb_empid.SelectedIndexChanged += new System.EventHandler(this.cmb_empid_SelectedIndexChanged);
             // 
             // label8
@@ -218,7 +218,7 @@
             this.btn_update.Location = new System.Drawing.Point(726, 599);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(179, 58);
-            this.btn_update.TabIndex = 73;
+            this.btn_update.TabIndex = 4;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             // 
@@ -231,7 +231,7 @@
             this.btn_delete.Location = new System.Drawing.Point(950, 599);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(183, 58);
-            this.btn_delete.TabIndex = 72;
+            this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             // 
@@ -244,7 +244,7 @@
             this.btn_new.Location = new System.Drawing.Point(296, 599);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(162, 58);
-            this.btn_new.TabIndex = 71;
+            this.btn_new.TabIndex = 2;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             // 
@@ -257,7 +257,7 @@
             this.btn_save.Location = new System.Drawing.Point(506, 599);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(179, 58);
-            this.btn_save.TabIndex = 70;
+            this.btn_save.TabIndex = 3;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
@@ -360,9 +360,49 @@
             this.groupBox1.Location = new System.Drawing.Point(41, 116);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(230, 541);
-            this.groupBox1.TabIndex = 83;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Attendence";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(30, 455);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(166, 31);
+            this.label17.TabIndex = 92;
+            this.label17.Text = "Over Time Hours:";
+            // 
+            // aadd
+            // 
+            this.aadd.AutoSize = true;
+            this.aadd.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aadd.Location = new System.Drawing.Point(30, 38);
+            this.aadd.Name = "aadd";
+            this.aadd.Size = new System.Drawing.Size(174, 31);
+            this.aadd.TabIndex = 87;
+            this.aadd.Text = "Total Attendence:";
+            // 
+            // lbl_overtime
+            // 
+            this.lbl_overtime.AutoSize = true;
+            this.lbl_overtime.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_overtime.Location = new System.Drawing.Point(30, 491);
+            this.lbl_overtime.Name = "lbl_overtime";
+            this.lbl_overtime.Size = new System.Drawing.Size(104, 31);
+            this.lbl_overtime.TabIndex = 93;
+            this.lbl_overtime.Text = "---------";
+            // 
+            // lbl_attendence
+            // 
+            this.lbl_attendence.AutoSize = true;
+            this.lbl_attendence.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_attendence.Location = new System.Drawing.Point(30, 74);
+            this.lbl_attendence.Name = "lbl_attendence";
+            this.lbl_attendence.Size = new System.Drawing.Size(104, 31);
+            this.lbl_attendence.TabIndex = 90;
+            this.lbl_attendence.Text = "---------";
             // 
             // lblmonthyear
             // 
@@ -372,7 +412,7 @@
             this.lblmonthyear.ForeColor = System.Drawing.Color.White;
             this.lblmonthyear.Location = new System.Drawing.Point(938, 21);
             this.lblmonthyear.Name = "lblmonthyear";
-            this.lblmonthyear.Size = new System.Drawing.Size(179, 50);
+            this.lblmonthyear.Size = new System.Drawing.Size(143, 40);
             this.lblmonthyear.TabIndex = 83;
             this.lblmonthyear.Text = "---------";
             // 
@@ -403,30 +443,10 @@
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(4);
             this.button1.Size = new System.Drawing.Size(230, 58);
-            this.button1.TabIndex = 85;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Genarate";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // aadd
-            // 
-            this.aadd.AutoSize = true;
-            this.aadd.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aadd.Location = new System.Drawing.Point(30, 38);
-            this.aadd.Name = "aadd";
-            this.aadd.Size = new System.Drawing.Size(174, 31);
-            this.aadd.TabIndex = 87;
-            this.aadd.Text = "Total Attendence:";
-            // 
-            // lbl_attendence
-            // 
-            this.lbl_attendence.AutoSize = true;
-            this.lbl_attendence.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_attendence.Location = new System.Drawing.Point(30, 74);
-            this.lbl_attendence.Name = "lbl_attendence";
-            this.lbl_attendence.Size = new System.Drawing.Size(104, 31);
-            this.lbl_attendence.TabIndex = 90;
-            this.lbl_attendence.Text = "---------";
             // 
             // label12
             // 
@@ -488,26 +508,6 @@
             this.lbl_taxrate.TabIndex = 95;
             this.lbl_taxrate.Text = "---------";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(30, 455);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 31);
-            this.label17.TabIndex = 92;
-            this.label17.Text = "Over Time Hours:";
-            // 
-            // lbl_overtime
-            // 
-            this.lbl_overtime.AutoSize = true;
-            this.lbl_overtime.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_overtime.Location = new System.Drawing.Point(30, 491);
-            this.lbl_overtime.Name = "lbl_overtime";
-            this.lbl_overtime.Size = new System.Drawing.Size(104, 31);
-            this.lbl_overtime.TabIndex = 93;
-            this.lbl_overtime.Text = "---------";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label3);
@@ -535,7 +535,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(3);
-            this.label5.Size = new System.Drawing.Size(8, 53);
+            this.label5.Size = new System.Drawing.Size(6, 42);
             this.label5.TabIndex = 84;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);

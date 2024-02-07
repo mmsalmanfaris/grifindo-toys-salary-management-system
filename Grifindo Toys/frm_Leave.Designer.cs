@@ -85,7 +85,7 @@
             this.btn_update.Location = new System.Drawing.Point(435, 779);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
-            this.btn_update.TabIndex = 52;
+            this.btn_update.TabIndex = 3;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -99,7 +99,7 @@
             this.btn_delete.Location = new System.Drawing.Point(643, 779);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
-            this.btn_delete.TabIndex = 51;
+            this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -113,7 +113,7 @@
             this.btn_new.Location = new System.Drawing.Point(30, 779);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(156, 58);
-            this.btn_new.TabIndex = 50;
+            this.btn_new.TabIndex = 1;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
@@ -127,7 +127,7 @@
             this.btn_save.Location = new System.Drawing.Point(228, 779);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
-            this.btn_save.TabIndex = 49;
+            this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -152,7 +152,7 @@
             this.dtp_leave_end.Location = new System.Drawing.Point(21, 170);
             this.dtp_leave_end.Name = "dtp_leave_end";
             this.dtp_leave_end.Size = new System.Drawing.Size(175, 33);
-            this.dtp_leave_end.TabIndex = 47;
+            this.dtp_leave_end.TabIndex = 1;
             this.dtp_leave_end.ValueChanged += new System.EventHandler(this.dtp_leave_end_ValueChanged);
             // 
             // label2
@@ -172,7 +172,7 @@
             this.dtp_leave_start.Location = new System.Drawing.Point(21, 75);
             this.dtp_leave_start.Name = "dtp_leave_start";
             this.dtp_leave_start.Size = new System.Drawing.Size(176, 33);
-            this.dtp_leave_start.TabIndex = 45;
+            this.dtp_leave_start.TabIndex = 0;
             this.dtp_leave_start.ValueChanged += new System.EventHandler(this.dtp_leave_start_ValueChanged);
             // 
             // label10
@@ -212,7 +212,7 @@
             this.cmb_empid.Location = new System.Drawing.Point(29, 171);
             this.cmb_empid.Name = "cmb_empid";
             this.cmb_empid.Size = new System.Drawing.Size(220, 38);
-            this.cmb_empid.TabIndex = 55;
+            this.cmb_empid.TabIndex = 0;
             this.cmb_empid.SelectedIndexChanged += new System.EventHandler(this.cmb_empid_SelectedIndexChanged);
             // 
             // txt_reason
@@ -221,7 +221,7 @@
             this.txt_reason.Location = new System.Drawing.Point(22, 346);
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.Size = new System.Drawing.Size(177, 33);
-            this.txt_reason.TabIndex = 57;
+            this.txt_reason.TabIndex = 2;
             this.txt_reason.TextChanged += new System.EventHandler(this.txt_reason_TextChanged);
             // 
             // label3

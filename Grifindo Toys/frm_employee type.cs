@@ -30,6 +30,12 @@ namespace Grifindo_Toys
             txt_annualleave.Text = "00";
 
             fill.FillDataGridView("SELECT * FROM tbl_employeetype", dgv_emp_type);
+            dgv_emp_type.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_emp_type.Columns[0].HeaderText = "ID";
+            dgv_emp_type.Columns[1].HeaderText = "Employee Type";
+            dgv_emp_type.Columns[2].HeaderText = "Over Time Rate";
+            dgv_emp_type.Columns[3].HeaderText = "Annual Leave";
         }
 
         private void label1_Click(object sender, EventArgs e)

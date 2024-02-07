@@ -40,7 +40,7 @@ namespace Grifindo_Toys.AppClasses
         public void UpdateData()
         {
             string query = "UPDATE tbl_setting SET gov_tax_rate = '" + gov_tax + "', month_year = '" + month_year + "', begin_date = '" + begindate + "', end_date = '" + endDate + "'," +
-                " cycle_range = '" + range + "' WHERE emp_id = " + seting_id;
+                " cycle_range = '" + range + "' WHERE setting_id = " + seting_id;
 
             cmn.messages(query, "update");
         }

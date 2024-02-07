@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
@@ -45,26 +48,28 @@
             // 
             // btn_update
             // 
-            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(452, 471);
+            this.btn_update.Location = new System.Drawing.Point(788, 453);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
-            this.btn_update.TabIndex = 22;
+            this.btn_update.TabIndex = 5;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_delete.BackColor = System.Drawing.Color.Red;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(662, 471);
+            this.btn_delete.Location = new System.Drawing.Point(998, 453);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
-            this.btn_delete.TabIndex = 21;
+            this.btn_delete.TabIndex = 6;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -72,38 +77,61 @@
             // btn_new
             // 
             this.btn_new.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(39, 471);
+            this.btn_new.Location = new System.Drawing.Point(375, 453);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(163, 58);
-            this.btn_new.TabIndex = 20;
+            this.btn_new.TabIndex = 3;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(57)))), ((int)(((byte)(70)))));
+            this.btn_save.BackColor = System.Drawing.Color.Lime;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(247, 471);
+            this.btn_save.Location = new System.Drawing.Point(583, 453);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
-            this.btn_save.TabIndex = 19;
+            this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // dgv_emp_type
             // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.dgv_emp_type.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_emp_type.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_emp_type.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_emp_type.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_emp_type.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_emp_type.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_emp_type.Location = new System.Drawing.Point(375, 113);
             this.dgv_emp_type.Name = "dgv_emp_type";
             this.dgv_emp_type.RowHeadersWidth = 51;
             this.dgv_emp_type.RowTemplate.Height = 24;
-            this.dgv_emp_type.Size = new System.Drawing.Size(451, 302);
+            this.dgv_emp_type.Size = new System.Drawing.Size(780, 302);
             this.dgv_emp_type.TabIndex = 18;
             this.dgv_emp_type.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgv_emp_type.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_emp_type_CellDoubleClick);
@@ -114,7 +142,7 @@
             this.txt_overtime.Location = new System.Drawing.Point(39, 266);
             this.txt_overtime.Name = "txt_overtime";
             this.txt_overtime.Size = new System.Drawing.Size(257, 33);
-            this.txt_overtime.TabIndex = 26;
+            this.txt_overtime.TabIndex = 1;
             this.txt_overtime.Text = "0.00";
             this.txt_overtime.Click += new System.EventHandler(this.txt_overtime_Click);
             this.txt_overtime.TextChanged += new System.EventHandler(this.txt_overtime_TextChanged);
@@ -135,7 +163,7 @@
             this.txt_emp_type.Location = new System.Drawing.Point(40, 147);
             this.txt_emp_type.Name = "txt_emp_type";
             this.txt_emp_type.Size = new System.Drawing.Size(256, 33);
-            this.txt_emp_type.TabIndex = 24;
+            this.txt_emp_type.TabIndex = 0;
             this.txt_emp_type.TextChanged += new System.EventHandler(this.txt_emp_type_TextChanged);
             // 
             // label1
@@ -157,7 +185,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(864, 77);
+            this.label7.Size = new System.Drawing.Size(1193, 77);
             this.label7.TabIndex = 27;
             this.label7.Text = "Employee Type";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +196,7 @@
             this.txt_annualleave.Location = new System.Drawing.Point(40, 382);
             this.txt_annualleave.Name = "txt_annualleave";
             this.txt_annualleave.Size = new System.Drawing.Size(257, 33);
-            this.txt_annualleave.TabIndex = 29;
+            this.txt_annualleave.TabIndex = 2;
             this.txt_annualleave.Text = "00";
             this.txt_annualleave.Click += new System.EventHandler(this.txt_annualleave_Click);
             this.txt_annualleave.TextChanged += new System.EventHandler(this.txt_annualleave_TextChanged);
@@ -188,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(864, 569);
+            this.ClientSize = new System.Drawing.Size(1193, 541);
             this.Controls.Add(this.txt_annualleave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);

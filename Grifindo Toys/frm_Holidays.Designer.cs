@@ -47,7 +47,7 @@
             this.txt_name.Location = new System.Drawing.Point(41, 155);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(197, 33);
-            this.txt_name.TabIndex = 73;
+            this.txt_name.TabIndex = 0;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // label7
@@ -72,7 +72,7 @@
             this.btn_update.Location = new System.Drawing.Point(291, 550);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(124, 58);
-            this.btn_update.TabIndex = 68;
+            this.btn_update.TabIndex = 4;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -86,7 +86,7 @@
             this.btn_delete.Location = new System.Drawing.Point(421, 550);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(112, 58);
-            this.btn_delete.TabIndex = 67;
+            this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -100,7 +100,7 @@
             this.btn_new.Location = new System.Drawing.Point(41, 550);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(119, 58);
-            this.btn_new.TabIndex = 66;
+            this.btn_new.TabIndex = 2;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             // 
@@ -113,7 +113,7 @@
             this.btn_save.Location = new System.Drawing.Point(166, 550);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(119, 58);
-            this.btn_save.TabIndex = 65;
+            this.btn_save.TabIndex = 3;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -136,7 +136,7 @@
             this.dtp_date.Location = new System.Drawing.Point(291, 155);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(242, 33);
-            this.dtp_date.TabIndex = 61;
+            this.dtp_date.TabIndex = 1;
             this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
             // 
             // label10

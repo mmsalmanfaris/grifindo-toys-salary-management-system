@@ -44,6 +44,15 @@ namespace Grifindo_Toys
             clssetting.month_year = DateTime.Now.ToString("MMMM ") + " " + DateTime.Now.ToString("yyyy");
 
             fill.FillDataGridView("SELECT * FROM tbl_setting", dgv_salary_setting);
+            dgv_salary_setting.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_salary_setting.Columns[0].HeaderText = "ID";
+            dgv_salary_setting.Columns[1].HeaderText = "Tax Rate";
+            dgv_salary_setting.Columns[2].HeaderText = "Month Year";
+            dgv_salary_setting.Columns[3].HeaderText = "Begin Date";
+            dgv_salary_setting.Columns[4].HeaderText = "End Date";
+            dgv_salary_setting.Columns[5].HeaderText = "Range";
+
         }
 
         private void btn_new_Click(object sender, EventArgs e)

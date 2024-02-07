@@ -38,14 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -72,7 +72,7 @@
             this.txt_password.Location = new System.Drawing.Point(46, 192);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(350, 33);
-            this.txt_password.TabIndex = 33;
+            this.txt_password.TabIndex = 1;
             // 
             // label6
             // 
@@ -91,7 +91,7 @@
             this.txt_username.Location = new System.Drawing.Point(46, 85);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(350, 33);
-            this.txt_username.TabIndex = 31;
+            this.txt_username.TabIndex = 0;
             // 
             // label2
             // 
@@ -126,7 +126,7 @@
             this.btn_login.Location = new System.Drawing.Point(46, 274);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(350, 58);
-            this.btn_login.TabIndex = 37;
+            this.btn_login.TabIndex = 3;
             this.btn_login.Tag = "Login";
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -148,9 +148,29 @@
             this.groupBox1.Location = new System.Drawing.Point(560, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(444, 417);
-            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Here!";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(365, 199);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 20);
+            this.pictureBox3.TabIndex = 41;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(365, 91);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 20);
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
             // checkBox2
             // 
@@ -158,7 +178,7 @@
             this.checkBox2.Location = new System.Drawing.Point(46, 237);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(62, 20);
-            this.checkBox2.TabIndex = 40;
+            this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Show";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
@@ -174,26 +194,6 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Forget Password";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(365, 91);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 20);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(365, 199);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 20);
-            this.pictureBox3.TabIndex = 41;
-            this.pictureBox3.TabStop = false;
             // 
             // frm_login
             // 
@@ -212,8 +212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_nic = new System.Windows.Forms.TextBox();
@@ -65,9 +69,9 @@
             this.label1.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 31);
+            this.label1.Size = new System.Drawing.Size(139, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Employee Name:";
+            this.label1.Text = "Username:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_name
@@ -76,7 +80,7 @@
             this.txt_name.Location = new System.Drawing.Point(53, 149);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(219, 33);
-            this.txt_name.TabIndex = 1;
+            this.txt_name.TabIndex = 0;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // txt_nic
@@ -85,7 +89,7 @@
             this.txt_nic.Location = new System.Drawing.Point(1218, 149);
             this.txt_nic.Name = "txt_nic";
             this.txt_nic.Size = new System.Drawing.Size(219, 33);
-            this.txt_nic.TabIndex = 3;
+            this.txt_nic.TabIndex = 4;
             this.txt_nic.Click += new System.EventHandler(this.txt_nic_Click);
             this.txt_nic.TextChanged += new System.EventHandler(this.txt_nic_TextChanged);
             // 
@@ -106,7 +110,7 @@
             this.txt_email.Location = new System.Drawing.Point(639, 257);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(219, 33);
-            this.txt_email.TabIndex = 5;
+            this.txt_email.TabIndex = 7;
             this.txt_email.Click += new System.EventHandler(this.txt_email_Click);
             this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
@@ -126,7 +130,7 @@
             this.txt_allowance.Location = new System.Drawing.Point(941, 257);
             this.txt_allowance.Name = "txt_allowance";
             this.txt_allowance.Size = new System.Drawing.Size(219, 33);
-            this.txt_allowance.TabIndex = 11;
+            this.txt_allowance.TabIndex = 8;
             this.txt_allowance.Click += new System.EventHandler(this.txt_allowance_Click);
             this.txt_allowance.TextChanged += new System.EventHandler(this.txt_allowance_TextChanged);
             // 
@@ -156,7 +160,7 @@
             this.txt_salary.Location = new System.Drawing.Point(639, 149);
             this.txt_salary.Name = "txt_salary";
             this.txt_salary.Size = new System.Drawing.Size(219, 33);
-            this.txt_salary.TabIndex = 7;
+            this.txt_salary.TabIndex = 2;
             this.txt_salary.Click += new System.EventHandler(this.txt_salary_Click);
             this.txt_salary.TextChanged += new System.EventHandler(this.txt_salary_TextChanged);
             // 
@@ -172,14 +176,43 @@
             // 
             // dgv_emp
             // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.dgv_emp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_emp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_emp.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_emp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_emp.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_emp.Location = new System.Drawing.Point(53, 347);
             this.dgv_emp.Name = "dgv_emp";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_emp.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_emp.RowHeadersWidth = 51;
             this.dgv_emp.RowTemplate.Height = 24;
             this.dgv_emp.Size = new System.Drawing.Size(1384, 554);
-            this.dgv_emp.TabIndex = 13;
+            this.dgv_emp.TabIndex = 14;
             this.dgv_emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_emp_CellContentClick);
             this.dgv_emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_emp_CellDoubleClick);
             // 
@@ -192,7 +225,7 @@
             this.btn_save.Location = new System.Drawing.Point(806, 941);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
-            this.btn_save.TabIndex = 14;
+            this.btn_save.TabIndex = 11;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -206,7 +239,7 @@
             this.btn_new.Location = new System.Drawing.Point(575, 941);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(163, 58);
-            this.btn_new.TabIndex = 15;
+            this.btn_new.TabIndex = 10;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
@@ -220,7 +253,7 @@
             this.btn_delete.Location = new System.Drawing.Point(1274, 941);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
-            this.btn_delete.TabIndex = 16;
+            this.btn_delete.TabIndex = 13;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -234,7 +267,7 @@
             this.btn_update.Location = new System.Drawing.Point(1035, 941);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
-            this.btn_update.TabIndex = 17;
+            this.btn_update.TabIndex = 12;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -247,7 +280,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1478, 74);
+            this.label7.Size = new System.Drawing.Size(1478, 93);
             this.label7.TabIndex = 18;
             this.label7.Text = "Employee Information";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,7 +302,7 @@
             this.dtp_joiningdate.Location = new System.Drawing.Point(941, 149);
             this.dtp_joiningdate.Name = "dtp_joiningdate";
             this.dtp_joiningdate.Size = new System.Drawing.Size(219, 33);
-            this.dtp_joiningdate.TabIndex = 25;
+            this.dtp_joiningdate.TabIndex = 3;
             this.dtp_joiningdate.ValueChanged += new System.EventHandler(this.dtp_joiningdate_ValueChanged);
             // 
             // rb_male
@@ -279,7 +312,7 @@
             this.rb_male.Location = new System.Drawing.Point(15, 28);
             this.rb_male.Name = "rb_male";
             this.rb_male.Size = new System.Drawing.Size(75, 34);
-            this.rb_male.TabIndex = 26;
+            this.rb_male.TabIndex = 0;
             this.rb_male.TabStop = true;
             this.rb_male.Text = "Male";
             this.rb_male.UseVisualStyleBackColor = true;
@@ -292,7 +325,7 @@
             this.rb_female.Location = new System.Drawing.Point(106, 28);
             this.rb_female.Name = "rb_female";
             this.rb_female.Size = new System.Drawing.Size(98, 34);
-            this.rb_female.TabIndex = 27;
+            this.rb_female.TabIndex = 1;
             this.rb_female.TabStop = true;
             this.rb_female.Text = "Female";
             this.rb_female.UseVisualStyleBackColor = true;
@@ -305,7 +338,7 @@
             this.groupBox1.Location = new System.Drawing.Point(1217, 220);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(219, 75);
-            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -327,7 +360,7 @@
             this.cmb_emptype.Location = new System.Drawing.Point(54, 252);
             this.cmb_emptype.Name = "cmb_emptype";
             this.cmb_emptype.Size = new System.Drawing.Size(218, 38);
-            this.cmb_emptype.TabIndex = 29;
+            this.cmb_emptype.TabIndex = 5;
             this.cmb_emptype.SelectedIndexChanged += new System.EventHandler(this.cmb_emptype_SelectedIndexChanged);
             // 
             // cmb_jobrole
@@ -346,7 +379,7 @@
             this.cmb_jobrole.Location = new System.Drawing.Point(348, 252);
             this.cmb_jobrole.Name = "cmb_jobrole";
             this.cmb_jobrole.Size = new System.Drawing.Size(218, 38);
-            this.cmb_jobrole.TabIndex = 30;
+            this.cmb_jobrole.TabIndex = 6;
             this.cmb_jobrole.SelectedIndexChanged += new System.EventHandler(this.cmb_jobrole_SelectedIndexChanged);
             // 
             // txt_fullname
@@ -355,7 +388,7 @@
             this.txt_fullname.Location = new System.Drawing.Point(348, 149);
             this.txt_fullname.Name = "txt_fullname";
             this.txt_fullname.Size = new System.Drawing.Size(219, 33);
-            this.txt_fullname.TabIndex = 32;
+            this.txt_fullname.TabIndex = 1;
             this.txt_fullname.TextChanged += new System.EventHandler(this.txt_fullname_TextChanged);
             // 
             // label8

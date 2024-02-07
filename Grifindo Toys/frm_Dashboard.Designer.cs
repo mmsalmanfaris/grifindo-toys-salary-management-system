@@ -91,7 +91,7 @@
             this.button3.Location = new System.Drawing.Point(27, 783);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(205, 63);
-            this.button3.TabIndex = 9;
+            this.button3.TabIndex = 6;
             this.button3.Text = "Admin";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -105,7 +105,7 @@
             this.btn_holiday.Location = new System.Drawing.Point(27, 682);
             this.btn_holiday.Name = "btn_holiday";
             this.btn_holiday.Size = new System.Drawing.Size(205, 63);
-            this.btn_holiday.TabIndex = 8;
+            this.btn_holiday.TabIndex = 5;
             this.btn_holiday.Text = "Holiday";
             this.btn_holiday.UseVisualStyleBackColor = false;
             this.btn_holiday.Click += new System.EventHandler(this.btn_holiday_Click);
@@ -119,7 +119,7 @@
             this.btn_leave.Location = new System.Drawing.Point(27, 582);
             this.btn_leave.Name = "btn_leave";
             this.btn_leave.Size = new System.Drawing.Size(205, 63);
-            this.btn_leave.TabIndex = 6;
+            this.btn_leave.TabIndex = 4;
             this.btn_leave.Text = "Leave";
             this.btn_leave.UseVisualStyleBackColor = false;
             this.btn_leave.Click += new System.EventHandler(this.btn_admin_Click);
@@ -133,7 +133,7 @@
             this.btn_attendance.Location = new System.Drawing.Point(27, 488);
             this.btn_attendance.Name = "btn_attendance";
             this.btn_attendance.Size = new System.Drawing.Size(205, 63);
-            this.btn_attendance.TabIndex = 5;
+            this.btn_attendance.TabIndex = 3;
             this.btn_attendance.Text = "Attendance";
             this.btn_attendance.UseVisualStyleBackColor = false;
             this.btn_attendance.Click += new System.EventHandler(this.btn_attendance_Click);
@@ -147,7 +147,7 @@
             this.btn_salary.Location = new System.Drawing.Point(27, 391);
             this.btn_salary.Name = "btn_salary";
             this.btn_salary.Size = new System.Drawing.Size(205, 63);
-            this.btn_salary.TabIndex = 4;
+            this.btn_salary.TabIndex = 2;
             this.btn_salary.Text = "Salary";
             this.btn_salary.UseVisualStyleBackColor = false;
             this.btn_salary.Click += new System.EventHandler(this.btn_salary_Click);
@@ -161,7 +161,7 @@
             this.btn_emp.Location = new System.Drawing.Point(27, 293);
             this.btn_emp.Name = "btn_emp";
             this.btn_emp.Size = new System.Drawing.Size(205, 63);
-            this.btn_emp.TabIndex = 3;
+            this.btn_emp.TabIndex = 1;
             this.btn_emp.Text = "Employee";
             this.btn_emp.UseVisualStyleBackColor = false;
             this.btn_emp.Click += new System.EventHandler(this.btn_emp_Click);
@@ -175,7 +175,7 @@
             this.btn_emp_type.Location = new System.Drawing.Point(27, 195);
             this.btn_emp_type.Name = "btn_emp_type";
             this.btn_emp_type.Size = new System.Drawing.Size(205, 63);
-            this.btn_emp_type.TabIndex = 2;
+            this.btn_emp_type.TabIndex = 0;
             this.btn_emp_type.Text = "Emp.Type";
             this.btn_emp_type.UseVisualStyleBackColor = false;
             this.btn_emp_type.Click += new System.EventHandler(this.btn_emp_type_Click);
@@ -223,7 +223,7 @@
             this.panel2.Location = new System.Drawing.Point(260, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1096, 110);
-            this.panel2.TabIndex = 7;
+            this.panel2.TabIndex = 1;
             // 
             // button1
             // 
@@ -234,7 +234,7 @@
             this.button1.Location = new System.Drawing.Point(996, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 60);
-            this.button1.TabIndex = 36;
+            this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // btn_report
@@ -246,7 +246,7 @@
             this.btn_report.Location = new System.Drawing.Point(748, 25);
             this.btn_report.Name = "btn_report";
             this.btn_report.Size = new System.Drawing.Size(114, 60);
-            this.btn_report.TabIndex = 7;
+            this.btn_report.TabIndex = 0;
             this.btn_report.Text = "Report";
             this.btn_report.UseVisualStyleBackColor = false;
             // 
@@ -259,7 +259,7 @@
             this.btn_setting.Location = new System.Drawing.Point(901, 25);
             this.btn_setting.Name = "btn_setting";
             this.btn_setting.Size = new System.Drawing.Size(61, 60);
-            this.btn_setting.TabIndex = 7;
+            this.btn_setting.TabIndex = 1;
             this.btn_setting.UseVisualStyleBackColor = false;
             this.btn_setting.Click += new System.EventHandler(this.btn_setting_Click);
             // 
@@ -350,7 +350,7 @@
             this.txt_search.Location = new System.Drawing.Point(214, 39);
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(338, 37);
-            this.txt_search.TabIndex = 9;
+            this.txt_search.TabIndex = 0;
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             // 
@@ -408,7 +408,7 @@
             this.txt_searchjobrole.Location = new System.Drawing.Point(692, 38);
             this.txt_searchjobrole.Name = "txt_searchjobrole";
             this.txt_searchjobrole.Size = new System.Drawing.Size(302, 37);
-            this.txt_searchjobrole.TabIndex = 13;
+            this.txt_searchjobrole.TabIndex = 1;
             this.txt_searchjobrole.TextChanged += new System.EventHandler(this.txt_searchjobrole_TextChanged);
             // 
             // groupBox1
@@ -420,7 +420,7 @@
             this.groupBox1.Location = new System.Drawing.Point(294, 140);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1023, 107);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Box";
             // 

@@ -31,11 +31,18 @@ namespace Grifindo_Toys
         void firstrun()
         {
             txt_name.Text = "";
-            txt_nic.Text = "0";
+            txt_nic.Text = "000000";
             txt_username.Text = "";
             txt_password.Text = "******";
 
             fill.FillDataGridView("SELECT * FROM tbl_admin", dgv_admin);
+            dgv_admin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_admin.Columns[0].HeaderText = "ID";
+            dgv_admin.Columns[1].HeaderText = "Full Name";
+            dgv_admin.Columns[2].HeaderText = "NIC";
+            dgv_admin.Columns[3].HeaderText = "Username";
+            dgv_admin.Columns[4].HeaderText = "Password";
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -70,7 +77,7 @@ namespace Grifindo_Toys
             clsadmin.adminid = Convert.ToInt32(dgv_admin.Rows[e.RowIndex].Cells[0].Value);
             clsadmin.FillEmployeTypeToField();
             txt_name.Text = clsadmin.name;
-            txt_nic.Text = clsadmin.name;
+            txt_nic.Text = clsadmin.nic;
             txt_username.Text = clsadmin.username;
             txt_password.Text = clsadmin.password;
         }
@@ -93,6 +100,16 @@ namespace Grifindo_Toys
         private void txt_password_TextChanged(object sender, EventArgs e)
         {
             clsadmin.password = txt_password.Text;
+        }
+
+        private void txt_nic_Click(object sender, EventArgs e)
+        {
+            txt_nic.SelectAll();
+        }
+
+        private void txt_password_Click(object sender, EventArgs e)
+        {
+            txt_password.SelectAll();
         }
     }
 }

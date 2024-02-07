@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtp_salary_begin = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_gov_tax = new System.Windows.Forms.TextBox();
@@ -54,7 +57,7 @@
             this.dtp_salary_begin.Location = new System.Drawing.Point(38, 364);
             this.dtp_salary_begin.Name = "dtp_salary_begin";
             this.dtp_salary_begin.Size = new System.Drawing.Size(196, 33);
-            this.dtp_salary_begin.TabIndex = 31;
+            this.dtp_salary_begin.TabIndex = 1;
             this.dtp_salary_begin.ValueChanged += new System.EventHandler(this.dtp_salary_begin_ValueChanged);
             // 
             // label10
@@ -73,7 +76,7 @@
             this.txt_gov_tax.Location = new System.Drawing.Point(36, 155);
             this.txt_gov_tax.Name = "txt_gov_tax";
             this.txt_gov_tax.Size = new System.Drawing.Size(196, 33);
-            this.txt_gov_tax.TabIndex = 29;
+            this.txt_gov_tax.TabIndex = 0;
             this.txt_gov_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_gov_tax.Click += new System.EventHandler(this.txt_gov_tax_Click);
             this.txt_gov_tax.TextChanged += new System.EventHandler(this.txt_gov_tax_TextChanged);
@@ -105,7 +108,7 @@
             this.dtp_salary_end.Location = new System.Drawing.Point(39, 478);
             this.dtp_salary_end.Name = "dtp_salary_end";
             this.dtp_salary_end.Size = new System.Drawing.Size(195, 33);
-            this.dtp_salary_end.TabIndex = 33;
+            this.dtp_salary_end.TabIndex = 2;
             this.dtp_salary_end.ValueChanged += new System.EventHandler(this.dtp_salary_end_ValueChanged);
             // 
             // label2
@@ -120,13 +123,34 @@
             // 
             // dgv_salary_setting
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(250)))));
+            this.dgv_salary_setting.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_salary_setting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_salary_setting.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_salary_setting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_salary_setting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_salary_setting.Location = new System.Drawing.Point(292, 121);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_salary_setting.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_salary_setting.Location = new System.Drawing.Point(292, 118);
             this.dgv_salary_setting.Name = "dgv_salary_setting";
             this.dgv_salary_setting.RowHeadersWidth = 51;
             this.dgv_salary_setting.RowTemplate.Height = 24;
-            this.dgv_salary_setting.Size = new System.Drawing.Size(522, 494);
+            this.dgv_salary_setting.Size = new System.Drawing.Size(776, 494);
             this.dgv_salary_setting.TabIndex = 34;
             this.dgv_salary_setting.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_salary_setting_CellContentClick);
             this.dgv_salary_setting.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_salary_setting_CellDoubleClick);
@@ -137,10 +161,10 @@
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_update.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(443, 671);
+            this.btn_update.Location = new System.Drawing.Point(697, 649);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
-            this.btn_update.TabIndex = 38;
+            this.btn_update.TabIndex = 5;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -151,10 +175,10 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(651, 671);
+            this.btn_delete.Location = new System.Drawing.Point(905, 649);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
-            this.btn_delete.TabIndex = 37;
+            this.btn_delete.TabIndex = 6;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -165,10 +189,10 @@
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_new.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(38, 671);
+            this.btn_new.Location = new System.Drawing.Point(292, 649);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(156, 58);
-            this.btn_new.TabIndex = 36;
+            this.btn_new.TabIndex = 3;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
@@ -179,10 +203,10 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(236, 671);
+            this.btn_save.Location = new System.Drawing.Point(490, 649);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
-            this.btn_save.TabIndex = 35;
+            this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -195,7 +219,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(857, 81);
+            this.label7.Size = new System.Drawing.Size(1118, 81);
             this.label7.TabIndex = 39;
             this.label7.Text = "Employee Salary Setting";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,7 +241,7 @@
             this.label3.Font = new System.Drawing.Font("Poppins", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(34, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 39);
+            this.label3.Size = new System.Drawing.Size(123, 31);
             this.label3.TabIndex = 56;
             this.label3.Text = "Month Year:";
             // 
@@ -237,7 +261,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 762);
+            this.ClientSize = new System.Drawing.Size(1118, 740);
             this.Controls.Add(this.lbl_monthyear);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_range);

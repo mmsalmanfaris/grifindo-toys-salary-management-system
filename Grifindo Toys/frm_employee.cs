@@ -56,6 +56,18 @@ namespace Grifindo_Toys
             rb_female.Checked = false;
 
             fill.FillDataGridView("SELECT * FROM tbl_employee", dgv_emp);
+            dgv_emp.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgv_emp.Columns[0].HeaderText = "Username";
+            dgv_emp.Columns[1].HeaderText = "Full Name";
+            dgv_emp.Columns[2].HeaderText = "Salary";
+            dgv_emp.Columns[3].HeaderText = "Joined Date";
+            dgv_emp.Columns[4].HeaderText = "NIC";
+            dgv_emp.Columns[5].HeaderText = "Type";
+            dgv_emp.Columns[6].HeaderText = "Role";
+            dgv_emp.Columns[7].HeaderText = "Email";
+            dgv_emp.Columns[8].HeaderText = "Allowance";
+            dgv_emp.Columns[9].HeaderText = "Gender";
         }
 
         private void dgv_emp_CellContentClick(object sender, DataGridViewCellEventArgs e)

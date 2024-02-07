@@ -88,7 +88,7 @@
             this.cmb_empid.Location = new System.Drawing.Point(50, 160);
             this.cmb_empid.Name = "cmb_empid";
             this.cmb_empid.Size = new System.Drawing.Size(218, 38);
-            this.cmb_empid.TabIndex = 41;
+            this.cmb_empid.TabIndex = 0;
             this.cmb_empid.SelectedIndexChanged += new System.EventHandler(this.cmb_employee_SelectedIndexChanged);
             // 
             // dgv_attendance
@@ -142,7 +142,7 @@
             this.dtp_date.Location = new System.Drawing.Point(51, 265);
             this.dtp_date.Name = "dtp_date";
             this.dtp_date.Size = new System.Drawing.Size(217, 33);
-            this.dtp_date.TabIndex = 62;
+            this.dtp_date.TabIndex = 1;
             this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
             // 
             // dtp_intime
@@ -152,7 +152,7 @@
             this.dtp_intime.Location = new System.Drawing.Point(51, 370);
             this.dtp_intime.Name = "dtp_intime";
             this.dtp_intime.Size = new System.Drawing.Size(217, 33);
-            this.dtp_intime.TabIndex = 63;
+            this.dtp_intime.TabIndex = 2;
             this.dtp_intime.ValueChanged += new System.EventHandler(this.dtp_intime_ValueChanged);
             // 
             // dtp_outime
@@ -162,7 +162,7 @@
             this.dtp_outime.Location = new System.Drawing.Point(51, 477);
             this.dtp_outime.Name = "dtp_outime";
             this.dtp_outime.Size = new System.Drawing.Size(217, 33);
-            this.dtp_outime.TabIndex = 64;
+            this.dtp_outime.TabIndex = 3;
             this.dtp_outime.ValueChanged += new System.EventHandler(this.dtp_outime_ValueChanged);
             // 
             // btn_update
@@ -174,7 +174,7 @@
             this.btn_update.Location = new System.Drawing.Point(470, 675);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(163, 58);
-            this.btn_update.TabIndex = 69;
+            this.btn_update.TabIndex = 7;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
@@ -188,7 +188,7 @@
             this.btn_delete.Location = new System.Drawing.Point(680, 675);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(163, 58);
-            this.btn_delete.TabIndex = 68;
+            this.btn_delete.TabIndex = 8;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
@@ -202,7 +202,7 @@
             this.btn_new.Location = new System.Drawing.Point(50, 675);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(156, 58);
-            this.btn_new.TabIndex = 67;
+            this.btn_new.TabIndex = 5;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = false;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click_1);
@@ -216,7 +216,7 @@
             this.btn_save.Location = new System.Drawing.Point(257, 675);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(163, 58);
-            this.btn_save.TabIndex = 66;
+            this.btn_save.TabIndex = 6;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
@@ -228,7 +228,7 @@
             this.lbl_totalminutes.Location = new System.Drawing.Point(45, 579);
             this.lbl_totalminutes.Name = "lbl_totalminutes";
             this.lbl_totalminutes.Size = new System.Drawing.Size(104, 31);
-            this.lbl_totalminutes.TabIndex = 70;
+            this.lbl_totalminutes.TabIndex = 4;
             this.lbl_totalminutes.Text = "---------";
             this.lbl_totalminutes.Click += new System.EventHandler(this.lbl_totalhours_Click);
             // 
