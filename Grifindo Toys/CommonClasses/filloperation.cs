@@ -33,6 +33,8 @@ namespace Grifindo_Toys.CommonClasses
             cmb_name.DisplayMember = display_member;
             cmb_name.ValueMember = value_member;
             cmb_name.DataSource = dt;
+
+            con.mycon.Close();
         }
 
         public void FillDataGridView(string qry, DataGridView dgv)

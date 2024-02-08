@@ -22,14 +22,23 @@ namespace Grifindo_Toys
         {
             InitializeComponent();
         }
+        void update()
+        {
+            fill.FillDataGridView("SELECT * FROM tbl_salary", dgv_empoyee_salary);
 
+            lbl_nopay.Text = "";
+            lbl_grosspay.Text = "";
+            lbl_basepay.Text = "";
+            lbl_overtimepayment.Text = "";
+        }
         void clearAll()
         {
+
             lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
             salary.monthyear = DateTime.Now.ToString("MMMM") + "  " + DateTime.Now.ToString("yyyy");
-            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "name", "emp_id");
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "full_name", "emp_id");
 
-            salary.SettingDetails();
+            salary.SettingDetails();                   
         }
         private void btn_delete_Click(object sender, EventArgs e)
         {
@@ -43,7 +52,26 @@ namespace Grifindo_Toys
 
         private void frm_salary_Load(object sender, EventArgs e)
         {
+;
+            update();
             clearAll();
+
+            dgv_empoyee_salary.Columns[0].HeaderText = "ID";
+            dgv_empoyee_salary.Columns[1].HeaderText = "Emp ID";
+            dgv_empoyee_salary.Columns[2].HeaderText = "Month";
+            dgv_empoyee_salary.Columns[3].HeaderText = "Attendance";
+            dgv_empoyee_salary.Columns[4].HeaderText = "Leave";
+            dgv_empoyee_salary.Columns[5].HeaderText = "Absent";
+            dgv_empoyee_salary.Columns[6].HeaderText = "Holiday";
+            dgv_empoyee_salary.Columns[7].HeaderText = "Over Time";
+            dgv_empoyee_salary.Columns[8].HeaderText = "Salary";
+            dgv_empoyee_salary.Columns[9].HeaderText = "Allowance";
+            dgv_empoyee_salary.Columns[10].HeaderText = "OT Rate";
+            dgv_empoyee_salary.Columns[11].HeaderText = "Tax";
+            dgv_empoyee_salary.Columns[12].HeaderText = "OT Ammount";
+            dgv_empoyee_salary.Columns[13].HeaderText = "No Pay";
+            dgv_empoyee_salary.Columns[14].HeaderText = "Base Pay";
+            dgv_empoyee_salary.Columns[15].HeaderText = "Gross Pay";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -97,7 +125,8 @@ namespace Grifindo_Toys
 
         private void btn_save_Click_1(object sender, EventArgs e)
         {
-
+            salary.Insertdata();
+            update();
         }
 
         private void lbl_holidays_Click(object sender, EventArgs e)
@@ -113,7 +142,6 @@ namespace Grifindo_Toys
             lbl_attendence.Text = salary.attendance.ToString() + " Days";
             lbl_leaves.Text = salary.leaves.ToString() + " Days";
             lbl_holidays.Text = salary.holiday.ToString() + " Days";
-            lbl_absents.Text = salary.total_absent.ToString() + " Days";
             lbl_overtime.Text = Math.Round(salary.overtime / 60).ToString() + " Hours";
             lbl_taxrate.Text = salary.gov_tax_rate.ToString() + "%";
 
@@ -123,12 +151,17 @@ namespace Grifindo_Toys
             lbl_allowance.Text = salary.allowance.ToString() + " lkr";
             lbl_overtimerate.Text = salary.rate.ToString() + " lkr";
             salary.PayValues();
+            lbl_absents.Text = salary.total_absent.ToString() + " Days";
+
+            clearAll();
+            update();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
+
 
         private void label8_Click(object sender, EventArgs e)
         {
@@ -161,6 +194,23 @@ namespace Grifindo_Toys
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_new_Click_1(object sender, EventArgs e)
+        {
+            update();
+        }
+
+        private void btn_update_Click_1(object sender, EventArgs e)
+        {
+            salary.UpdateData();
+            update();
+        }
+
+        private void btn_delete_Click_1(object sender, EventArgs e)
+        {
+            salary.DeleteDate();
+            update();
         }
     }
 }

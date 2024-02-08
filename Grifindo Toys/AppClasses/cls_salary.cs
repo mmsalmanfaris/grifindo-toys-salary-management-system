@@ -61,18 +61,55 @@ namespace Grifindo_Toys.AppClasses
 
         public void Insertdata()
         {
+            string query = "INSERT INTO tbl_salary(emp_id, month_year, attendance, leaves, absents, holidays, over_time, salary, allowance, overtime_rate, tax, over_time_payment, no_pay, base_pay, gross_pay) " +
+                "VALUES('" + empid + "' , '" + monthyear + "' , '" + attendance + "' , '" + leaves + "' , '" + total_absent + "' , '" + holiday + "' ," +
+                " '" + overtime + "' , '" + salary + "' , '" + allowance + "' , '" + rate + "' , '" + gov_tax_rate + "' , '" + overtime_payment + "' , '" + nopay + "' , '" + basepay + "' , '" + grosspay + "')";
 
+            cmn.messages(query, "insert");
         }
 
 
         public void UpdateData()
         {
+            string query = "UPDATE tbl_salary SET emp_id = '" + empid + "', month_year = '" + monthyear + "', attendance = '" + attendance + "', leaves = '" + leaves + "', " +
+                "  absents = '" + total_absent + "', holidays = '" + holiday + "', over_time = '" + overtime + "', salary = '" + salary + "', allowance = '" + allowance + "', overtime_rate = '" + rate + "', tax = '" + gov_tax_rate + "', over_time_payment = '" + overtime_payment + "', no_pay = '" + nopay + "', base_pay = '" + basepay + "', gross_pay = '" + grosspay +"' '"+
+                " WHERE salary_id = '" + salaryid + "'";
 
+            cmn.messages(query, "update");
         }
 
         public void DeleteDate()
         {
+            string query = "Delete from tbl_salary WHERE salary_id = '" + salaryid + "'";
 
+            cmn.messages(query, "delete");
+        }
+
+
+        public void FillEmployeTypeToField()
+        {
+            string qry = "SELECT * FROM tbl_salary WHERE salary_id = '" + salaryid + "'";
+            filloperation fill = new filloperation();
+            SqlDataReader rd = fill.FillWithID(qry);
+
+            if (rd.Read())
+            {
+                empid = Convert.ToInt32(rd["emp_id"].ToString());
+                monthyear = rd["month_year"].ToString();
+                attendance = Convert.ToInt32(rd["attendance"]);
+                leaves = Convert.ToInt32(rd["leaves"]);
+                total_absent = Convert.ToInt32(rd["absents"]);
+                holiday = Convert.ToInt32(rd["holidays"]);
+                overtime = Convert.ToInt32(rd["over_time"]);
+                salary = Convert.ToInt32(rd["salary"]);
+                allowance = Convert.ToInt32(rd["allowance"]);
+                rate = Convert.ToInt32(rd["overtime_rate"]);
+                gov_tax_rate = Convert.ToInt32(rd["tax"]);
+                overtime_payment = Convert.ToInt32(rd["over_time_payment"]);
+                nopay = Convert.ToInt32(rd["no_pay"]);
+                basepay = Convert.ToInt32(rd["base_pay"]);
+                grosspay = Convert.ToInt32(rd["gross_pay"]);
+            }
         }
 
         public void SettingDetails()
@@ -136,8 +173,7 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 salary= Convert.ToDouble(rd["monthly_salary"]);
-                allowance= Convert.ToDouble(rd["allowance"]);
-                
+                allowance= Convert.ToDouble(rd["allowance"]);                
             }
             rd.Close();
             rd = null;

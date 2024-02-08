@@ -79,9 +79,9 @@ namespace Grifindo_Toys
             clsattendace.attendanceid = Convert.ToInt32(dgv_attendance.Rows[e.RowIndex].Cells[0].Value);
             clsattendace.FillEmployeTypeToField();
             cmb_empid.Text = clsattendace.empid.ToString();
-            dtp_date.Text = clsattendace.date.ToString();
-            dtp_intime.Text = clsattendace.intime.ToString();
-            dtp_outime.Text = clsattendace.outime.ToString();
+            dtp_date.Text = clsattendace.date.ToShortDateString();
+            dtp_intime.Text = clsattendace.intime.ToShortDateString();
+            dtp_outime.Text = clsattendace.outime.ToShortDateString();
             lbl_totalminutes.Text = clsattendace.minutes.ToString();
         }
 

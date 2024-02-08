@@ -62,9 +62,9 @@ namespace Grifindo_Toys.AppClasses
             {
                 empid = (int)rd["emp_id"];
                 date = Convert.ToDateTime(rd["date"]);
-                intime = Convert.ToDateTime(rd["in_time"]);
-                outime = Convert.ToDateTime(rd["out_time"]);
-                minutes = Convert.ToDouble(rd["working_minutes"]);
+                intime = Convert.ToDateTime(rd["in_time"].ToString());
+                outime = Convert.ToDateTime(rd["out_time"].ToString());
+                minutes = Convert.ToDouble(rd["working_minutes"].ToString());
             }
         }
     }
