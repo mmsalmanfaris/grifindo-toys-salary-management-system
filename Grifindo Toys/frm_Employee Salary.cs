@@ -22,40 +22,25 @@ namespace Grifindo_Toys
         {
             InitializeComponent();
         }
-        void update()
-        {
-            fill.FillDataGridView("SELECT * FROM tbl_salary", dgv_empoyee_salary);
+ 
+        void Firstrun()
+        {            
+            salary.monthyear = DateTime.Now.ToString("MMMM") + "  " + DateTime.Now.ToString("yyyy");
+            lblmonthyear.Text = salary.monthyear.ToString();
 
+            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "full_name", "emp_id");
+
+            salary.SettingDetails();
+        }
+
+        void refresh()
+        {
             lbl_nopay.Text = "";
             lbl_grosspay.Text = "";
             lbl_basepay.Text = "";
             lbl_overtimepayment.Text = "";
-        }
-        void clearAll()
-        {
 
-            lblmonthyear.Text = DateTime.Now.ToString("MMMM ") +" "+ DateTime.Now.ToString("yyyy");
-            salary.monthyear = DateTime.Now.ToString("MMMM") + "  " + DateTime.Now.ToString("yyyy");
-            fill.combobox("SELECT * FROM tbl_employee", cmb_empid, "full_name", "emp_id");
-
-            salary.SettingDetails();                   
-        }
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frm_salary_Load(object sender, EventArgs e)
-        {
-;
-            update();
-            clearAll();
-
+            fill.FillDataGridView("SELECT * FROM tbl_salary", dgv_empoyee_salary);
             dgv_empoyee_salary.Columns[0].HeaderText = "ID";
             dgv_empoyee_salary.Columns[1].HeaderText = "Emp ID";
             dgv_empoyee_salary.Columns[2].HeaderText = "Month";
@@ -73,12 +58,23 @@ namespace Grifindo_Toys
             dgv_empoyee_salary.Columns[14].HeaderText = "Base Pay";
             dgv_empoyee_salary.Columns[15].HeaderText = "Gross Pay";
         }
-
-        private void btn_save_Click(object sender, EventArgs e)
+        private void btn_delete_Click(object sender, EventArgs e)
         {
 
         }
-        void GridDetail()
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_salary_Load(object sender, EventArgs e)
+        {
+            Firstrun();
+            refresh();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
         {
 
         }
@@ -126,7 +122,7 @@ namespace Grifindo_Toys
         private void btn_save_Click_1(object sender, EventArgs e)
         {
             salary.Insertdata();
-            update();
+            refresh();
         }
 
         private void lbl_holidays_Click(object sender, EventArgs e)
@@ -153,8 +149,7 @@ namespace Grifindo_Toys
             salary.PayValues();
             lbl_absents.Text = salary.total_absent.ToString() + " Days";
 
-            clearAll();
-            update();
+            refresh();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -198,19 +193,19 @@ namespace Grifindo_Toys
 
         private void btn_new_Click_1(object sender, EventArgs e)
         {
-            update();
+            refresh();
         }
 
         private void btn_update_Click_1(object sender, EventArgs e)
         {
             salary.UpdateData();
-            update();
+            refresh();
         }
 
         private void btn_delete_Click_1(object sender, EventArgs e)
         {
             salary.DeleteDate();
-            update();
+            Firstrun();
         }
     }
 }
