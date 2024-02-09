@@ -1,14 +1,7 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-using Microsoft.ReportingServices.Diagnostics.Internal;
+﻿using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grifindo_Toys.CommonClasses
