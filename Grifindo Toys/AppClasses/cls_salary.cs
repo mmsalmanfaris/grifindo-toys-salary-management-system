@@ -65,7 +65,8 @@ namespace Grifindo_Toys.AppClasses
         public void UpdateData()
         {
             string query = "UPDATE tbl_salary SET emp_id = '" + empid + "', month_year = '" + monthyear + "', attendance = '" + attendance + "', leaves = '" + leaves + "', " +
-                "  absents = '" + total_absent + "', holidays = '" + holiday + "', over_time = '" + overtime + "', salary = '" + salary + "', allowance = '" + allowance + "', overtime_rate = '" + rate + "', tax = '" + gov_tax_rate + "', over_time_payment = '" + overtime_payment + "', no_pay = '" + nopay + "', base_pay = '" + basepay + "', gross_pay = '" + grosspay +"' '"+
+                "  absents = '" + total_absent + "', holidays = '" + holiday + "', over_time = '" + overtime + "', salary = '" + salary + "', allowance = '" + allowance + "', overtime_rate = '" + rate + "'," +
+                " tax = '" + gov_tax_rate + "', over_time_payment = '" + overtime_payment + "', no_pay = '" + nopay + "', base_pay = '" + basepay + "', gross_pay = '" + grosspay +"' '"+
                 " WHERE salary_id = '" + salaryid + "'";
 
             cmn.messages(query, "update");
