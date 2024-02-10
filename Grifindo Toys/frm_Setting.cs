@@ -69,7 +69,7 @@ namespace Grifindo_Toys
         private void dgv_salary_setting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clssetting.seting_id = Convert.ToInt32(dgv_salary_setting.Rows[e.RowIndex].Cells[0].Value);
-            clssetting.FillEmployeTypeToField();
+            clssetting.FillData();
             txt_gov_tax.Text = clssetting.gov_tax.ToString();
             dtp_salary_begin.Text = clssetting.begindate.ToString();
             dtp_salary_end.Text = clssetting.endDate.ToString();

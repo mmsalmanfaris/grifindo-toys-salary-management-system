@@ -52,7 +52,7 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-        public void FillEmployeTypeToField()
+        public void FillData()
         {
             string qry = "SELECT * FROM tbl_attendance WHERE attendance_id = " + attendanceid;
             filloperation fill = new filloperation();

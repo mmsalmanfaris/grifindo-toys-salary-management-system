@@ -75,7 +75,7 @@ namespace Grifindo_Toys
         private void dgv_admin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsadmin.adminid = Convert.ToInt32(dgv_admin.Rows[e.RowIndex].Cells[0].Value);
-            clsadmin.FillEmployeTypeToField();
+            clsadmin.FillData();
             txt_name.Text = clsadmin.name;
             txt_nic.Text = clsadmin.nic;
             txt_username.Text = clsadmin.username;

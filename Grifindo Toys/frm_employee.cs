@@ -90,7 +90,7 @@ namespace Grifindo_Toys
         private void dgv_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsemp.empid = Convert.ToInt32(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
-            clsemp.FillEmployeTypeToField();
+            clsemp.FillData();
             txt_fullname.Text = clsemp.fullname;
             txt_nic.Text = clsemp.nic.ToString();
             txt_email.Text = clsemp.email;
