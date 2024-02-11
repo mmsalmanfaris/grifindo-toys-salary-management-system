@@ -45,7 +45,7 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_holidays WHERE holiday_id = " + holidayid;
             filloperation fill = new filloperation();

@@ -129,7 +129,7 @@ namespace Grifindo_Toys
         private void dgv_leave_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsleave.leaveid = Convert.ToInt32(dgv_leave.Rows[e.RowIndex].Cells[0].Value);
-            clsleave.FillEmployeTypeToField();
+            clsleave.Getdata();
             cmb_empid.Text = clsleave.emp_id.ToString();
             dtp_leave_start.Text = clsleave.start;
             dtp_leave_end.Text = clsleave.end;

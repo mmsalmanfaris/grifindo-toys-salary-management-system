@@ -54,6 +54,29 @@ namespace Grifindo_Toys
             dgv_salary_setting.Columns[5].HeaderText = "Range";
 
         }
+                
+        private void dgv_salary_setting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clssetting.seting_id = Convert.ToInt32(dgv_salary_setting.Rows[e.RowIndex].Cells[0].Value);
+            clssetting.Getdata();
+            txt_gov_tax.Text = clssetting.gov_tax.ToString();
+            dtp_salary_begin.Text = clssetting.begindate.ToString();
+            dtp_salary_end.Text = clssetting.endDate.ToString();
+            lbl_range.Text = clssetting.range;
+        }
+
+        private void lbl_range_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dtp_salary_begin.Value;
+            DateTime endDate = dtp_salary_end.Value;
+
+            TimeSpan difference = (startDate <= endDate) ? endDate - startDate : TimeSpan.Zero;
+            int daysDifference = difference.Days;
+
+            lbl_range.Text = daysDifference.ToString();
+
+            clssetting.range = lbl_range.Text;
+        }
 
         private void btn_new_Click(object sender, EventArgs e)
         {
@@ -64,16 +87,6 @@ namespace Grifindo_Toys
         {
             clssetting.UpdateData();
             FirstRun();
-        }
-
-        private void dgv_salary_setting_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            clssetting.seting_id = Convert.ToInt32(dgv_salary_setting.Rows[e.RowIndex].Cells[0].Value);
-            clssetting.FillData();
-            txt_gov_tax.Text = clssetting.gov_tax.ToString();
-            dtp_salary_begin.Text = clssetting.begindate.ToString();
-            dtp_salary_end.Text = clssetting.endDate.ToString();
-            lbl_range.Text = clssetting.range;
         }
 
         private void dgv_salary_setting_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -106,20 +119,7 @@ namespace Grifindo_Toys
             lbl_range_Click(sender, e);
         }
 
-        private void lbl_range_Click(object sender, EventArgs e)
-        {
-            DateTime startDate = dtp_salary_begin.Value;
-            DateTime endDate = dtp_salary_end.Value;
-
-            TimeSpan difference = (startDate <= endDate) ? endDate - startDate : TimeSpan.Zero;
-            int daysDifference = difference.Days;
-
-            lbl_range.Text = daysDifference.ToString();
-
-            clssetting.range = lbl_range.Text;
-        }
-
-
+        
         private void txt_gov_tax_Click(object sender, EventArgs e)
         {
             txt_gov_tax.SelectAll();

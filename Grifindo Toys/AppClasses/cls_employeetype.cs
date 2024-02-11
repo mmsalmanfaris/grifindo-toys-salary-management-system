@@ -42,7 +42,7 @@ namespace Grifindo_Toys.AppClasses
             cmn.messages(query, "delete");
         }
 
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_employeetype WHERE emp_type_id = " + emptype_id;
             filloperation fill = new filloperation();

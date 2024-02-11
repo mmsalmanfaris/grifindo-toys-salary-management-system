@@ -69,28 +69,10 @@ namespace Grifindo_Toys
             dgv_emp.Columns[9].HeaderText = "Gender";
         }
 
-        private void dgv_emp_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-            FirstRun();
-            txt_fullname.Focus();
-        }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            
-            clsemp.Insertdata();
-            FirstRun();
-        }
-
         private void dgv_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsemp.empid = Convert.ToInt32(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
-            clsemp.FillData();
+            clsemp.Getdata();
             txt_fullname.Text = clsemp.fullname;
             txt_nic.Text = clsemp.nic.ToString();
             txt_email.Text = clsemp.email;
@@ -108,8 +90,25 @@ namespace Grifindo_Toys
             {
                 rb_female.Checked = true;
             }
-            
         }
+
+        private void dgv_emp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            FirstRun();
+            txt_fullname.Focus();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            
+            clsemp.Insertdata();
+            FirstRun();
+        }            
 
         private void btn_update_Click(object sender, EventArgs e)
         {

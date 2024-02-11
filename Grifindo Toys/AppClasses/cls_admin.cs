@@ -50,7 +50,7 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_admin WHERE admin_id = " + adminid;
             filloperation fill = new filloperation();

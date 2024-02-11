@@ -61,11 +61,11 @@ namespace Grifindo_Toys.AppClasses
             cmn.messages(query, "insert");
         }
 
-
         public void UpdateData()
         {
             string query = "UPDATE tbl_salary SET emp_id = '" + empid + "', month_year = '" + monthyear + "', attendance = '" + attendance + "', leaves = '" + leaves + "', " +
-                "  absents = '" + total_absent + "', holidays = '" + holiday + "', over_time = '" + overtime + "', salary = '" + salary + "', allowance = '" + allowance + "', overtime_rate = '" + rate + "', tax = '" + gov_tax_rate + "', over_time_payment = '" + overtime_payment + "', no_pay = '" + nopay + "', base_pay = '" + basepay + "', gross_pay = '" + grosspay +"' '"+
+                "  absents = '" + total_absent + "', holidays = '" + holiday + "', over_time = '" + overtime + "', salary = '" + salary + "', allowance = '" + allowance + "', overtime_rate = '" + rate + 
+                "', tax = '" + gov_tax_rate + "', over_time_payment = '" + overtime_payment + "', no_pay = '" + nopay + "', base_pay = '" + basepay + "', gross_pay = '" + grosspay +"' '"+
                 " WHERE salary_id = '" + salaryid + "'";
 
             cmn.messages(query, "update");
@@ -78,8 +78,7 @@ namespace Grifindo_Toys.AppClasses
             cmn.messages(query, "delete");
         }
 
-
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_salary WHERE salary_id = '" + salaryid + "'";
             filloperation fill = new filloperation();
@@ -102,8 +101,8 @@ namespace Grifindo_Toys.AppClasses
                 nopay = Convert.ToInt32(rd["no_pay"]);
                 basepay = Convert.ToInt32(rd["base_pay"]);
                 grosspay = Convert.ToInt32(rd["gross_pay"]);
-            }
         }
+            }
 
         public void SettingDetails()
         {

@@ -61,7 +61,7 @@ namespace Grifindo_Toys
         private void dgv_emp_type_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsemptype.emptype_id = Convert.ToInt32(dgv_emp_type.Rows[e.RowIndex].Cells[0].Value);
-            clsemptype.FillEmployeTypeToField();
+            clsemptype.Getdata();
             txt_emp_type.Text = clsemptype.emptype.ToString();
             txt_overtime.Text = clsemptype.Overtimerate.ToString();
             txt_annualleave.Text = clsemptype.Annualleaves.ToString();

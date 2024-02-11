@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Grifindo_Toys.AppClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Grifindo_Toys
@@ -16,7 +18,7 @@ namespace Grifindo_Toys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_salary());
+            Application.Run(new frm_login());
         }
     }
 }

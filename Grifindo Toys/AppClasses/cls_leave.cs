@@ -53,7 +53,7 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_leave WHERE leave_id = " + leaveid;
             filloperation fill = new filloperation();

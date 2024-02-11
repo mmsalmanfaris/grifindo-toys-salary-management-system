@@ -77,7 +77,7 @@ namespace Grifindo_Toys
         private void dgv_attendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             clsattendace.attendanceid = Convert.ToInt32(dgv_attendance.Rows[e.RowIndex].Cells[0].Value);
-            clsattendace.FillData();
+            clsattendace.Getdata();
             cmb_empid.Text = clsattendace.empid.ToString();
             dtp_date.Text = clsattendace.date.ToShortDateString();
             dtp_intime.Text = clsattendace.intime.ToShortDateString();

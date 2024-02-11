@@ -53,7 +53,7 @@ namespace Grifindo_Toys.AppClasses
         }
 
 
-        public void FillData()
+        public void Getdata()
         {
             string qry = "SELECT * FROM tbl_setting WHERE setting_id = " + seting_id;
             filloperation fill = new filloperation();
