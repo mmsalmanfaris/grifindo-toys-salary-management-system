@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grifindo_Toys.CommonClasses
@@ -12,7 +7,6 @@ namespace Grifindo_Toys.CommonClasses
     internal class Common
     {
         dbconnection dbcon = new dbconnection();
-
 
         public void messages(string qry, string key)
         {
@@ -23,9 +17,7 @@ namespace Grifindo_Toys.CommonClasses
                     case "insert":
                         if (MessageBox.Show("Do you want to save?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            RunQuery(qry);
-                            
-                            
+                            RunQuery(qry);                          
                             MessageBox.Show("Saved Succesfully", "Saved");
                         }
                         break;
