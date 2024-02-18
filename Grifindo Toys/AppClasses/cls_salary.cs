@@ -11,6 +11,7 @@ namespace Grifindo_Toys.AppClasses
         filloperation fill = new filloperation();
         dbconnection con = new dbconnection();
 
+
         public int salaryid { get; set; }
 
         public int empid { get; set; }
@@ -31,7 +32,7 @@ namespace Grifindo_Toys.AppClasses
 
         public double gov_tax_rate { get; set; }
 
-        public int attendance {  get; set; }
+        public int attendance { get; set; }
 
         public int leaves { get; set; }
 
@@ -45,12 +46,11 @@ namespace Grifindo_Toys.AppClasses
 
         public int rate { get; set; }
 
-        public double overtime_payment {  get; set; }
+        public double overtime_payment { get; set; }
 
         public double basepay { get; set; }
 
         public double grosspay { get; set; }
-
 
         public void Insertdata()
         {

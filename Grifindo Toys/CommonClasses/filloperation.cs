@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -189,6 +190,23 @@ namespace Grifindo_Toys.CommonClasses
             con.mycon.Close();
             return dt;
 
+        }
+
+        public void FillReportView(string qry, ReportViewer rpt)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+            da.Fill(dt);
+
+            rpt.LocalReport.DataSources.Clear();
+            ReportDataSource source = new ReportDataSource("EmployeeSalary", dt);
+            ReportDataSource source1 = new ReportDataSource("tbl_salary", dt);
+            ReportDataSource source2 = new ReportDataSource("tbl_employee", dt);
+            rpt.LocalReport.ReportPath = "D:\\HND\\Assignment Answer\\Programming\\Grifindo Toys\\Grifindo Toys\\Report1.rdlc";
+            rpt.LocalReport.DataSources.Add(source);
+            rpt.LocalReport.DataSources.Add(source1);
+            rpt.LocalReport.DataSources.Add(source2);
+            rpt.RefreshReport();
         }
     }
 

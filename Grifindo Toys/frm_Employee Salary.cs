@@ -1,14 +1,6 @@
 ﻿using Grifindo_Toys.AppClasses;
 using Grifindo_Toys.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Grifindo_Toys
@@ -35,11 +27,13 @@ namespace Grifindo_Toys
 
         void refresh()
         {
+            //Empty the calculated results
             lbl_nopay.Text = "";
             lbl_grosspay.Text = "";
             lbl_basepay.Text = "";
             lbl_overtimepayment.Text = "";
 
+            //Customising Datagrideview header
             fill.FillDataGridView("SELECT * FROM tbl_salary", dgv_empoyee_salary);
             dgv_empoyee_salary.Columns[0].HeaderText = "ID";
             dgv_empoyee_salary.Columns[1].HeaderText = "Emp ID";
