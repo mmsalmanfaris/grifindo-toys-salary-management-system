@@ -38,7 +38,7 @@ namespace Grifindo_Toys.AppClasses
 
         public void UpdateData()
         {
-            string query = "UPDATE tbl_attendance SET emp_id = '" + empid + "', date = '" + date + "', in_time = '" + intime + "'," +
+            string query = "UPDATE tbl_attendance SET emp_id = '" + empid + "', working_date = '" + date + "', in_time = '" + intime + "'," +
                            " out_time = '" + outime + "', working_minutes = '" + minutes + "' WHERE attendance_id = " + attendanceid;
 
             cmn.messages(query, "update");
@@ -61,7 +61,7 @@ namespace Grifindo_Toys.AppClasses
             if (rd.Read())
             {
                 empid = (int)rd["emp_id"];
-                date = Convert.ToDateTime(rd["date"]);
+                date = Convert.ToDateTime(rd["working_date"]);
                 intime = Convert.ToDateTime(rd["in_time"].ToString());
                 outime = Convert.ToDateTime(rd["out_time"].ToString());
                 minutes = Convert.ToDouble(rd["working_minutes"].ToString());

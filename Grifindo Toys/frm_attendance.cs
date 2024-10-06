@@ -115,11 +115,6 @@ namespace Grifindo_Toys
             clsattendace.minutes = totalMinutes;
         }
 
-        private void dtp_date_ValueChanged(object sender, EventArgs e)
-        {
-            clsattendace.date = dtp_date.Value.Date;
-        }
-
         private void dtp_intime_ValueChanged(object sender, EventArgs e)
         {
             dtp_intime.Format = DateTimePickerFormat.Time;
@@ -129,6 +124,12 @@ namespace Grifindo_Toys
             lbl_totalhours_Click(sender, e);
         }
 
+        private void dtp_date_ValueChanged(object sender, EventArgs e)
+        {
+            clsattendace.date = dtp_date.Value.Date;
+        }
+
+        
         private void dtp_outime_ValueChanged(object sender, EventArgs e)
         {
             dtp_outime.Format = DateTimePickerFormat.Time;

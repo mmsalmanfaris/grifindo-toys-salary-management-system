@@ -38,6 +38,15 @@ namespace Grifindo_Toys
             dgv_emp_type.Columns[3].HeaderText = "Annual Leave";
         }
 
+        private void dgv_emp_type_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clsemptype.emptype_id = Convert.ToInt32(dgv_emp_type.Rows[e.RowIndex].Cells[0].Value);
+            clsemptype.Getdata();
+            txt_emp_type.Text = clsemptype.emptype.ToString();
+            txt_overtime.Text = clsemptype.Overtimerate.ToString();
+            txt_annualleave.Text = clsemptype.Annualleaves.ToString();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -58,14 +67,7 @@ namespace Grifindo_Toys
 
         }
 
-        private void dgv_emp_type_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            clsemptype.emptype_id = Convert.ToInt32(dgv_emp_type.Rows[e.RowIndex].Cells[0].Value);
-            clsemptype.Getdata();
-            txt_emp_type.Text = clsemptype.emptype.ToString();
-            txt_overtime.Text = clsemptype.Overtimerate.ToString();
-            txt_annualleave.Text = clsemptype.Annualleaves.ToString();
-        }
+        
 
         private void btn_save_Click(object sender, EventArgs e)
         {

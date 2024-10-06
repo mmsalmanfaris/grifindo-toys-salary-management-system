@@ -126,15 +126,17 @@ namespace Grifindo_Toys
             dgv_search.Columns[9].HeaderText = "Gender";
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_searchjobrole_TextChanged(object sender, EventArgs e)
         {
             DataView dv = dt.DefaultView;
             dv.RowFilter = "job_role Like '%" + txt_searchjobrole.Text + "%'";
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

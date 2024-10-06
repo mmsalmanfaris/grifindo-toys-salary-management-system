@@ -23,10 +23,7 @@ namespace Grifindo_Toys
         }
 
 
-        public void getavailableleave()
-        {
-            lbl_available_leaves.Text = Convert.ToString((int)fill.total_leaves(clsleave.emp_id) - (int)fill.Completed_leaves(clsleave.emp_id));
-        }
+       
 
 
         private void label7_Click(object sender, EventArgs e)
@@ -102,6 +99,11 @@ namespace Grifindo_Toys
             lbl_total_days.Text = daysDifference.ToString();
 
             clsleave.days = lbl_total_days.Text;
+        }
+
+        public void getavailableleave()
+        {
+            lbl_available_leaves.Text = Convert.ToString((int)fill.total_leaves(clsleave.emp_id) - (int)fill.Completed_leaves(clsleave.emp_id));
         }
 
         private void txt_reason_TextChanged(object sender, EventArgs e)

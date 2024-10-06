@@ -30,7 +30,6 @@ namespace Grifindo_Toys.AppClasses
         {
             string query = "INSERT INTO tbl_admin(name, nic, username, password) " +
                            "VALUES('" + name + "' , '" + nic + "' , '" + username + "' , '" + password + "')";
-
             cmn.messages(query, "insert");
         }
 
@@ -38,14 +37,12 @@ namespace Grifindo_Toys.AppClasses
         {
             string query = "UPDATE tbl_admin SET name = '" + name + "', nic = '" + nic + "', username = '" + username + "'," +
                 " password = '" + password + "' WHERE admin_id = " + adminid;
-
             cmn.messages(query, "update");
         }
 
         public void DeleteData()
         {
             string query = "Delete from tbl_admin WHERE admin_id = " + adminid;
-
             cmn.messages(query, "delete");
         }
 

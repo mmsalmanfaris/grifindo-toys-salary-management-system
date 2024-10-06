@@ -14,7 +14,7 @@ namespace Grifindo_Toys
 {
     public partial class frm_login : Form
     {
-        public SqlConnection mycon = new SqlConnection("Data Source=SALMAN_FARIS\\SQLEXPRESS;Initial Catalog=Grifindo_Toys;Integrated Security=True;Encrypt=False");
+        public SqlConnection mycon = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Grifindo_Toys;Integrated Security=True;Encrypt=False");
         public frm_login()
         {
             InitializeComponent();
@@ -55,14 +55,17 @@ namespace Grifindo_Toys
                 else
                     MessageBox.Show("Incorrect Username or Password");
             }
-
-            catch (Exception ex)
+             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
             finally { mycon.Close(); }
             
+        }
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
